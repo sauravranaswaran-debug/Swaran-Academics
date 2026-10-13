@@ -2357,27 +2357,31 @@
         document.getElementById('bookingModal').classList.remove('open');
       }
 
-      function closeModalOnBg(e) {
-        if (e.target.id === 'bookingModal') closeBookingModal();
-      }
+      function submitModalToWhatsapp() {
+  const name = document.getElementById('parentName').value.trim();
+  const sector = document.getElementById('parentSector').value.trim();
+  const grade = document.getElementById('studentGrade').value;
+  const subjects = document.getElementById('subjectsNeeded').value;
 
-      function submitModalToWhatsApp() {
-        const name = document.getElementById('parentName').value.trim() || 'Parent/Student';
-        const sector = document.getElementById('parentSector').value.trim() || 'Near PU Chandigarh';
-        const grade = document.getElementById('modalClass').value;
-        const subjects = document.getElementById('modalSubjects').value.trim();
+  if (!name || !sector) {
+    alert(currentLang === 'pa' ? 'ਕਿਰਪਾ ਕਰਕੇ ਸਾਰੇ ਖਾਨੇ ਭਰੋ।' : (currentLang === 'hi' ? 'कृपया सभी विवरण भरें।' : 'Please fill all details.'));
+    return;
+  }
 
-        const text = encodeURIComponent(`Hello Saurav! I would like to book a Free 2-Day Trial Class via Swaran Academics:\n- Name: ${name}\n- Area: ${sector}\n- Format/Grade: ${grade}\n- Subjects: ${subjects}`);
-        window.open(`https://wa.me/919815485169?text=${text}`, '_blank');
-        closeBookingModal();
-      }
+  let text = '';
+  if (currentLang === 'pa') {
+    text = `ਸਤਿ ਸ਼੍ਰੀ ਅਕਾਲ ਸੌਰਵ ਜੀ, ਮੈਂ ਮੁਫ਼ਤ 2 ਦਿਨਾਂ ਦਾ ਟ੍ਰਾਇਲ ਬੁੱਕ ਕਰਨਾ ਚਾਹੁੰਦਾ/ਚਾਹੁੰਦੀ ਹਾਂ।\n\nਵਿਦਿਆਰਥੀ/ਮਾਪੇ ਦਾ ਨਾਂ: ${name}\nਇਲਾਕਾ/ਸੈਕਟਰ: ${sector}\nਜਮਾਤ: ${grade}\nਵਿਸ਼ੇ: ${subjects}`;
+  } else if (currentLang === 'hi') {
+    text = `नमस्ते सौरभ जी, मैं 2 दिन का फ्री ट्रायल बुक करना चाहता/चाहती हूँ।\n\nछात्र/अभिभावक का नाम: ${name}\nइलाका/सेक्टर: ${sector}\nकक्षा: ${grade}\nविषय: ${subjects}`;
+  } else {
+    text = `Hello Saurav, I would like to book a Free 2-Day Trial.\n\nStudent/Parent Name: ${name}\nLocation: ${sector}\nGrade: ${grade}\nSubjects: ${subjects}`;
+  }
 
-      // Tri-Lingual Engine (English, Punjabi, Hindi)
-      let currentLang = 'en';
+  const encodedText = encodeURIComponent(text);
+  window.open(`https://api.whatsapp.com/send?phone=919878248529&text=${encodedText}`, '_blank');
+  closeBookingModal();
+}
 
-      function switchLang(lang) {
-        currentLang = lang;
-        triggerTactile('toggle');
 
         document.querySelectorAll('.lang-pill').forEach(btn => btn.classList.remove('active'));
         if (lang === 'en') document.getElementById('btnLangEn').classList.add('active');
