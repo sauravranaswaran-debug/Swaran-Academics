@@ -2357,31 +2357,36 @@
         document.getElementById('bookingModal').classList.remove('open');
       }
 
+            let currentLang = 'en';
+
       function submitModalToWhatsapp() {
-  const name = document.getElementById('parentName').value.trim();
-  const sector = document.getElementById('parentSector').value.trim();
-  const grade = document.getElementById('studentGrade').value;
-  const subjects = document.getElementById('subjectsNeeded').value;
+        const name = document.getElementById('parentName') ? document.getElementById('parentName').value.trim() : '';
+        const sector = document.getElementById('parentSector') ? document.getElementById('parentSector').value.trim() : '';
+        const grade = document.getElementById('modalClass') ? document.getElementById('modalClass').value : '';
+        const subjects = document.getElementById('modalSubjects') ? document.getElementById('modalSubjects').value : '';
 
-  if (!name || !sector) {
-    alert(currentLang === 'pa' ? 'ਕਿਰਪਾ ਕਰਕੇ ਸਾਰੇ ਖਾਨੇ ਭਰੋ।' : (currentLang === 'hi' ? 'कृपया सभी विवरण भरें।' : 'Please fill all details.'));
-    return;
-  }
+        if (!name || !sector) {
+          alert(currentLang === 'pa' ? 'ਕਿਰਪਾ ਕਰਕੇ ਸਾਰੇ ਖਾਨੇ ਭਰੋ।' : (currentLang === 'hi' ? 'कृपया सभी विवरण भरें।' : 'Please fill all details.'));
+          return;
+        }
 
-  let text = '';
-  if (currentLang === 'pa') {
-    text = `ਸਤਿ ਸ਼੍ਰੀ ਅਕਾਲ ਸੌਰਵ ਜੀ, ਮੈਂ ਮੁਫ਼ਤ 2 ਦਿਨਾਂ ਦਾ ਟ੍ਰਾਇਲ ਬੁੱਕ ਕਰਨਾ ਚਾਹੁੰਦਾ/ਚਾਹੁੰਦੀ ਹਾਂ।\n\nਵਿਦਿਆਰਥੀ/ਮਾਪੇ ਦਾ ਨਾਂ: ${name}\nਇਲਾਕਾ/ਸੈਕਟਰ: ${sector}\nਜਮਾਤ: ${grade}\nਵਿਸ਼ੇ: ${subjects}`;
-  } else if (currentLang === 'hi') {
-    text = `नमस्ते सौरभ जी, मैं 2 दिन का फ्री ट्रायल बुक करना चाहता/चाहती हूँ।\n\nछात्र/अभिभावक का नाम: ${name}\nइलाका/सेक्टर: ${sector}\nकक्षा: ${grade}\nविषय: ${subjects}`;
-  } else {
-    text = `Hello Saurav, I would like to book a Free 2-Day Trial.\n\nStudent/Parent Name: ${name}\nLocation: ${sector}\nGrade: ${grade}\nSubjects: ${subjects}`;
-  }
+        let text = '';
+        if (currentLang === 'pa') {
+          text = `ਸਤਿ ਸ਼੍ਰੀ ਅਕਾਲ ਸੌਰਵ ਜੀ, ਮੈਂ ਮੁਫ਼ਤ 2 ਦਿਨਾਂ ਦਾ ਟ੍ਰਾਇਲ ਬੁੱਕ ਕਰਨਾ ਚਾਹੁੰਦਾ/ਚਾਹੁੰਦੀ ਹਾਂ।\n\nਵਿਦਿਆਰਥੀ/ਮਾਪੇ ਦਾ ਨਾਂ: ${name}\nਇਲਾਕਾ/ਸੈਕਟਰ: ${sector}\nਜਮਾਤ: ${grade}\nਵਿਸ਼ੇ: ${subjects}`;
+        } else if (currentLang === 'hi') {
+          text = `नमस्ते सौरभ जी, मैं 2 दिन का फ्री ट्रायल बुक करना चाहता/चाहती हूँ।\n\nछात्र/अभिभावक का नाम: ${name}\nइलाका/सेक्टर: ${sector}\nकक्षा: ${grade}\nविषय: ${subjects}`;
+        } else {
+          text = `Hello Saurav, I would like to book a Free 2-Day Trial.\n\nStudent/Parent Name: ${name}\nLocation: ${sector}\nGrade: ${grade}\nSubjects: ${subjects}`;
+        }
 
-  const encodedText = encodeURIComponent(text);
-  window.open(`https://api.whatsapp.com/send?phone=919878248529&text=${encodedText}`, '_blank');
-  closeBookingModal();
-}
+        const encodedText = encodeURIComponent(text);
+        window.open(`https://api.whatsapp.com/send?phone=919815485169&text=${encodedText}`, '_blank');
+        closeBookingModal();
+      }
 
+      function switchLang(lang) {
+        currentLang = lang;
+        triggerTactile('toggle');
 
         document.querySelectorAll('.lang-pill').forEach(btn => btn.classList.remove('active'));
         if (lang === 'en') document.getElementById('btnLangEn').classList.add('active');
@@ -2406,6 +2411,20 @@
             nameInput.placeholder = 'Student / Parent Name';
             sectorInput.placeholder = 'Location e.g. Sector 15 / PU Campus';
           }
+        }
+
+        // Bottom dock Whatsapp link update
+        const dockWa = document.getElementById('dockWaLink');
+        if (dockWa) {
+          let dockMsg = '';
+          if (lang === 'pa') {
+            dockMsg = 'ਸਤਿ ਸ਼੍ਰੀ ਅਕਾਲ ਸੌਰਵ ਜੀ, ਮੈਂ ਪੰਜਾਬ ਯੂਨੀਵਰਸਿਟੀ / ਚੰਡੀਗੜ੍ਹ ਦੇ ਆਸ-ਪਾਸ 9ਵੀਂ/10ਵੀਂ ਜਮਾਤ ਦੀਆਂ ਹੋਮ ਟਿਊਸ਼ਨਾਂ ਬਾਰੇ ਗੱਲਬਾਤ ਕਰਨੀ ਚਾਹੁੰਦਾ/ਚਾਹੁੰਦੀ ਹਾਂ।';
+          } else if (lang === 'hi') {
+            dockMsg = 'नमस्ते सौरभ जी, मैं पंजाब यूनिवर्सिटी / चंडीगढ़ के आस-पास 9वीं/10वीं कक्षा के होम ट्यूशन के बारे में जानकारी लेना चाहता/चाहती हूँ।';
+          } else {
+            dockMsg = 'Hello Saurav, I am interested in Home Tuitions for 9th/10th grade around PU Chandigarh.';
+          }
+          dockWa.href = `https://wa.me/919815485169?text=${encodeURIComponent(dockMsg)}`;
         }
 
         computePlan();
