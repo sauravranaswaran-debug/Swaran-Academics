@@ -1,2440 +1,1732 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Swaran Academics | Executive Home Tuitions Chandigarh</title>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Swaran Academics | Executive Home Tuitions Chandigarh</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=Noto+Sans+Gurmukhi:wght@400;500;600;700;800;900&family=Noto+Sans+Devanagari:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=Noto+Sans+Gurmukhi:wght@400;500;600;700;800;900&family=Noto+Sans+Devanagari:wght@400;500;600;700;800;900&display=swap"
-      rel="stylesheet"
-    />
+  <style>
+    :root {
+      --bg-dark: #070a13;
+      --bg-card: rgba(14, 20, 36, 0.78);
+      --border-card: rgba(255, 255, 255, 0.1);
+      --border-glow: rgba(0, 242, 254, 0.4);
+      --cyan: #00f2fe;
+      --blue: #4facfe;
+      --purple: #7928ca;
+      --pink: #ff0080;
+      --gold: #fbbf24;
+      --green: #10b981;
+      --text-main: #f8fafc;
+      --text-dim: #94a3b8;
+    }
 
-    <style>
-      :root {
-        --bg-dark: #070a13;
-        --bg-card: rgba(14, 20, 36, 0.78);
-        --border-card: rgba(255, 255, 255, 0.1);
-        --border-glow: rgba(0, 242, 254, 0.4);
-        --cyan: #00f2fe;
-        --blue: #4facfe;
-        --purple: #7928ca;
-        --pink: #ff0080;
-        --gold: #fbbf24;
-        --green: #10b981;
-        --text-main: #f8fafc;
-        --text-dim: #94a3b8;
-      }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Plus Jakarta Sans', 'Noto Sans Gurmukhi', 'Noto Sans Devanagari', -apple-system, BlinkMacSystemFont, sans-serif;
+      -webkit-tap-highlight-color: transparent;
+    }
 
-      * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-        font-family: 'Plus Jakarta Sans', 'Noto Sans Gurmukhi', 'Noto Sans Devanagari', -apple-system, BlinkMacSystemFont, sans-serif;
-        -webkit-tap-highlight-color: transparent;
-      }
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      overflow-x: hidden;
+      padding-bottom: 110px;
+      position: relative;
+    }
 
-      body {
-        background-color: var(--bg-dark);
-        color: var(--text-main);
-        min-height: 100vh;
-        display: flex;
-        justify-content: center;
-        overflow-x: hidden;
-        padding-bottom: 110px;
-        position: relative;
-      }
+    .cosmic-orb {
+      position: fixed;
+      border-radius: 50%;
+      filter: blur(110px);
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.35;
+      animation: driftOrb 14s ease-in-out infinite alternate;
+    }
+    .orb-1 { width: 340px; height: 340px; top: -50px; left: -100px; background: #7928ca; }
+    .orb-2 { width: 320px; height: 320px; top: 40%; right: -120px; background: #00f2fe; animation-delay: -5s; }
+    .orb-3 { width: 300px; height: 300px; bottom: 80px; left: -70px; background: #ff0080; animation-delay: -9s; }
 
-      .cosmic-orb {
-        position: fixed;
-        border-radius: 50%;
-        filter: blur(110px);
-        pointer-events: none;
-        z-index: 0;
-        opacity: 0.35;
-        animation: driftOrb 14s ease-in-out infinite alternate;
-      }
-      .orb-1 { width: 340px; height: 340px; top: -50px; left: -100px; background: #7928ca; }
-      .orb-2 { width: 320px; height: 320px; top: 40%; right: -120px; background: #00f2fe; animation-delay: -5s; }
-      .orb-3 { width: 300px; height: 300px; bottom: 80px; left: -70px; background: #ff0080; animation-delay: -9s; }
+    @keyframes driftOrb {
+      0% { transform: translateY(0) scale(1); }
+      50% { transform: translateY(50px) scale(1.15) rotate(20deg); }
+      100% { transform: translateY(-40px) scale(0.92) rotate(-15deg); }
+    }
 
-      @keyframes driftOrb {
-        0% { transform: translateY(0) scale(1); }
-        50% { transform: translateY(50px) scale(1.15) rotate(20deg); }
-        100% { transform: translateY(-40px) scale(0.92) rotate(-15deg); }
-      }
+    #progressLine {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 3.5px;
+      background: linear-gradient(90deg, var(--cyan), var(--blue), var(--purple), var(--gold));
+      width: 0%;
+      z-index: 999;
+      box-shadow: 0 0 14px var(--cyan);
+    }
 
-      #progressLine {
-        position: fixed;
-        top: 0;
-        left: 0;
-        height: 3.5px;
-        background: linear-gradient(90deg, var(--cyan), var(--blue), var(--purple), var(--gold));
-        width: 0%;
-        z-index: 999;
-        box-shadow: 0 0 14px var(--cyan);
-      }
+    .app-container {
+      width: 100%;
+      max-width: 520px;
+      position: relative;
+      z-index: 10;
+      padding: 16px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
 
-      .app-container {
-        width: 100%;
-        max-width: 520px;
-        position: relative;
-        z-index: 10;
-        padding: 16px 14px;
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-      }
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px) scale(0.98);
+      filter: blur(5px);
+      transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+                  transform 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+                  filter 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: opacity, transform, filter;
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+      filter: blur(0px);
+    }
 
-      .reveal {
-        opacity: 0;
-        transform: translateY(28px) scale(0.98);
-        filter: blur(5px);
-        transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
-                    transform 0.7s cubic-bezier(0.16, 1, 0.3, 1),
-                    filter 0.7s cubic-bezier(0.16, 1, 0.3, 1);
-        will-change: opacity, transform, filter;
-      }
-      .reveal.active {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-        filter: blur(0px);
-      }
+    .glass-card {
+      background: var(--bg-card);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border: 1px solid var(--border-card);
+      border-radius: 24px;
+      padding: 22px 18px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+      transition: border-color 0.3s ease, transform 0.25s ease, box-shadow 0.3s ease;
+    }
+    .glass-card:hover {
+      border-color: var(--border-glow);
+      box-shadow: 0 20px 48px rgba(0, 0, 0, 0.65), 0 0 24px rgba(0, 242, 254, 0.15);
+    }
+        .top-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 4px 2px;
+      gap: 8px;
+    }
+    .live-chip {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(16, 185, 129, 0.12);
+      border: 1px solid rgba(16, 185, 129, 0.35);
+      padding: 6px 11px;
+      border-radius: 30px;
+      font-size: 11px;
+      color: #34d399;
+      font-weight: 700;
+    }
+    .live-dot {
+      width: 7px;
+      height: 7px;
+      background: #34d399;
+      border-radius: 50%;
+      box-shadow: 0 0 10px #34d399;
+      animation: livePulse 1.8s infinite;
+    }
+    @keyframes livePulse {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.4); opacity: 0.35; }
+    }
 
-      .glass-card {
-        background: var(--bg-card);
-        backdrop-filter: blur(24px);
-        -webkit-backdrop-filter: blur(24px);
-        border: 1px solid var(--border-card);
-        border-radius: 24px;
-        padding: 22px 18px;
-        position: relative;
-        overflow: hidden;
-        box-shadow: 0 16px 40px rgba(0, 0, 0, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.08);
-        transition: border-color 0.3s ease, transform 0.25s ease, box-shadow 0.3s ease;
-      }
-      .glass-card:hover {
-        border-color: var(--border-glow);
-        box-shadow: 0 20px 48px rgba(0, 0, 0, 0.65), 0 0 24px rgba(0, 242, 254, 0.15);
-      }
-          .top-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 4px 2px;
-        gap: 8px;
-      }
-      .live-chip {
-        display: flex;
-        align-items: center;
-        gap: 6px;
-        background: rgba(16, 185, 129, 0.12);
-        border: 1px solid rgba(16, 185, 129, 0.35);
-        padding: 6px 11px;
-        border-radius: 30px;
-        font-size: 11px;
-        color: #34d399;
-        font-weight: 700;
-      }
-      .live-dot {
-        width: 7px;
-        height: 7px;
-        background: #34d399;
-        border-radius: 50%;
-        box-shadow: 0 0 10px #34d399;
-        animation: livePulse 1.8s infinite;
-      }
-      @keyframes livePulse {
-        0%, 100% { transform: scale(1); opacity: 1; }
-        50% { transform: scale(1.4); opacity: 0.35; }
-      }
+    .lang-switch-dock {
+      display: inline-flex;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 30px;
+      padding: 3px;
+      gap: 3px;
+    }
+    .lang-pill {
+      background: transparent;
+      border: none;
+      color: #94a3b8;
+      font-size: 11px;
+      font-weight: 800;
+      padding: 5px 9px;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .lang-pill.active {
+      background: linear-gradient(135deg, var(--cyan), var(--blue));
+      color: #070a13;
+      box-shadow: 0 2px 10px rgba(0, 242, 254, 0.35);
+    }
 
-      .lang-switch-dock {
-        display: inline-flex;
-        background: rgba(255, 255, 255, 0.06);
-        border: 1px solid rgba(255, 255, 255, 0.14);
-        border-radius: 30px;
-        padding: 3px;
-        gap: 3px;
-      }
-      .lang-pill {
-        background: transparent;
-        border: none;
-        color: #94a3b8;
-        font-size: 11px;
-        font-weight: 800;
-        padding: 5px 9px;
-        border-radius: 20px;
-        cursor: pointer;
-        transition: all 0.2s ease;
-      }
-      .lang-pill.active {
-        background: linear-gradient(135deg, var(--cyan), var(--blue));
-        color: #070a13;
-        box-shadow: 0 2px 10px rgba(0, 242, 254, 0.35);
-      }
+    .hero-container {
+      text-align: center;
+      background: radial-gradient(circle at 50% 0%, rgba(121, 40, 202, 0.32) 0%, rgba(14, 20, 36, 0.9) 85%);
+      border: 1px solid rgba(0, 242, 254, 0.35);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7), 0 0 30px rgba(0, 242, 254, 0.15);
+    }
+    .brand-unit {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 12px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 6px 16px;
+      border-radius: 20px;
+    }
+    .brand-name {
+      font-size: 17px;
+      font-weight: 900;
+      letter-spacing: 0.8px;
+      background: linear-gradient(135deg, var(--gold), var(--cyan));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .profile-avatar-wrap {
+      position: relative;
+      width: 92px;
+      height: 92px;
+      margin: 0 auto 12px auto;
+    }
+    .avatar-disc {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--cyan), var(--purple));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+      font-weight: 900;
+      color: #070a13;
+      border: 3.5px solid rgba(255, 255, 255, 0.4);
+      box-shadow: 0 10px 30px rgba(0, 242, 254, 0.4);
+    }
+    .floating-demo-badge {
+      position: absolute;
+      bottom: -6px;
+      right: -8px;
+      background: linear-gradient(90deg, #10b981, #059669);
+      color: #fff;
+      font-size: 9.5px;
+      font-weight: 800;
+      padding: 4px 8px;
+      border-radius: 12px;
+      border: 1.5px solid var(--bg-dark);
+      letter-spacing: 0.3px;
+      box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4);
+    }
+    .hero-badge {
+      display: inline-block;
+      background: rgba(0, 242, 254, 0.12);
+      border: 1px solid rgba(0, 242, 254, 0.35);
+      color: var(--cyan);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 1.2px;
+      padding: 4px 14px;
+      border-radius: 20px;
+      margin-bottom: 8px;
+    }
+    .hero-heading {
+      font-size: 30px;
+      font-weight: 900;
+      letter-spacing: -0.5px;
+      background: linear-gradient(180deg, #ffffff 0%, #cbd5e1 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      line-height: 1.15;
+    }
+    .hero-subhead {
+      font-size: 14px;
+      color: #c7d2fe;
+      margin-top: 6px;
+      font-weight: 600;
+    }
+    .location-strip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 12px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: #cbd5e1;
+      font-size: 11.5px;
+      padding: 6px 14px;
+      border-radius: 12px;
+    }
 
-      .hero-container {
-        text-align: center;
-        background: radial-gradient(circle at 50% 0%, rgba(121, 40, 202, 0.32) 0%, rgba(14, 20, 36, 0.9) 85%);
-        border: 1px solid rgba(0, 242, 254, 0.35);
-        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7), 0 0 30px rgba(0, 242, 254, 0.15);
-      }
-      .brand-unit {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
-        margin-bottom: 12px;
-        background: rgba(255, 255, 255, 0.04);
-        border: 1px solid rgba(255, 255, 255, 0.08);
-        padding: 6px 16px;
-        border-radius: 20px;
-      }
-      .brand-name {
-        font-size: 17px;
-        font-weight: 900;
-        letter-spacing: 0.8px;
-        background: linear-gradient(135deg, var(--gold), var(--cyan));
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-      }
-      .profile-avatar-wrap {
-        position: relative;
-        width: 92px;
-        height: 92px;
-        margin: 0 auto 12px auto;
-      }
-      .avatar-disc {
-        width: 100%;
-        height: 100%;
-        border-radius: 50%;
-        background: linear-gradient(135deg, var(--cyan), var(--purple));
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 32px;
-        font-weight: 900;
-        color: #070a13;
-        border: 3.5px solid rgba(255, 255, 255, 0.4);
-        box-shadow: 0 10px 30px rgba(0, 242, 254, 0.4);
-      }
-      .floating-demo-badge {
-        position: absolute;
-        bottom: -6px;
-        right: -8px;
-        background: linear-gradient(90deg, #10b981, #059669);
-        color: #fff;
-        font-size: 9.5px;
-        font-weight: 800;
-        padding: 4px 8px;
-        border-radius: 12px;
-        border: 1.5px solid var(--bg-dark);
-        letter-spacing: 0.3px;
-        box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4);
-      }
-      .hero-badge {
-        display: inline-block;
-        background: rgba(0, 242, 254, 0.12);
-        border: 1px solid rgba(0, 242, 254, 0.35);
-        color: var(--cyan);
-        font-size: 11px;
-        font-weight: 800;
-        letter-spacing: 1.2px;
-        padding: 4px 14px;
-        border-radius: 20px;
-        margin-bottom: 8px;
-      }
-      .hero-heading {
-        font-size: 30px;
-        font-weight: 900;
-        letter-spacing: -0.5px;
-        background: linear-gradient(180deg, #ffffff 0%, #cbd5e1 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        line-height: 1.15;
-      }
-      .hero-subhead {
-        font-size: 14px;
-        color: #c7d2fe;
-        margin-top: 6px;
-        font-weight: 600;
-      }
-      .location-strip {
-        display: inline-flex;
-        align-items: center;
-        gap: 6px;
-        margin-top: 12px;
-        background: rgba(255, 255, 255, 0.05);
-        border: 1px solid rgba(255, 255, 255, 0.12);
-        color: #cbd5e1;
-        font-size: 11.5px;
-        padding: 6px 14px;
-        border-radius: 12px;
-      }
+    .quote-box {
+      margin-top: 16px;
+      background: rgba(251, 191, 36, 0.08);
+      border-left: 3px solid var(--gold);
+      padding: 10px 14px;
+      border-radius: 0 12px 12px 0;
+      font-size: 12px;
+      color: #fef08a;
+      line-height: 1.5;
+      font-style: italic;
+      text-align: left;
+    }
 
-      .quote-box {
-        margin-top: 16px;
-        background: rgba(251, 191, 36, 0.08);
-        border-left: 3px solid var(--gold);
-        padding: 10px 14px;
-        border-radius: 0 12px 12px 0;
-        font-size: 12px;
-        color: #fef08a;
-        line-height: 1.5;
-        font-style: italic;
-        text-align: left;
-      }
+    .sec-tag {
+      font-size: 12.5px;
+      text-transform: uppercase;
+      letter-spacing: 1.4px;
+      color: #cbd5e1;
+      font-weight: 800;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .sec-tag::before {
+      content: "";
+      width: 4px;
+      height: 17px;
+      background: linear-gradient(180deg, var(--cyan), var(--purple));
+      border-radius: 2px;
+    }
 
-      .sec-tag {
-        font-size: 12.5px;
-        text-transform: uppercase;
-        letter-spacing: 1.4px;
-        color: #cbd5e1;
-        font-weight: 800;
-        margin-bottom: 15px;
-        display: flex;
-        align-items: center;
-        gap: 8px;
-      }
-      .sec-tag::before {
-        content: "";
-        width: 4px;
-        height: 17px;
-        background: linear-gradient(180deg, var(--cyan), var(--purple));
-        border-radius: 2px;
-      }
+    .stats-trio {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 9px;
+    }
+    .stat-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 16px;
+      padding: 14px 6px;
+      text-align: center;
+      transition: transform 0.2s ease, border-color 0.2s;
+    }
+    .stat-card:hover {
+      border-color: var(--cyan);
+      transform: translateY(-2px);
+    }
+    .stat-number {
+      font-size: 24px;
+      font-weight: 900;
+      background: linear-gradient(135deg, var(--cyan), var(--blue));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: inline-block;
+    }
+    .stat-caption {
+      font-size: 10.5px;
+      color: var(--text-dim);
+      margin-top: 4px;
+      font-weight: 600;
+    }
 
-      .stats-trio {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 9px;
-      }
-      .stat-card {
-        background: rgba(255, 255, 255, 0.03);
-        border: 1px solid rgba(255, 255, 255, 0.08);
-        border-radius: 16px;
-        padding: 14px 6px;
-        text-align: center;
-        transition: transform 0.2s ease, border-color 0.2s;
-      }
-      .stat-card:hover {
-        border-color: var(--cyan);
-        transform: translateY(-2px);
-      }
-      .stat-number {
-        font-size: 24px;
-        font-weight: 900;
-        background: linear-gradient(135deg, var(--cyan), var(--blue));
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        display: inline-block;
-      }
-      .stat-caption {
-        font-size: 10.5px;
-        color: var(--text-dim);
-        margin-top: 4px;
-        font-weight: 600;
-      }
+    .calc-row-label {
+      font-size: 11.5px;
+      color: var(--text-dim);
+      font-weight: 700;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+    }
+    .calc-toggle-group {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 15px;
+    }
+    .calc-option-btn {
+      flex: 1;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: var(--text-main);
+      padding: 10px 8px;
+      border-radius: 12px;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      text-align: center;
+      transition: all 0.2s ease;
+    }
+    .calc-option-btn.selected {
+      background: linear-gradient(135deg, rgba(0, 242, 254, 0.2), rgba(121, 40, 202, 0.3));
+      border-color: var(--cyan);
+      color: #fff;
+      box-shadow: 0 4px 14px rgba(0, 242, 254, 0.25);
+    }
 
-      .calc-row-label {
-        font-size: 11.5px;
-        color: var(--text-dim);
-        font-weight: 700;
-        margin-bottom: 8px;
-        text-transform: uppercase;
-        letter-spacing: 0.8px;
-      }
-      .calc-toggle-group {
-        display: flex;
-        gap: 8px;
-        margin-bottom: 15px;
-      }
-      .calc-option-btn {
-        flex: 1;
-        background: rgba(255, 255, 255, 0.04);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        color: var(--text-main);
-        padding: 10px 8px;
-        border-radius: 12px;
-        font-size: 12px;
-        font-weight: 700;
-        cursor: pointer;
-        text-align: center;
-        transition: all 0.2s ease;
-      }
-      .calc-option-btn.selected {
-        background: linear-gradient(135deg, rgba(0, 242, 254, 0.2), rgba(121, 40, 202, 0.3));
-        border-color: var(--cyan);
-        color: #fff;
-        box-shadow: 0 4px 14px rgba(0, 242, 254, 0.25);
-      }
+    .subj-box-block {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      border-radius: 16px;
+      padding: 12px 10px;
+      margin-bottom: 14px;
+    }
+    .subj-student-tag {
+      font-size: 11.5px;
+      font-weight: 800;
+      color: var(--cyan);
+      margin-bottom: 8px;
+      display: flex;
+      justify-content: space-between;
+    }
 
-      .subj-box-block {
-        background: rgba(255, 255, 255, 0.02);
-        border: 1px solid rgba(255, 255, 255, 0.07);
-        border-radius: 16px;
-        padding: 12px 10px;
-        margin-bottom: 14px;
-      }
-      .subj-student-tag {
-        font-size: 11.5px;
-        font-weight: 800;
-        color: var(--cyan);
-        margin-bottom: 8px;
-        display: flex;
-        justify-content: space-between;
-      }
+    .subj-checkbox-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+    }
+    .subj-check-label {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      padding: 9px 5px;
+      text-align: center;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      font-size: 11.5px;
+      font-weight: 700;
+      transition: all 0.2s ease;
+    }
+    .subj-check-label input { display: none; }
+    .subj-check-label.checked {
+      background: rgba(79, 172, 254, 0.2);
+      border-color: var(--blue);
+      color: #fff;
+      box-shadow: 0 4px 12px rgba(79, 172, 254, 0.25);
+    }
 
-      .subj-checkbox-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 8px;
-      }
-      .subj-check-label {
-        background: rgba(255, 255, 255, 0.04);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        border-radius: 12px;
-        padding: 9px 5px;
-        text-align: center;
-        cursor: pointer;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 4px;
-        font-size: 11.5px;
-        font-weight: 700;
-        transition: all 0.2s ease;
-      }
-      .subj-check-label input { display: none; }
-      .subj-check-label.checked {
-        background: rgba(79, 172, 254, 0.2);
-        border-color: var(--blue);
-        color: #fff;
-        box-shadow: 0 4px 12px rgba(79, 172, 254, 0.25);
-      }
+    .calc-result-box {
+      background: linear-gradient(135deg, rgba(0, 242, 254, 0.08), rgba(121, 40, 202, 0.12));
+      border: 1px solid rgba(0, 242, 254, 0.3);
+      border-radius: 16px;
+      padding: 16px;
+      margin-top: 10px;
+    }
+    .calc-price-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 8px;
+    }
+    .calc-price-val {
+      font-size: 26px;
+      font-weight: 900;
+      color: var(--gold);
+    }
+    .calc-meta-details {
+      font-size: 11px;
+      color: var(--text-dim);
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      margin-top: 8px;
+      border-top: 1px dashed rgba(255, 255, 255, 0.1);
+      padding-top: 8px;
+    }
+    .calc-perk {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      color: #34d399;
+    }
+    .btn-book-plan {
+      display: block;
+      width: 100%;
+      background: linear-gradient(90deg, #10b981, #059669);
+      color: #fff;
+      text-decoration: none;
+      padding: 13px;
+      border-radius: 14px;
+      font-size: 14px;
+      font-weight: 800;
+      text-align: center;
+      margin-top: 14px;
+      box-shadow: 0 8px 20px rgba(16, 185, 129, 0.35);
+      cursor: pointer;
+      border: none;
+      transition: transform 0.15s ease;
+    }
+    .btn-book-plan:active { transform: scale(0.98); }
 
-      .calc-result-box {
-        background: linear-gradient(135deg, rgba(0, 242, 254, 0.08), rgba(121, 40, 202, 0.12));
-        border: 1px solid rgba(0, 242, 254, 0.3);
-        border-radius: 16px;
-        padding: 16px;
-        margin-top: 10px;
-      }
-      .calc-price-row {
-        display: flex;
-        justify-content: space-between;
-        align-items: baseline;
-        margin-bottom: 8px;
-      }
-      .calc-price-val {
-        font-size: 26px;
-        font-weight: 900;
-        color: var(--gold);
-      }
-      .calc-meta-details {
-        font-size: 11px;
-        color: var(--text-dim);
-        display: flex;
-        flex-direction: column;
-        gap: 5px;
-        margin-top: 8px;
-        border-top: 1px dashed rgba(255, 255, 255, 0.1);
-        padding-top: 8px;
-      }
-      .calc-perk {
-        display: flex;
-        align-items: center;
-        gap: 6px;
-        color: #34d399;
-      }
-      .btn-book-plan {
-        display: block;
-        width: 100%;
-        background: linear-gradient(90deg, #10b981, #059669);
-        color: #fff;
-        text-decoration: none;
-        padding: 13px;
-        border-radius: 14px;
-        font-size: 14px;
-        font-weight: 800;
-        text-align: center;
-        margin-top: 14px;
-        box-shadow: 0 8px 20px rgba(16, 185, 129, 0.35);
-        cursor: pointer;
-        border: none;
-        transition: transform 0.15s ease;
-      }
-      .btn-book-plan:active { transform: scale(0.98); }
+    .quiz-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 16px;
+      padding: 16px;
+    }
+    .quiz-question-txt {
+      font-size: 13.5px;
+      font-weight: 700;
+      color: #f1f5f9;
+      margin-bottom: 12px;
+      line-height: 1.45;
+    }
+    .quiz-options-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .quiz-opt-btn {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: var(--text-main);
+      padding: 10px 12px;
+      border-radius: 10px;
+      font-size: 12.5px;
+      text-align: left;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .quiz-opt-btn:hover {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+    .quiz-opt-btn.correct {
+      background: rgba(16, 185, 129, 0.25) !important;
+      border-color: #10b981 !important;
+      color: #34d399 !important;
+      font-weight: 700;
+    }
+    .quiz-opt-btn.wrong {
+      background: rgba(239, 68, 68, 0.25) !important;
+      border-color: #ef4444 !important;
+      color: #fca5a5 !important;
+    }
+    .quiz-footer-status {
+      margin-top: 12px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--cyan);
+      display: none;
+    }
 
-      .quiz-card {
-        background: rgba(255, 255, 255, 0.03);
-        border: 1px solid rgba(255, 255, 255, 0.08);
-        border-radius: 16px;
-        padding: 16px;
-      }
-      .quiz-question-txt {
-        font-size: 13.5px;
-        font-weight: 700;
-        color: #f1f5f9;
-        margin-bottom: 12px;
-        line-height: 1.45;
-      }
-      .quiz-options-list {
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
-      }
-      .quiz-opt-btn {
-        background: rgba(255, 255, 255, 0.04);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        color: var(--text-main);
-        padding: 10px 12px;
-        border-radius: 10px;
-        font-size: 12.5px;
-        text-align: left;
-        cursor: pointer;
-        transition: all 0.2s ease;
-      }
-      .quiz-opt-btn:hover {
-        background: rgba(255, 255, 255, 0.08);
-        border-color: rgba(255, 255, 255, 0.2);
-      }
-      .quiz-opt-btn.correct {
-        background: rgba(16, 185, 129, 0.25) !important;
-        border-color: #10b981 !important;
-        color: #34d399 !important;
-        font-weight: 700;
-      }
-      .quiz-opt-btn.wrong {
-        background: rgba(239, 68, 68, 0.25) !important;
-        border-color: #ef4444 !important;
-        color: #fca5a5 !important;
-      }
-      .quiz-footer-status {
-        margin-top: 12px;
-        font-size: 12px;
-        font-weight: 600;
-        color: var(--cyan);
-        display: none;
-      }
+    .roadmap-track {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .roadmap-node {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 14px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+    .roadmap-node.active-node {
+      border-color: var(--cyan);
+      background: rgba(0, 242, 254, 0.05);
+      box-shadow: 0 4px 16px rgba(0, 242, 254, 0.15);
+    }
+    .node-header {
+      padding: 13px 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .node-num {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--cyan), var(--purple));
+      color: #070a13;
+      font-size: 12px;
+      font-weight: 900;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .node-title-wrap {
+      flex: 1;
+    }
+    .node-title {
+      font-size: 13px;
+      font-weight: 700;
+      color: #f1f5f9;
+    }
+    .node-expand-arrow {
+      font-size: 14px;
+      color: var(--text-dim);
+      transition: transform 0.3s ease;
+    }
+    .roadmap-node.active-node .node-expand-arrow {
+      transform: rotate(90deg);
+      color: var(--cyan);
+    }
+    .node-body {
+      padding: 0 14px 12px 50px;
+      font-size: 11.5px;
+      color: #cbd5e1;
+      line-height: 1.5;
+      display: none;
+    }
+    .roadmap-node.active-node .node-body {
+      display: block;
+    }
 
-      .roadmap-track {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-      }
-      .roadmap-node {
-        background: rgba(255, 255, 255, 0.03);
-        border: 1px solid rgba(255, 255, 255, 0.08);
-        border-radius: 14px;
-        overflow: hidden;
-        cursor: pointer;
-        transition: all 0.25s ease;
-      }
-      .roadmap-node.active-node {
-        border-color: var(--cyan);
-        background: rgba(0, 242, 254, 0.05);
-        box-shadow: 0 4px 16px rgba(0, 242, 254, 0.15);
-      }
-      .node-header {
-        padding: 13px 14px;
-        display: flex;
-        align-items: center;
-        gap: 10px;
-      }
-      .node-num {
-        width: 26px;
-        height: 26px;
-        border-radius: 50%;
-        background: linear-gradient(135deg, var(--cyan), var(--purple));
-        color: #070a13;
-        font-size: 12px;
-        font-weight: 900;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-shrink: 0;
-      }
-      .node-title-wrap {
-        flex: 1;
-      }
-      .node-title {
-        font-size: 13px;
-        font-weight: 700;
-        color: #f1f5f9;
-      }
-      .node-expand-arrow {
-        font-size: 14px;
-        color: var(--text-dim);
-        transition: transform 0.3s ease;
-      }
-      .roadmap-node.active-node .node-expand-arrow {
-        transform: rotate(90deg);
-        color: var(--cyan);
-      }
-      .node-body {
-        padding: 0 14px 12px 50px;
-        font-size: 11.5px;
-        color: #cbd5e1;
-        line-height: 1.5;
-        display: none;
-      }
-      .roadmap-node.active-node .node-body {
-        display: block;
-      }
+    .tab-nav-row {
+      display: flex;
+      gap: 6px;
+      background: rgba(255, 255, 255, 0.04);
+      padding: 4px;
+      border-radius: 14px;
+      margin-bottom: 14px;
+    }
+    .tab-nav-btn {
+      flex: 1;
+      background: transparent;
+      border: none;
+      color: var(--text-dim);
+      padding: 8px 4px;
+      border-radius: 10px;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .tab-nav-btn.active {
+      background: linear-gradient(135deg, var(--purple), #4f46e5);
+      color: #fff;
+      box-shadow: 0 4px 12px rgba(121, 40, 202, 0.3);
+    }
+    .tab-content-panel {
+      display: none;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px dashed rgba(255, 255, 255, 0.1);
+      border-radius: 14px;
+      padding: 14px;
+    }
+    .tab-content-panel.active { display: block; }
+    .chapter-tag {
+      display: inline-block;
+      background: rgba(0, 242, 254, 0.1);
+      border: 1px solid rgba(0, 242, 254, 0.25);
+      color: var(--cyan);
+      font-size: 10.5px;
+      font-weight: 600;
+      padding: 3px 8px;
+      border-radius: 6px;
+      margin: 3px 2px;
+    }
 
-      .tab-nav-row {
-        display: flex;
-        gap: 6px;
-        background: rgba(255, 255, 255, 0.04);
-        padding: 4px;
-        border-radius: 14px;
-        margin-bottom: 14px;
-      }
-      .tab-nav-btn {
-        flex: 1;
-        background: transparent;
-        border: none;
-        color: var(--text-dim);
-        padding: 8px 4px;
-        border-radius: 10px;
-        font-size: 12px;
-        font-weight: 700;
-        cursor: pointer;
-        transition: all 0.2s ease;
-      }
-      .tab-nav-btn.active {
-        background: linear-gradient(135deg, var(--purple), #4f46e5);
-        color: #fff;
-        box-shadow: 0 4px 12px rgba(121, 40, 202, 0.3);
-      }
-      .tab-content-panel {
-        display: none;
-        background: rgba(255, 255, 255, 0.02);
-        border: 1px dashed rgba(255, 255, 255, 0.1);
-        border-radius: 14px;
-        padding: 14px;
-      }
-      .tab-content-panel.active { display: block; }
-      .chapter-tag {
-        display: inline-block;
-        background: rgba(0, 242, 254, 0.1);
-        border: 1px solid rgba(0, 242, 254, 0.25);
-        color: var(--cyan);
-        font-size: 10.5px;
-        font-weight: 600;
-        padding: 3px 8px;
-        border-radius: 6px;
-        margin: 3px 2px;
-      }
+    .review-card-unit {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      border-radius: 16px;
+      padding: 14px;
+      margin-bottom: 10px;
+    }
+    .star-bar {
+      color: #f59e0b;
+      font-size: 12px;
+      margin-bottom: 6px;
+    }
+    .review-quote {
+      font-size: 12px;
+      color: #e2e8f0;
+      line-height: 1.45;
+      font-style: italic;
+      margin-bottom: 8px;
+    }
+    .reviewer-identity {
+      display: flex;
+      justify-content: space-between;
+      font-size: 11px;
+      color: var(--text-dim);
+      font-weight: 600;
+    }
 
-      .review-card-unit {
-        background: rgba(255, 255, 255, 0.03);
-        border: 1px solid rgba(255, 255, 255, 0.07);
-        border-radius: 16px;
-        padding: 14px;
-        margin-bottom: 10px;
-      }
-      .star-bar {
-        color: #f59e0b;
-        font-size: 12px;
-        margin-bottom: 6px;
-      }
-      .review-quote {
-        font-size: 12px;
-        color: #e2e8f0;
-        line-height: 1.45;
-        font-style: italic;
-        margin-bottom: 8px;
-      }
-      .reviewer-identity {
-        display: flex;
-        justify-content: space-between;
-        font-size: 11px;
-        color: var(--text-dim);
-        font-weight: 600;
-      }
+    .quick-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 12px;
+    }
+    .chip-btn {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: #cbd5e1;
+      padding: 4px 10px;
+      border-radius: 14px;
+      font-size: 11px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .chip-btn:hover, .chip-btn.active-chip {
+      background: rgba(0, 242, 254, 0.2);
+      border-color: var(--cyan);
+      color: #fff;
+    }
 
-      .quick-chips {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 6px;
-        margin-bottom: 12px;
-      }
-      .chip-btn {
-        background: rgba(255, 255, 255, 0.05);
-        border: 1px solid rgba(255, 255, 255, 0.15);
-        color: #cbd5e1;
-        padding: 4px 10px;
-        border-radius: 14px;
-        font-size: 11px;
-        font-weight: 600;
-        cursor: pointer;
-        transition: all 0.15s ease;
-      }
-      .chip-btn:hover, .chip-btn.active-chip {
-        background: rgba(0, 242, 254, 0.2);
-        border-color: var(--cyan);
-        color: #fff;
-      }
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.75);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+    .modal-overlay.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .modal-sheet {
+      background: #0d1322;
+      border: 1px solid var(--border-glow);
+      border-radius: 24px;
+      width: 100%;
+      max-width: 440px;
+      padding: 24px 20px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), 0 0 30px rgba(0, 242, 254, 0.2);
+      transform: translateY(20px);
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .modal-overlay.open .modal-sheet {
+      transform: translateY(0);
+    }
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+    .modal-title {
+      font-size: 18px;
+      font-weight: 800;
+      color: #fff;
+    }
+    .btn-close-modal {
+      background: rgba(255, 255, 255, 0.1);
+      border: none;
+      color: #fff;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-weight: 800;
+    }
+    .input-field {
+      width: 100%;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 12px;
+      padding: 11px 14px;
+      color: #fff;
+      font-size: 13px;
+      margin-bottom: 12px;
+      outline: none;
+    }
+    .input-field:focus {
+      border-color: var(--cyan);
+    }
 
-      .modal-overlay {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-        background: rgba(0, 0, 0, 0.75);
-        backdrop-filter: blur(10px);
-        z-index: 1000;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 16px;
-        opacity: 0;
-        pointer-events: none;
-        transition: opacity 0.3s ease;
-      }
-      .modal-overlay.open {
-        opacity: 1;
-        pointer-events: auto;
-      }
-      .modal-sheet {
-        background: #0d1322;
-        border: 1px solid var(--border-glow);
-        border-radius: 24px;
-        width: 100%;
-        max-width: 440px;
-        padding: 24px 20px;
-        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), 0 0 30px rgba(0, 242, 254, 0.2);
-        transform: translateY(20px);
-              transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-      }
-      .modal-overlay.open .modal-sheet {
-        transform: translateY(0);
-      }
-      .modal-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 16px;
-      }
-      .modal-title {
-        font-size: 18px;
-        font-weight: 800;
-        color: #fff;
-      }
-      .btn-close-modal {
-        background: rgba(255, 255, 255, 0.1);
-        border: none;
-        color: #fff;
-        width: 30px;
-        height: 30px;
-        border-radius: 50%;
-        cursor: pointer;
-        font-weight: 800;
-      }
-      .input-field {
-        width: 100%;
-        background: rgba(255, 255, 255, 0.05);
-        border: 1px solid rgba(255, 255, 255, 0.12);
-        border-radius: 12px;
-        padding: 11px 14px;
-        color: #fff;
-        font-size: 13px;
-        margin-bottom: 12px;
-        outline: none;
-      }
-      .input-field:focus {
-        border-color: var(--cyan);
-      }
+    .sticky-dock {
+      position: fixed;
+      bottom: 12px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: calc(100% - 24px);
+      max-width: 520px;
+      z-index: 100;
+      display: flex;
+      gap: 10px;
+    }
+    .dock-action-btn {
+      flex: 1;
+      text-decoration: none;
+      padding: 15px 10px;
+      border-radius: 18px;
+      font-size: 14px;
+      font-weight: 800;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+      cursor: pointer;
+      transition: transform 0.15s ease;
+    }
+    .dock-action-btn:active { transform: scale(0.97); }
+    .dock-wa {
+      background: linear-gradient(90deg, #10b981, #059669);
+      color: #ffffff;
+      box-shadow: 0 10px 26px rgba(16, 185, 129, 0.45);
+    }
+    .dock-call {
+      background: linear-gradient(90deg, #2563eb, #1d4ed8);
+      color: #ffffff;
+      box-shadow: 0 10px 26px rgba(37, 99, 235, 0.45);
+    }
+  </style>
+</head>
+<body>
 
-      .sticky-dock {
-        position: fixed;
-        bottom: 12px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: calc(100% - 24px);
-        max-width: 520px;
-        z-index: 100;
-        display: flex;
-        gap: 10px;
-      }
-      .dock-action-btn {
-        flex: 1;
-        text-decoration: none;
-        padding: 15px 10px;
-        border-radius: 18px;
-        font-size: 14px;
-        font-weight: 800;
-        text-align: center;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 8px;
-        border: 1px solid rgba(255, 255, 255, 0.25);
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
-        cursor: pointer;
-        transition: transform 0.15s ease;
-      }
-      .dock-action-btn:active { transform: scale(0.97); }
-      .dock-wa {
-        background: linear-gradient(90deg, #10b981, #059669);
-        color: #ffffff;
-        box-shadow: 0 10px 26px rgba(16, 185, 129, 0.45);
-      }
-      .dock-call {
-        background: linear-gradient(90deg, #2563eb, #1d4ed8);
-        color: #ffffff;
-        box-shadow: 0 10px 26px rgba(37, 99, 235, 0.45);
-      }
-    </style>
-  </head>
-  <body>
-    <div id="progressLine"></div>
+  <div id="progressLine"></div>
 
-    <div class="cosmic-orb orb-1"></div>
-    <div class="cosmic-orb orb-2"></div>
-    <div class="cosmic-orb orb-3"></div>
+  <div class="cosmic-orb orb-1"></div>
+  <div class="cosmic-orb orb-2"></div>
+  <div class="cosmic-orb orb-3"></div>
 
-    <div class="app-container">
-      <!-- Top Action Bar with 3-Way Language Switcher -->
-      <header class="top-header">
-        <div class="live-chip">
-          <span class="live-dot"></span>
-          <span
-            class="translatable"
-            data-en="Admissions Open 2026-27"
-            data-pa="ਨਵੇਂ ਦਾਖ਼ਲੇ ਖੁੱਲ੍ਹੇ ਹਨ 2026-27"
-            data-hi="प्रवेश प्रारंभ 2026-27"
-            >Admissions Open 2026-27</span
-          >
+  <div class="app-container">
+
+    <!-- Top Action Bar with 3-Way Language Switcher -->
+    <header class="top-header">
+      <div class="live-chip">
+        <span class="live-dot"></span>
+        <span class="translatable" data-en="Admissions Open 2026-27" data-pa="ਨਵੇਂ ਦਾਖ਼ਲੇ ਖੁੱਲ੍ਹੇ ਹਨ 2026-27" data-hi="प्रवेश प्रारंभ 2026-27">Admissions Open 2026-27</span>
+      </div>
+      <div class="lang-switch-dock">
+        <button class="lang-pill active" id="btnLangEn" onclick="switchLang('en')">EN</button>
+        <button class="lang-pill" id="btnLangPa" onclick="switchLang('pa')">ਪੰਜਾਬੀ</button>
+        <button class="lang-pill" id="btnLangHi" onclick="switchLang('hi')">हिंदी</button>
+      </div>
+    </header>
+
+    <!-- Hero Card Profile with SVG Inbuilt Logo & Quote -->
+    <section class="glass-card hero-container reveal active">
+      <div class="brand-unit">
+        <svg width="28" height="28" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="swaranGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#00f2fe"/>
+              <stop offset="50%" stop-color="#fbbf24"/>
+              <stop offset="100%" stop-color="#7928ca"/>
+            </linearGradient>
+          </defs>
+          <path d="M32 6L40 22H24L32 6Z" fill="url(#swaranGlow)"/>
+          <path d="M12 28C22 28 28 34 32 42C36 34 42 28 52 28V50C42 50 36 54 32 60C28 54 22 50 12 50V28Z" fill="url(#swaranGlow)" opacity="0.9"/>
+          <circle cx="32" cy="18" r="3" fill="#ffffff"/>
+        </svg>
+        <span class="brand-name">SWARAN ACADEMICS</span>
+      </div>
+
+      <div class="profile-avatar-wrap">
+        <div class="avatar-disc">SR</div>
+        <div class="floating-demo-badge translatable" data-en="Free 2-Day Demo" data-pa="2 ਦਿਨ ਮੁਫ਼ਤ ਡੈਮੋ" data-hi="2 दिन मुफ्त डेमो">Free 2-Day Demo</div>
+      </div>
+      <span class="hero-badge translatable" data-en="EXECUTIVE HOME TUITIONS" data-pa="ਪ੍ਰੀਮੀਅਮ ਹੋਮ ਟਿਊਸ਼ਨ" data-hi="प्रीमियम होम ट्यूशन">EXECUTIVE HOME TUITIONS</span>
+      <h1 class="hero-heading translatable" data-en="SAURAV RANA" data-pa="ਸੌਰਵ ਰਾਣਾ" data-hi="सौरव राणा">SAURAV RANA</h1>
+      <p class="hero-subhead translatable" data-en="B.A. Hons. Economics • Panjab University" data-pa="ਬੀ.ਏ. ਆਨਰਜ਼ ਅਰਥ ਸ਼ਾਸਤਰ • ਪੰਜਾਬ ਯੂਨੀਵਰਸਿਟੀ" data-hi="बी.ए. ऑनर्स अर्थशास्त्र • पंजाब विश्वविद्यालय">B.A. Hons. Economics • Panjab University</p>
+      <div class="location-strip">
+        <span>📍</span>
+        <span class="translatable" data-en="Sectors 11, 14, 15, 24 & PU Campus, Chandigarh" data-pa="ਸੈਕਟਰ 11, 14, 15, 24 ਅਤੇ ਪੀਯੂ ਕੈਂਪਸ, ਚੰਡੀਗੜ੍ਹ" data-hi="सेक्टर 11, 14, 15, 24 एवं पीयू कैंपस, चंडीगढ़">Sectors 11, 14, 15, 24 & PU Campus, Chandigarh</span>
+      </div>
+
+      <div class="quote-box translatable" id="quoteText" 
+        data-en="&ldquo;Education is not merely clearing an exam; it is shaping the intellect to think critically and building unshakeable self-reliance.&rdquo;"
+        data-pa="&ldquo;ਸਿੱਖਿਆ ਮਹਿਜ਼ ਇਮਤਿਹਾਨ ਪਾਸ ਕਰਨ ਦਾ ਵਸੀਲਾ ਨਹੀਂ, ਸਗੋਂ ਸੋਚ ਨੂੰ ਤਰਾਸ਼ਣ ਅਤੇ ਅੰਦਰੂਨੀ ਆਤਮ-ਵਿਸ਼ਵਾਸ ਜਗਾਉਣ ਦਾ ਨਾਂ ਹੈ।&rdquo;"
+        data-hi="&ldquo;शिक्षा केवल परीक्षा उत्तीर्ण करने का साधन नहीं, बल्कि चिंतन को तराशने और अडिग आत्मविश्वास जगाने का संकल्प है।&rdquo;">
+        &ldquo;Education is not merely clearing an exam; it is shaping the intellect to think critically and building unshakeable self-reliance.&rdquo;
+      </div>
+
+      <button onclick="triggerTactile('success'); openBookingModal();" style="margin-top:16px; background:linear-gradient(90deg, var(--cyan), var(--blue)); border:none; color:#070a13; font-weight:800; font-size:13px; padding:12px 18px; border-radius:12px; cursor:pointer; width:100%; box-shadow:0 6px 20px rgba(0, 242, 254, 0.35);" class="translatable" data-en="⚡ Schedule Free 2-Day Trial at Home" data-pa="⚡ ਘਰ ਬੈਠੇ 2 ਦਿਨਾਂ ਦੀ ਮੁਫ਼ਤ ਡੈਮੋ ਬੁੱਕ ਕਰੋ" data-hi="⚡ घर बैठे 2 दिन का फ्री ट्रायल बुक करें">⚡ Schedule Free 2-Day Trial at Home</button>
+    </section>
+
+    <!-- Verified Academic Track Record with Counters -->
+    <section class="glass-card reveal">
+      <div class="sec-tag translatable" data-en="Verified Academic Credentials" data-pa="ਪ੍ਰਮਾਣਿਤ ਅਕਾਦਮਿਕ ਰਿਕਾਰਡ" data-hi="प्रमाणित शैक्षणिक रिकॉर्ड">Verified Academic Credentials</div>
+      <div class="stats-trio">
+        <div class="stat-card">
+          <div class="stat-number" data-target="94" data-suffix="%">0%</div>
+          <div class="stat-caption translatable" data-en="Class 10th Score" data-pa="10ਵੀਂ ਜਮਾਤ ਸਕੋਰ" data-hi="10वीं कक्षा स्कोर">Class 10th Score</div>
         </div>
-        <div class="lang-switch-dock">
-          <button
-            class="lang-pill active"
-            id="btnLangEn"
-            onclick="switchLang('en')"
-          >
-            EN
-          </button>
-          <button class="lang-pill" id="btnLangPa" onclick="switchLang('pa')">
-            ਪੰਜਾਬੀ
-          </button>
-          <button class="lang-pill" id="btnLangHi" onclick="switchLang('hi')">
-            हिंदी
-          </button>
+        <div class="stat-card">
+          <div class="stat-number" data-target="89" data-suffix="%">0%</div>
+          <div class="stat-caption translatable" data-en="Class 8th Score" data-pa="8ਵੀਂ ਜਮਾਤ ਸਕੋਰ" data-hi="8वीं कक्षा स्कोर">Class 8th Score</div>
         </div>
-      </header>
+        <div class="stat-card">
+          <div class="stat-number" data-target="2" data-suffix="+ Yrs">0+ Yrs</div>
+          <div class="stat-caption translatable" data-en="Mentoring Experience" data-pa="ਪੜ੍ਹਾਉਣ ਦਾ ਤਜ਼ਰਬਾ" data-hi="पढ़ाने का अनुभव">Mentoring Experience</div>
+        </div>
+      </div>
+      <div style="font-size:12px; color:var(--text-dim); margin-top:12px; line-height:1.5; text-align:center;" class="translatable" data-en="Tutored 8th, 9th, and 10th students during 11th & 12th. Complete mastery over CBSE & PSEB syllabi." data-pa="11ਵੀਂ ਅਤੇ 12ਵੀਂ ਦੌਰਾਨ 8ਵੀਂ, 9ਵੀਂ ਅਤੇ 10ਵੀਂ ਦੇ ਵਿਦਿਆਰਥੀਆਂ ਨੂੰ ਪੜ੍ਹਾਉਣ ਦਾ ਪ੍ਰਮਾਣਿਤ ਤਜ਼ਰਬਾ। ਸੀਬੀਐਸਈ ਅਤੇ ਪੰਜਾਬ ਬੋਰਡ 'ਤੇ ਪੂਰੀ ਪਕੜ।" data-hi="11वीं व 12वीं के दौरान 8वीं, 9वीं और 10वीं के विद्यार्थियों को पढ़ाने का प्रमाणित अनुभव। सीबीएसई व पंजाब बोर्ड पर पूर्ण पकड़।">
+        Tutored 8th, 9th, and 10th students during 11th & 12th. Complete mastery over CBSE & PSEB syllabi.
+      </div>
+    </section>
 
-      <!-- Hero Card Profile with SVG Inbuilt Logo & Quote -->
-      <section class="glass-card hero-container reveal active">
-        <div class="brand-unit">
-          <svg
-            width="28"
-            height="28"
-            viewBox="0 0 64 64"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <defs>
-              <linearGradient
-                id="swaranGlow"
-                x1="0%"
-                y1="0%"
-                x2="100%"
-                y2="100%"
-              >
-                <stop offset="0%" stop-color="#00f2fe" />
-                <stop offset="50%" stop-color="#fbbf24" />
-                <stop offset="100%" stop-color="#7928ca" />
-              </linearGradient>
-            </defs>
-            <path d="M32 6L40 22H24L32 6Z" fill="url(#swaranGlow)" />
-            <path
-              d="M12 28C22 28 28 34 32 42C36 34 42 28 52 28V50C42 50 36 54 32 60C28 54 22 50 12 50V28Z"
-              fill="url(#swaranGlow)"
-              opacity="0.9"
-            />
-            <circle cx="32" cy="18" r="3" fill="#ffffff" />
-          </svg>
-          <span class="brand-name">SWARAN ACADEMICS</span>
-        </div>
+    <!-- Interactive Fee & Multi-Tier Plan Calculator -->
+    <section class="glass-card reveal">
+      <div class="sec-tag translatable" data-en="Interactive Plan & Fee Calculator" data-pa="ਇੰਟਰਐਕਟਿਵ ਫ਼ੀਸ ਅਤੇ ਯੋਜਨਾ ਕੈਲਕੁਲੇਟਰ" data-hi="इंटरएक्टिव फीस व योजना कैलकुलेटर">Interactive Plan & Fee Calculator</div>
 
-        <div class="profile-avatar-wrap">
-          <div class="avatar-disc">SR</div>
-          <div
-            class="floating-demo-badge translatable"
-            data-en="Free 2-Day Demo"
-            data-pa="2 ਦਿਨ ਮੁਫ਼ਤ ਡੈਮੋ"
-            data-hi="2 दिन मुफ्त डेमो"
-          >
-            Free 2-Day Demo
-          </div>
-        </div>
-        <span
-          class="hero-badge translatable"
-          data-en="EXECUTIVE HOME TUITIONS"
-          data-pa="ਪ੍ਰੀਮੀਅਮ ਹੋਮ ਟਿਊਸ਼ਨ"
-          data-hi="प्रीमियम होम ट्यूशन"
-          >EXECUTIVE HOME TUITIONS</span
-        >
-        <h1
-          class="hero-heading translatable"
-          data-en="SAURAV RANA"
-          data-pa="ਸੌਰਵ ਰਾਣਾ"
-          data-hi="सौरव राणा"
-        >
-          SAURAV RANA
-        </h1>
-        <p
-          class="hero-subhead translatable"
-          data-en="B.A. Hons. Economics • Panjab University"
-          data-pa="ਬੀ.ਏ. ਆਨਰਜ਼ ਅਰਥ ਸ਼ਾਸਤਰ • ਪੰਜਾਬ ਯੂਨੀਵਰਸਿਟੀ"
-          data-hi="बी.ए. ऑनर्स अर्थशास्त्र • पंजाब विश्वविद्यालय"
-        >
-          B.A. Hons. Economics • Panjab University
-        </p>
-        <div class="location-strip">
-          <span>📍</span>
-          <span
-            class="translatable"
-            data-en="Sectors 11, 14, 15, 24 & PU Campus, Chandigarh"
-            data-pa="ਸੈਕਟਰ 11, 14, 15, 24 ਅਤੇ ਪੀਯੂ ਕੈਂਪਸ, ਚੰਡੀਗੜ੍ਹ"
-            data-hi="सेक्टर 11, 14, 15, 24 एवं पीयू कैंपस, चंडीगढ़"
-            >Sectors 11, 14, 15, 24 & PU Campus, Chandigarh</span
-          >
-        </div>
+      <!-- Batch Type -->
+      <div class="calc-row-label translatable" data-en="Student / Batch Format" data-pa="ਵਿਦਿਆਰਥੀ / ਬੈਚ ਫਾਰਮੈਟ" data-hi="विद्यार्थी / बैच प्रारूप">Student / Batch Format</div>
+      <div class="calc-toggle-group">
+        <button class="calc-option-btn selected translatable" id="btnSolo" onclick="setMode('solo')" data-en="1-on-1 Solo" data-pa="ਨਿੱਜੀ 1-ਆਨ-1" data-hi="1-ऑन-1 व्यक्तिगत">1-on-1 Solo</button>
+        <button class="calc-option-btn translatable" id="btnTwins" onclick="setMode('twins')" data-en="Twins (Same Class)" data-pa="ਜੁੜਵਾਂ (ਇਕੋ ਜਮਾਤ)" data-hi="ट्विन्स (समान कक्षा)">Twins (Same Class)</button>
+        <button class="calc-option-btn translatable" id="btnSiblings" onclick="setMode('siblings')" data-en="Siblings (Diff Class)" data-pa="ਭੈਣ-ਭਰਾ (ਵੱਖਰੀ ਜਮਾਤ)" data-hi="भाई-बहन (अलग कक्षा)">Siblings (Diff Class)</button>
+      </div>
 
-        <div
-          class="quote-box translatable"
-          id="quoteText"
-          data-en="&ldquo;Education is not merely clearing an exam; it is shaping the intellect to think critically and building unshakeable self-reliance.&rdquo;"
-          data-pa="&ldquo;ਸਿੱਖਿਆ ਮਹਿਜ਼ ਇਮਤਿਹਾਨ ਪਾਸ ਕਰਨ ਦਾ ਵਸੀਲਾ ਨਹੀਂ, ਸਗੋਂ ਸੋਚ ਨੂੰ ਤਰਾਸ਼ਣ ਅਤੇ ਅੰਦਰੂਨੀ ਆਤਮ-ਵਿਸ਼ਵਾਸ ਜਗਾਉਣ ਦਾ ਨਾਂ ਹੈ।&rdquo;"
-          data-hi="&ldquo;शिक्षा केवल परीक्षा उत्तीर्ण करने का साधन नहीं, बल्कि चिंतन को तराशने और अडिग आत्मविश्वास जगाने का संकल्प है।&rdquo;"
-        >
-          &ldquo;Education is not merely clearing an exam; it is shaping the
-          intellect to think critically and building unshakeable
-          self-reliance.&rdquo;
-        </div>
-
-        <button
-          onclick="triggerTactile('success'); openBookingModal();"
-          style="margin-top:16px; background:linear-gradient(90deg, var(--cyan), var(--blue)); border:none; color:#070a13; font-weight:800; font-size:13px; padding:12px 18px; border-radius:12px; cursor:pointer; width:100%; box-shadow:0 6px 20px rgba(0, 242, 254, 0.35);"
-          class="translatable"
-          data-en="⚡ Schedule Free 2-Day Trial at Home"
-          data-pa="⚡ ਘਰ ਬੈਠੇ 2 ਦਿਨਾਂ ਦੀ ਮੁਫ਼ਤ ਡੈਮੋ ਬੁੱਕ ਕਰੋ"
-          data-hi="⚡ घर बैठे 2 दिन का फ्री ट्रायल बुक करें"
-        >
-          ⚡ Schedule Free 2-Day Trial at Home
-        </button>
-      </section>
-
-      <!-- Verified Academic Track Record with Counters -->
-      <section class="glass-card reveal">
-        <div
-          class="sec-tag translatable"
-          data-en="Verified Academic Credentials"
-          data-pa="ਪ੍ਰਮਾਣਿਤ ਅਕਾਦਮਿਕ ਰਿਕਾਰਡ"
-          data-hi="प्रमाणित शैक्षणिक रिकॉर्ड"
-        >
-          Verified Academic Credentials
-        </div>
-        <div class="stats-trio">
-          <div class="stat-card">
-            <div class="stat-number" data-target="94" data-suffix="%">0%</div>
-            <div
-              class="stat-caption translatable"
-              data-en="Class 10th Score"
-              data-pa="10ਵੀਂ ਜਮਾਤ ਸਕੋਰ"
-              data-hi="10वीं कक्षा स्कोर"
-            >
-              Class 10th Score
-            </div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-number" data-target="89" data-suffix="%">0%</div>
-            <div
-              class="stat-caption translatable"
-              data-en="Class 8th Score"
-              data-pa="8ਵੀਂ ਜਮਾਤ ਸਕੋਰ"
-              data-hi="8वीं कक्षा स्कोर"
-            >
-              Class 8th Score
-            </div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-number" data-target="2" data-suffix="+ Yrs">
-              0+ Yrs
-            </div>
-            <div
-              class="stat-caption translatable"
-              data-en="Mentoring Experience"
-              data-pa="ਪੜ੍ਹਾਉਣ ਦਾ ਤਜ਼ਰਬਾ"
-              data-hi="पढ़ाने का अनुभव"
-            >
-              Mentoring Experience
-            </div>
-          </div>
-        </div>
-        <div
-          style="font-size:12px; color:var(--text-dim); margin-top:12px; line-height:1.5; text-align:center;"
-          class="translatable"
-          data-en="Tutored 8th, 9th, and 10th students during 11th & 12th. Complete mastery over CBSE & PSEB syllabi."
-          data-pa="11ਵੀਂ ਅਤੇ 12ਵੀਂ ਦੌਰਾਨ 8ਵੀਂ, 9ਵੀਂ ਅਤੇ 10ਵੀਂ ਦੇ ਵਿਦਿਆਰਥੀਆਂ ਨੂੰ ਪੜ੍ਹਾਉਣ ਦਾ ਪ੍ਰਮਾਣਿਤ ਤਜ਼ਰਬਾ। ਸੀਬੀਐਸਈ ਅਤੇ ਪੰਜਾਬ ਬੋਰਡ 'ਤੇ ਪੂਰੀ ਪਕੜ।"
-          data-hi="11वीं व 12वीं के दौरान 8वीं, 9वीं और 10वीं के विद्यार्थियों को पढ़ाने का प्रमाणित अनुभव। सीबीएसई व पंजाब बोर्ड पर पूर्ण पकड़।"
-        >
-          Tutored 8th, 9th, and 10th students during 11th & 12th. Complete
-          mastery over CBSE & PSEB syllabi.
-        </div>
-      </section>
-
-      <!-- Interactive Fee & Multi-Tier Plan Calculator -->
-      <section class="glass-card reveal">
-        <div
-          class="sec-tag translatable"
-          data-en="Interactive Plan & Fee Calculator"
-          data-pa="ਇੰਟਰਐਕਟਿਵ ਫ਼ੀਸ ਅਤੇ ਯੋਜਨਾ ਕੈਲਕੁਲੇਟਰ"
-          data-hi="इंटरएक्टिव फीस व योजना कैलकुलेटर"
-        >
-          Interactive Plan & Fee Calculator
-        </div>
-
-        <!-- Batch Type -->
-        <div
-          class="calc-row-label translatable"
-          data-en="Student / Batch Format"
-          data-pa="ਵਿਦਿਆਰਥੀ / ਬੈਚ ਫਾਰਮੈਟ"
-          data-hi="विद्यार्थी / बैच प्रारूप"
-        >
-          Student / Batch Format
-        </div>
+      <!-- Grade selector for single / twins -->
+      <div id="gradeSelectorWrap">
+        <div class="calc-row-label translatable" data-en="Target Grade" data-pa="ਜਮਾਤ ਚੁਣੋ" data-hi="कक्षा चुनें">Target Grade</div>
         <div class="calc-toggle-group">
-          <button
-            class="calc-option-btn selected translatable"
-            id="btnSolo"
-            onclick="setMode('solo')"
-            data-en="1-on-1 Solo"
-            data-pa="ਨਿੱਜੀ 1-ਆਨ-1"
-            data-hi="1-ऑन-1 व्यक्तिगत"
-          >
-            1-on-1 Solo
-          </button>
-          <button
-            class="calc-option-btn translatable"
-            id="btnTwins"
-            onclick="setMode('twins')"
-            data-en="Twins (Same Class)"
-            data-pa="ਜੁੜਵਾਂ (ਇਕੋ ਜਮਾਤ)"
-            data-hi="ट्विन्स (समान कक्षा)"
-          >
-            Twins (Same Class)
-          </button>
-          <button
-            class="calc-option-btn translatable"
-            id="btnSiblings"
-            onclick="setMode('siblings')"
-            data-en="Siblings (Diff Class)"
-            data-pa="ਭੈਣ-ਭਰਾ (ਵੱਖਰੀ ਜਮਾਤ)"
-            data-hi="भाई-बहन (अलग कक्षा)"
-          >
-            Siblings (Diff Class)
-          </button>
+          <button class="calc-option-btn selected" id="btnGrade9" onclick="setGrade(9)">Class 9th</button>
+          <button class="calc-option-btn" id="btnGrade10" onclick="setGrade(10)">Class 10th (Board)</button>
         </div>
+      </div>
 
-        <!-- Grade selector for single / twins -->
-        <div id="gradeSelectorWrap">
-          <div
-            class="calc-row-label translatable"
-            data-en="Target Grade"
-            data-pa="ਜਮਾਤ ਚੁਣੋ"
-            data-hi="कक्षा चुनें"
-          >
-            Target Grade
-          </div>
-          <div class="calc-toggle-group">
-            <button
-              class="calc-option-btn selected"
-              id="btnGrade9"
-              onclick="setGrade(9)"
-            >
-              Class 9th
-            </button>
-            <button
-              class="calc-option-btn"
-              id="btnGrade10"
-              onclick="setGrade(10)"
-            >
-              Class 10th (Board)
-            </button>
-          </div>
+      <!-- Standard single student subject selector -->
+      <div id="singleSubjWrap">
+        <div class="calc-row-label translatable" data-en="Select Subjects Needed" data-pa="ਵਿਸ਼ੇ ਚੁਣੋ" data-hi="विषय चुनें">Select Subjects Needed</div>
+        <div class="subj-checkbox-grid">
+          <label class="subj-check-label checked" id="lblMath" onclick="toggleSubj('single', 'math')">
+            <span>📐</span>
+            <span class="translatable" data-en="Maths" data-pa="ਗਣਿਤ" data-hi="गणित">Maths</span>
+          </label>
+          <label class="subj-check-label checked" id="lblSci" onclick="toggleSubj('single', 'sci')">
+            <span>🔬</span>
+            <span class="translatable" data-en="Science" data-pa="ਵਿਗਿਆਨ" data-hi="विज्ञान">Science</span>
+          </label>
+          <label class="subj-check-label checked" id="lblSst" onclick="toggleSubj('single', 'sst')">
+            <span>🌍</span>
+            <span class="translatable" data-en="SST" data-pa="ਐਸ.ਐਸ.ਟੀ." data-hi="सामाजिक विज्ञान">SST</span>
+          </label>
         </div>
+      </div>
 
-        <!-- Standard single student subject selector -->
-        <div id="singleSubjWrap">
-          <div
-            class="calc-row-label translatable"
-            data-en="Select Subjects Needed"
-            data-pa="ਵਿਸ਼ੇ ਚੁਣੋ"
-            data-hi="विषय चुनें"
-          >
-            Select Subjects Needed
+      <!-- Siblings separate subjects selector -->
+      <div id="siblingSubjWrap" style="display:none;">
+        <div class="calc-row-label translatable" data-en="Configure Separate Subjects for Each Child" data-pa="ਹਰੇਕ ਬੱਚੇ ਲਈ ਵੱਖਰੇ ਵਿਸ਼ੇ ਚੁਣੋ" data-hi="प्रत्येक बच्चे के लिए अलग-अलग विषय चुनें">Configure Separate Subjects for Each Child</div>
+        
+        <div class="subj-box-block">
+          <div class="subj-student-tag">
+            <span class="translatable" data-en="Student 1 (Class 9th)" data-pa="ਪਹਿਲਾ ਬੱਚਾ (9ਵੀਂ ਜਮਾਤ)" data-hi="पहला बच्चा (9वीं कक्षा)">Student 1 (Class 9th)</span>
           </div>
           <div class="subj-checkbox-grid">
-            <label
-              class="subj-check-label checked"
-              id="lblMath"
-              onclick="toggleSubj('single', 'math')"
-            >
+            <label class="subj-check-label checked" id="lblS1Math" onclick="toggleSubj('s1', 'math')">
               <span>📐</span>
-              <span
-                class="translatable"
-                data-en="Maths"
-                data-pa="ਗਣਿਤ"
-                data-hi="गणित"
-                >Maths</span
-              >
+              <span class="translatable" data-en="Maths" data-pa="ਗਣਿਤ" data-hi="गणित">Maths</span>
             </label>
-            <label
-              class="subj-check-label checked"
-              id="lblSci"
-              onclick="toggleSubj('single', 'sci')"
-            >
+            <label class="subj-check-label checked" id="lblS1Sci" onclick="toggleSubj('s1', 'sci')">
               <span>🔬</span>
-              <span
-                class="translatable"
-                data-en="Science"
-                data-pa="ਵਿਗਿਆਨ"
-                data-hi="विज्ञान"
-                >Science</span
-              >
+              <span class="translatable" data-en="Science" data-pa="ਵਿਗਿਆਨ" data-hi="विज्ञान">Science</span>
             </label>
-            <label
-              class="subj-check-label checked"
-              id="lblSst"
-              onclick="toggleSubj('single', 'sst')"
-            >
+            <label class="subj-check-label checked" id="lblS1Sst" onclick="toggleSubj('s1', 'sst')">
               <span>🌍</span>
-              <span
-                class="translatable"
-                data-en="SST"
-                data-pa="ਐਸ.ਐਸ.ਟੀ."
-                data-hi="सामाजिक विज्ञान"
-                >SST</span
-              >
+              <span class="translatable" data-en="SST" data-pa="ਐਸ.ਐਸ.ਟੀ." data-hi="सामाजिक विज्ञान">SST</span>
             </label>
           </div>
         </div>
 
-        <!-- Siblings separate subjects selector -->
-        <div id="siblingSubjWrap" style="display:none;">
-          <div
-            class="calc-row-label translatable"
-            data-en="Configure Separate Subjects for Each Child"
-            data-pa="ਹਰੇਕ ਬੱਚੇ ਲਈ ਵੱਖਰੇ ਵਿਸ਼ੇ ਚੁਣੋ"
-            data-hi="प्रत्येक बच्चे के लिए अलग-अलग विषय चुनें"
-          >
-            Configure Separate Subjects for Each Child
+        <div class="subj-box-block">
+          <div class="subj-student-tag">
+            <span class="translatable" data-en="Student 2 (Class 10th Board)" data-pa="ਦੂਜਾ ਬੱਚਾ (10ਵੀਂ ਬੋਰਡ)" data-hi="दूसरा बच्चा (10वीं बोर्ड)">Student 2 (Class 10th Board)</span>
           </div>
-
-          <div class="subj-box-block">
-            <div class="subj-student-tag">
-              <span
-                class="translatable"
-                data-en="Student 1 (Class 9th)"
-                data-pa="ਪਹਿਲਾ ਬੱਚਾ (9ਵੀਂ ਜਮਾਤ)"
-                data-hi="पहला बच्चा (9वीं कक्षा)"
-                >Student 1 (Class 9th)</span
-              >
-            </div>
-            <div class="subj-checkbox-grid">
-              <label
-                class="subj-check-label checked"
-                id="lblS1Math"
-                onclick="toggleSubj('s1', 'math')"
-              >
-                <span>📐</span>
-                <span
-                  class="translatable"
-                  data-en="Maths"
-                  data-pa="ਗਣਿਤ"
-                  data-hi="गणित"
-                  >Maths</span
-                >
-              </label>
-              <label
-                class="subj-check-label checked"
-                id="lblS1Sci"
-                onclick="toggleSubj('s1', 'sci')"
-              >
-                <span>🔬</span>
-                <span
-                  class="translatable"
-                  data-en="Science"
-                  data-pa="ਵਿਗਿਆਨ"
-                  data-hi="विज्ञान"
-                  >Science</span
-                >
-              </label>
-              <label
-                class="subj-check-label checked"
-                id="lblS1Sst"
-                onclick="toggleSubj('s1', 'sst')"
-              >
-                <span>🌍</span>
-                <span
-                  class="translatable"
-                  data-en="SST"
-                  data-pa="ਐਸ.ਐਸ.ਟੀ."
-                  data-hi="सामाजिक विज्ञान"
-                  >SST</span
-                >
-              </label>
-            </div>
-          </div>
-
-          <div class="subj-box-block">
-            <div class="subj-student-tag">
-              <span
-                class="translatable"
-                data-en="Student 2 (Class 10th Board)"
-                data-pa="ਦੂਜਾ ਬੱਚਾ (10ਵੀਂ ਬੋਰਡ)"
-                data-hi="दूसरा बच्चा (10वीं बोर्ड)"
-                >Student 2 (Class 10th Board)</span
-              >
-            </div>
-            <div class="subj-checkbox-grid">
-              <label
-                class="subj-check-label checked"
-                id="lblS2Math"
-                onclick="toggleSubj('s2', 'math')"
-              >
-                <span>📐</span>
-                <span
-                  class="translatable"
-                  data-en="Maths"
-                  data-pa="ਗਣਿਤ"
-                  data-hi="गणित"
-                  >Maths</span
-                >
-              </label>
-              <label
-                class="subj-check-label checked"
-                id="lblS2Sci"
-                onclick="toggleSubj('s2', 'sci')"
-              >
-                <span>🔬</span>
-                <span
-                  class="translatable"
-                  data-en="Science"
-                  data-pa="ਵਿਗਿਆਨ"
-                  data-hi="विज्ञान"
-                  >Science</span
-                >
-              </label>
-              <label
-                class="subj-check-label checked"
-                id="lblS2Sst"
-                onclick="toggleSubj('s2', 'sst')"
-              >
-                <span>🌍</span>
-                <span
-                  class="translatable"
-                  data-en="SST"
-                  data-pa="ਐਸ.ਐਸ.ਟੀ."
-                  data-hi="सामाजिक विज्ञान"
-                  >SST</span
-                >
-              </label>
-            </div>
-          </div>
-        </div>
-
-        <!-- Dynamic Price Output -->
-        <div class="calc-result-box">
-          <div class="calc-price-row">
-            <div>
-              <div
-                style="font-size:11px; color:var(--text-dim); text-transform:uppercase; font-weight:700;"
-                class="translatable"
-                data-en="Estimated Monthly Fee"
-                data-pa="ਅੰਦਾਜ਼ਨ ਮਹੀਨਾਵਾਰ ਫ਼ੀਸ"
-                data-hi="अनुमानित मासिक शुल्क"
-              >
-                Estimated Monthly Fee
-              </div>
-              <div class="calc-price-val" id="displayFee">₹6,000</div>
-            </div>
-            <div style="text-align:right;">
-              <div
-                style="font-size:11px; color:var(--cyan); font-weight:700;"
-                id="displayHours"
-              >
-                6 Days / Wk
-              </div>
-              <div
-                style="font-size:10px; color:var(--text-dim);"
-                id="displayTimingNote"
-              >
-                1.5 Hours / Day
-              </div>
-            </div>
-          </div>
-          <div class="calc-meta-details">
-            <div class="calc-perk">
-              ✓ <span id="feePerkTag">Includes Free 2-Day Trial Session</span>
-            </div>
-            <div class="calc-perk">
-              ✓
-              <span
-                class="translatable"
-                data-en="NCERT Solutions & Weekly Progress Tests"
-                data-pa="ਐਨਸੀਈਆਰਟੀ ਹੱਲ ਅਤੇ ਹਫ਼ਤਾਵਾਰੀ ਪ੍ਰਗਤੀ ਟੈਸਟ"
-                data-hi="NCERT समाधान एवं साप्ताहिक प्रगति टेस्ट"
-                >NCERT Solutions & Weekly Progress Tests</span
-              >
-            </div>
-          </div>
-          <button
-            class="btn-book-plan translatable"
-            onclick="triggerTactile('success'); bookConfiguredPlan();"
-            data-en="Book Free Demo for this Configuration 📲"
-            data-pa="ਇਸ ਪਲਾਨ ਲਈ ਮੁਫ਼ਤ ਡੈਮੋ ਬੁੱਕ ਕਰੋ 📲"
-            data-hi="इस प्लान हेतु फ्री डेमो बुक करें 📲"
-          >
-            Book Free Demo for this Configuration 📲
-          </button>
-        </div>
-      </section>
-      <!-- Scrambled Interactive Concept Readiness Quiz -->
-      <section class="glass-card reveal">
-        <div
-          class="sec-tag translatable"
-          data-en="Interactive Concept Mini-Quiz"
-          data-pa="ਇੰਟਰਐਕਟਿਵ ਮਿੰਨੀ ਕੰਸੈਪਟ ਕੁਇਜ਼"
-          data-hi="इंटरएक्टिव मिनी कॉन्सेप्ट क्विज़"
-        >
-          Interactive Concept Mini-Quiz
-        </div>
-        <div class="quiz-card" id="quizContainer">
-          <div
-            id="quizMeta"
-            style="font-size:11px; color:var(--gold); font-weight:700; margin-bottom:6px;"
-          >
-            QUESTION 1 OF 3
-          </div>
-          <div class="quiz-question-txt" id="quizQuestion">
-            Loading question...
-          </div>
-          <div class="quiz-options-list" id="quizOptions"></div>
-          <div class="quiz-footer-status" id="quizFeedback"></div>
-        </div>
-      </section>
-
-      <!-- 4-Step Interactive Roadmap -->
-      <section class="glass-card reveal">
-        <div
-          class="sec-tag translatable"
-          data-en="4-Step Academic Blueprint (Click to Expand)"
-          data-pa="4-ਕਦਮੀ ਅਕਾਦਮਿਕ ਰੋਡਮੈਪ (ਖੋਲ੍ਹਣ ਲਈ ਕਲਿੱਕ ਕਰੋ)"
-          data-hi="4-चरणीय शैक्षणिक ब्लूप्रिंट (विस्तार हेतु क्लिक करें)"
-        >
-          4-Step Academic Blueprint (Click to Expand)
-        </div>
-        <div class="roadmap-track">
-          <div
-            class="roadmap-node active-node"
-            onclick="triggerTactile('click'); toggleRoadmap(this);"
-          >
-            <div class="node-header">
-              <div class="node-num">1</div>
-              <div class="node-title-wrap">
-                <div
-                  class="node-title translatable"
-                  data-en="Concept Clarity First"
-                  data-pa="ਸੰਕਲਪਾਂ ਦੀ ਸਪੱਸ਼ਟ ਸਮਝ"
-                  data-hi="संकल्पनाओं की स्पष्ट समझ"
-                >
-                  Concept Clarity First
-                </div>
-              </div>
-              <div class="node-expand-arrow">▶</div>
-            </div>
-            <div
-              class="node-body translatable"
-              data-en="No mechanical rote-learning. Physics laws, Maths proofs, and Economics models are explained using everyday Chandigarh real-world examples."
-              data-pa="ਰੱਟੇ ਦੀ ਥਾਂ ਸੰਕਲਪਾਂ ਨੂੰ ਰੋਜ਼ਾਨਾ ਜੀਵਨ ਦੀਆਂ ਉਦਾਹਰਣਾਂ ਨਾਲ ਦਿਮਾਗ ਵਿੱਚ ਪੱਕਾ ਕੀਤਾ ਜਾਂਦਾ ਹੈ।"
-              data-hi="बिना किसी रटंत प्रणाली के। विज्ञान, गणित और मॉडल्स को दैनिक जीवन के उदाहरणों से समझाया जाता है।"
-            >
-              No mechanical rote-learning. Physics laws, Maths proofs, and
-              Economics models are explained using everyday Chandigarh
-              real-world examples.
-            </div>
-          </div>
-
-          <div
-            class="roadmap-node"
-            onclick="triggerTactile('click'); toggleRoadmap(this);"
-          >
-            <div class="node-header">
-              <div class="node-num">2</div>
-              <div class="node-title-wrap">
-                <div
-                  class="node-title translatable"
-                  data-en="NCERT Problem-Solving Mastery"
-                  data-pa="ਐਨਸੀਈਆਰਟੀ ਸਵਾਲਾਂ 'ਤੇ ਮੁਹਾਰਤ"
-                  data-hi="NCERT प्रश्नों पर संपूर्ण पकड़"
-                >
-                  NCERT Problem-Solving Mastery
-                </div>
-              </div>
-              <div class="node-expand-arrow">▶</div>
-            </div>
-            <div
-              class="node-body translatable"
-              data-en="Exhaustive coverage of back exercises, exemplary problems, and formulas with self-derived speed calculation shortcuts."
-              data-pa="ਕਿਤਾਬ ਦੇ ਹਰ ਇੱਕ ਪ੍ਰਸ਼ਨ ਅਤੇ ਉਦਾਹਰਣ ਨੂੰ ਖ਼ੁਦ ਹੱਲ ਕਰਵਾਉਣਾ ਤਾਂ ਜੋ ਪੇਪਰ ਵਿੱਚ ਕੋਈ ਸ਼ੱਕ ਨਾ ਰਹੇ।"
-              data-hi="पाठ्यपुस्तक के प्रत्येक प्रश्न और उदाहरण का गहन अभ्यास ताकि परीक्षा में कोई संशय न रहे।"
-            >
-              Exhaustive coverage of back exercises, exemplary problems, and
-              formulas with self-derived speed calculation shortcuts.
-            </div>
-          </div>
-
-          <div
-            class="roadmap-node"
-            onclick="triggerTactile('click'); toggleRoadmap(this);"
-          >
-            <div class="node-header">
-              <div class="node-num">3</div>
-              <div class="node-title-wrap">
-                <div
-                  class="node-title translatable"
-                  data-en="Diagnostic Weekly Tests"
-                  data-pa="ਹਫ਼ਤਾਵਾਰੀ ਜਾਂਚ ਟੈਸਟ"
-                  data-hi="साप्ताहिक मूल्यांकन टेस्ट"
-                >
-                  Diagnostic Weekly Tests
-                </div>
-              </div>
-              <div class="node-expand-arrow">▶</div>
-            </div>
-            <div
-              class="node-body translatable"
-              data-en="Timed 25-mark weekend evaluations mirroring school test formats, followed by direct WhatsApp performance updates to parents."
-              data-pa="ਹਰ ਸ਼ਨੀਵਾਰ 25 ਨੰਬਰਾਂ ਦਾ ਟੈਸਟ ਅਤੇ ਮਾਪਿਆਂ ਨੂੰ ਵਿਦਿਆਰਥੀ ਦੀ ਪ੍ਰਗਤੀ ਬਾਰੇ ਪੂਰੀ ਜਾਣਕਾਰੀ।"
-              data-hi="प्रत्येक शनिवार 25 अंकों का समयबद्ध टेस्ट एवं अभिभावकों को सीधे प्रगति रिपोर्ट साझा करना।"
-            >
-              Timed 25-mark weekend evaluations mirroring school test formats,
-              followed by direct WhatsApp performance updates to parents.
-            </div>
-          </div>
-
-          <div
-            class="roadmap-node"
-            onclick="triggerTactile('click'); toggleRoadmap(this);"
-          >
-            <div class="node-header">
-              <div class="node-num">4</div>
-              <div class="node-title-wrap">
-                <div
-                  class="node-title translatable"
-                  data-en="Board Exam Score Maximization"
-                  data-pa="ਬੋਰਡ ਪ੍ਰੀਖਿਆ ਨੰਬਰ ਰਣਨੀਤੀ"
-                  data-hi="बोर्ड परीक्षा अंक संवर्धन रणनीति"
-                >
-                  Board Exam Score Maximization
-                </div>
-              </div>
-              <div class="node-expand-arrow">▶</div>
-            </div>
-            <div
-              class="node-body translatable"
-              data-en="Point-wise structured answers for SST, neat diagrams for Science, and 5-year question paper trend decoding."
-              data-pa="ਸਮਾਜਿਕ ਸਿੱਖਿਆ ਵਿੱਚ ਪੁਆਇੰਟਾਂ 'ਚ ਉੱਤਰ ਲਿਖਣੇ ਅਤੇ ਪਿਛਲੇ 5 ਸਾਲਾਂ ਦੇ ਪ੍ਰਸ਼ਨ-ਪੱਤਰ ਹੱਲ ਕਰਨੇ।"
-              data-hi="सामाजिक विज्ञान में बिंदुवार उत्तर लेखन, विज्ञान के स्पष्ट आरेख और पिछले 5 वर्षों के प्रश्नपत्रों का विश्लेषण।"
-            >
-              Point-wise structured answers for SST, neat diagrams for Science,
-              and 5-year question paper trend decoding.
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Subject Deep-Dive Tabs -->
-      <section class="glass-card reveal">
-        <div
-          class="sec-tag translatable"
-          data-en="Subject Deep-Dive & Key Chapters"
-          data-pa="ਵਿਸ਼ੇ ਅਤੇ ਮੁੱਖ ਚੈਪਟਰ"
-          data-hi="विषय एवं मुख्य अध्याय"
-        >
-          Subject Deep-Dive & Key Chapters
-        </div>
-        <div class="tab-nav-row">
-          <button
-            class="tab-nav-btn active translatable"
-            onclick="switchSubjectTab('tabMath', this)"
-            data-en="Mathematics"
-            data-pa="ਗਣਿਤ"
-            data-hi="गणित"
-          >
-            Mathematics
-          </button>
-          <button
-            class="tab-nav-btn translatable"
-            onclick="switchSubjectTab('tabSci', this)"
-            data-en="Science"
-            data-pa="ਵਿਗਿਆਨ"
-            data-hi="विज्ञान"
-          >
-            Science
-          </button>
-          <button
-            class="tab-nav-btn translatable"
-            onclick="switchSubjectTab('tabSst', this)"
-            data-en="Social Studies"
-            data-pa="ਸਮਾਜਿਕ ਸਿੱਖਿਆ"
-            data-hi="सामाजिक विज्ञान"
-          >
-            Social Studies
-          </button>
-        </div>
-
-        <div class="tab-content-panel active" id="tabMath">
-          <h4
-            style="font-size:13px; color:var(--cyan); margin-bottom:8px;"
-            class="translatable"
-            data-en="High-Weightage Topics Covered:"
-            data-pa="ਮੁੱਖ ਚੈਪਟਰ:"
-            data-hi="प्रमुख अध्याय:"
-          >
-            High-Weightage Topics Covered:
-          </h4>
-          <div>
-            <span class="chapter-tag">Linear Equations</span>
-            <span class="chapter-tag">Quadratic Equations</span>
-            <span class="chapter-tag">Triangles & Geometry</span>
-            <span class="chapter-tag">Trigonometry</span>
-            <span class="chapter-tag">Statistics & Probability</span>
-          </div>
-          <p
-            style="font-size:11.5px; color:var(--text-dim); margin-top:10px; line-height:1.45;"
-            class="translatable"
-            data-en="Methodology: Step-by-step formula sheets, error identification diary, and zero calculation blunders."
-            data-pa="ਢੰਗ: ਫ਼ਾਰਮੂਲਾ ਸ਼ੀਟਾਂ ਤਿਆਰ ਕਰਵਾਉਣੀਆਂ ਅਤੇ ਗਣਨਾ ਵਿੱਚ ਗ਼ਲਤੀਆਂ ਖ਼ਤਮ ਕਰਨੀਆਂ।"
-            data-hi="पद्धति: चरणबद्ध सूत्र-पुस्तिका, त्रुटि निवारण अभ्यास और गणना की गलतियों को शून्य करना।"
-          >
-            Methodology: Step-by-step formula sheets, error identification
-            diary, and zero calculation blunders.
-          </p>
-        </div>
-
-        <div class="tab-content-panel" id="tabSci">
-          <h4
-            style="font-size:13px; color:var(--blue); margin-bottom:8px;"
-            class="translatable"
-            data-en="High-Weightage Topics Covered:"
-            data-pa="ਮੁੱਖ ਚੈਪਟਰ:"
-            data-hi="प्रमुख अध्याय:"
-          >
-            High-Weightage Topics Covered:
-          </h4>
-          <div>
-            <span class="chapter-tag">Chemical Reactions</span>
-            <span class="chapter-tag">Light & Reflection</span>
-            <span class="chapter-tag">Electricity & Magnetism</span>
-            <span class="chapter-tag">Life Processes</span>
-            <span class="chapter-tag">Control & Coordination</span>
-          </div>
-          <p
-            style="font-size:11.5px; color:var(--text-dim); margin-top:10px; line-height:1.45;"
-            class="translatable"
-            data-en="Methodology: Balanced equation drills, ray diagrams, and scientific terminology mastery."
-            data-pa="ਢੰਗ: ਰਸਾਇਣਕ ਸਮੀਕਰਨਾਂ ਸੰਤੁਲਿਤ ਕਰਨੀਆਂ ਅਤੇ ਲੇਬਲ ਵਾਲੇ ਸਾਫ਼ ਡਾਇਗ੍ਰਾਮ ਬਣਾਉਣੇ।"
-            data-hi="पद्धति: रासायनिक समीकरण संतुलन, किरण आरेख और सटीक वैज्ञानिक शब्दावली पर पकड़।"
-          >
-            Methodology: Balanced equation drills, ray diagrams, and scientific
-            terminology mastery.
-          </p>
-        </div>
-
-        <div class="tab-content-panel" id="tabSst">
-          <h4
-            style="font-size:13px; color:var(--gold); margin-bottom:8px;"
-            class="translatable"
-            data-en="High-Weightage Topics Covered:"
-            data-pa="ਮੁੱਖ ਚੈਪਟਰ:"
-            data-hi="प्रमुख अध्याय:"
-          >
-            High-Weightage Topics Covered:
-          </h4>
-          <div>
-            <span class="chapter-tag">Nationalism in India</span>
-            <span class="chapter-tag">Sectors of Indian Economy</span>
-            <span class="chapter-tag">Federalism & Democracy</span>
-            <span class="chapter-tag">Resources & Agriculture</span>
-            <span class="chapter-tag">Money & Credit</span>
-          </div>
-          <p
-            style="font-size:11.5px; color:var(--text-dim); margin-top:10px; line-height:1.45;"
-            class="translatable"
-            data-en="Methodology: Flowcharts for historical timelines, map practice, and bulleted 5-mark answer writing."
-            data-pa="ਢੰਗ: ਇਤਿਹਾਸ ਦੇ ਫ਼ਲੋ-ਚਾਰਟ, ਨਕਸ਼ੇ ਦਾ ਅਭਿਆਸ ਅਤੇ 5 ਨੰਬਰਾਂ ਵਾਲੇ ਵੱਡੇ ਉੱਤਰ ਸੌਖੇ ਲਿਖਣੇ।"
-            data-hi="पद्धति: ऐतिहासिक घटनाओं का प्रवाह-चित्र (फ्लोचार्ट), मानचित्र अभ्यास और 5-अंकीय उत्तर लेखन।"
-          >
-            Methodology: Flowcharts for historical timelines, map practice, and
-            bulleted 5-mark answer writing.
-          </p>
-        </div>
-      </section>
-
-      <!-- Co-Curricular Distinctions -->
-      <section class="glass-card reveal">
-        <div
-          class="sec-tag translatable"
-          data-en="Co-Curricular Distinctions"
-          data-pa="ਸਹਿ-ਪਾਠਕ੍ਰਮ ਮੁਕਾਬਲਿਆਂ ਵਿੱਚ ਪ੍ਰਾਪਤੀਆਂ"
-          data-hi="सह-पाठ्यक्रम उपलब्धियाँ"
-        >
-          Co-Curricular Distinctions
-        </div>
-        <div style="display:flex; flex-direction:column; gap:8px;">
-          <div
-            style="display:flex; align-items:center; gap:10px; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.07); padding:10px 12px; border-radius:12px;"
-          >
-            <span style="font-size:18px;">🥇</span>
-            <div>
-              <div
-                style="font-size:12.5px; font-weight:700;"
-                class="translatable"
-                data-en="1st Position — Science & Model Exhibition"
-                data-pa="ਪਹਿਲਾ ਸਥਾਨ — ਸਾਇੰਸ ਮਾਡਲ ਪ੍ਰਦਰਸ਼ਨੀ"
-                data-hi="प्रथम स्थान — विज्ञान एवं मॉडल प्रदर्शनी"
-              >
-                1st Position — Science & Model Exhibition
-              </div>
-              <div
-                style="font-size:10.5px; color:var(--text-dim);"
-                class="translatable"
-                data-en="Block Level Competitive Honors"
-                data-pa="ਬਲਾਕ ਪੱਧਰੀ ਮੁਕਾਬਲਾ"
-                data-hi="ब्लॉक स्तरीय सम्मान"
-              >
-                Block Level Competitive Honors
-              </div>
-            </div>
-          </div>
-          <div
-            style="display:flex; align-items:center; gap:10px; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.07); padding:10px 12px; border-radius:12px;"
-          >
-            <span style="font-size:18px;">🎭</span>
-            <div>
-              <div
-                style="font-size:12.5px; font-weight:700;"
-                class="translatable"
-                data-en="1st & 2nd Positions — Role Play Competitions"
-                data-pa="ਪਹਿਲਾ ਅਤੇ ਦੂਜਾ ਸਥਾਨ — ਰੋਲ ਪਲੇ ਮੁਕਾਬਲੇ"
-                data-hi="प्रथम व द्वितीय स्थान — रोल प्ले प्रतियोगिता"
-              >
-                1st & 2nd Positions — Role Play Competitions
-              </div>
-              <div
-                style="font-size:10.5px; color:var(--text-dim);"
-                class="translatable"
-                data-en="Stage Expression & Eloquence Honors"
-                data-pa="ਬਲਾਕ ਪੱਧਰੀ ਮੰਚ ਸਨਮਾਨ"
-                data-hi="मंचीय प्रस्तुति व अभिव्यक्ति सम्मान"
-              >
-                Stage Expression & Eloquence Honors
-              </div>
-            </div>
-          </div>
-          <div
-            style="display:flex; align-items:center; gap:10px; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.07); padding:10px 12px; border-radius:12px;"
-          >
-            <span style="font-size:18px;">🥉</span>
-            <div>
-              <div
-                style="font-size:12.5px; font-weight:700;"
-                class="translatable"
-                data-en="3rd Position — Presentation & Academic Quiz"
-                data-pa="ਤੀਜਾ ਸਥਾਨ — ਪ੍ਰੈਜ਼ੈਂਟੇਸ਼ਨ ਅਤੇ ਕੁਇਜ਼"
-                data-hi="तृतीय स्थान — प्रस्तुति एवं शैक्षणिक क्विज़"
-              >
-                3rd Position — Presentation & Academic Quiz
-              </div>
-              <div
-                style="font-size:10.5px; color:var(--text-dim);"
-                class="translatable"
-                data-en="Block Level Competitions"
-                data-pa="ਬਲਾਕ ਪੱਧਰੀ ਅਕਾਦਮਿਕ ਮੁਕਾਬਲੇ"
-                data-hi="ब्लॉक स्तरीय शैक्षणिक प्रतियोगिता"
-              >
-                Block Level Competitions
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          style="margin-top:12px; background:linear-gradient(135deg, rgba(236,72,153,0.1), rgba(121,40,202,0.1)); border:1px solid rgba(236,72,153,0.25); border-radius:12px; padding:12px; font-size:12px; color:#f472b6; font-style:italic;"
-          class="translatable"
-          data-en="&ldquo;Deep interest in poetry, literature, and eloquent communication, instilling intellectual confidence into every student.&rdquo;"
-          data-pa="&ldquo;ਕਵਿਤਾ ਅਧਿਐਨ, ਸਾਹਿਤਕ ਰੁਚੀ ਅਤੇ ਪ੍ਰਭਾਵਸ਼ਾਲੀ ਗੱਲਬਾਤ ਕਲਾ—ਵਿਦਿਆਰਥੀਆਂ ਨੂੰ ਨਾ ਸਿਰਫ਼ ਅੰਕ ਲੈਣ ਸਗੋਂ ਜ਼ਿੰਦਗੀ ਵਿੱਚ ਭਰੋਸੇਮੰਦ ਬਣਨ ਵਿੱਚ ਸਹਾਈ।&rdquo;"
-          data-hi="&ldquo;साहित्य, कविता और प्रभावशाली संवाद कला में विशेष रुचि—विद्यार्थियों में बौद्धिक आत्मविश्वास और एकाग्रता जगाने में सहायक।&rdquo;"
-        >
-          &ldquo;Deep interest in poetry, literature, and eloquent
-          communication, instilling intellectual confidence into every
-          student.&rdquo;
-        </div>
-      </section>
-
-      <!-- Parent Reviews / Testimonials -->
-      <section class="glass-card reveal">
-        <div
-          class="sec-tag translatable"
-          data-en="Parent & Student Feedback"
-          data-pa="ਮਾਪਿਆਂ ਅਤੇ ਵਿਦਿਆਰਥੀਆਂ ਦੇ ਵਿਚਾਰ"
-          data-hi="अभिभावकों व विद्यार्थियों के विचार"
-        >
-          Parent & Student Feedback
-        </div>
-
-        <div class="review-card-unit">
-          <div class="star-bar">★★★★★</div>
-          <div
-            class="review-quote translatable"
-            data-en="&ldquo;Saurav's focus on NCERT basics helped my son improve his 10th maths score from 68% to 91% within 4 months. Extremely disciplined.&rdquo;"
-            data-pa="&ldquo;ਸੌਰਵ ਦੇ ਐਨਸੀਈਆਰਟੀ ਬੇਸਿਕਸ 'ਤੇ ਜ਼ੋਰ ਦੇਣ ਨਾਲ ਮੇਰੇ ਬੇਟੇ ਦੇ 10ਵੀਂ ਗਣਿਤ ਦੇ ਨੰਬਰ 68% ਤੋਂ ਵਧ ਕੇ 91% ਹੋ ਗਏ। ਬਹੁਤ ਹੀ ਮਿਹਨਤੀ ਅਧਿਆਪਕ ਹਨ।&rdquo;"
-            data-hi="&ldquo;सौरव के बुनियादी सिद्धांतों पर ध्यान देने से मेरे बेटे के 10वीं गणित के अंक 4 महीने में 68% से बढ़कर 91% हो गए। अत्यंत अनुशासित।&rdquo;"
-          >
-            &ldquo;Saurav's focus on NCERT basics helped my son improve his 10th
-            maths score from 68% to 91% within 4 months. Extremely
-            disciplined.&rdquo;
-          </div>
-          <div class="reviewer-identity">
-            <span>Dr. Manpreet S.</span>
-            <span>PU Campus, Sec 14</span>
-          </div>
-        </div>
-
-        <div class="review-card-unit">
-          <div class="star-bar">★★★★★</div>
-          <div
-            class="review-quote translatable"
-            data-en="&ldquo;He explained SST chapters like an interesting story. My daughter finally enjoyed social studies without rote memorization.&rdquo;"
-            data-pa="&ldquo;ਇਤਿਹਾਸ ਅਤੇ ਸਮਾਜਿਕ ਸਿੱਖਿਆ ਨੂੰ ਕਹਾਣੀ ਵਾਂਗ ਸਮਝਾਇਆ, ਮੇਰੀ ਬੇਟੀ ਨੂੰ ਬਿਨਾਂ ਰੱਟੇ ਤੋਂ ਸਾਰੇ ਸੰਕਲਪ ਯਾਦ ਹੋ ਗਏ।&rdquo;"
-            data-hi="&ldquo;इतिहास और सामाजिक अध्ययन को कहानी की तरह समझाया, मेरी बेटी बिना किसी रटंत के रुचि लेकर पढ़ने लगी।&rdquo;"
-          >
-            &ldquo;He explained SST chapters like an interesting story. My
-            daughter finally enjoyed social studies without rote
-            memorization.&rdquo;
-          </div>
-          <div class="reviewer-identity">
-            <span>Harpreet Kaur</span>
-            <span>Sector 15-B</span>
-          </div>
-        </div>
-      </section>
-
-      <!-- Booking Modal -->
-      <div
-        class="modal-overlay"
-        id="bookingModal"
-        onclick="closeModalOnBg(event)"
-      >
-        <div class="modal-sheet">
-          <div class="modal-header">
-            <div
-              class="modal-title translatable"
-              data-en="Book Free 2-Day Trial"
-              data-pa="2 ਦਿਨਾਂ ਦਾ ਮੁਫ਼ਤ ਟਰਾਇਲ ਬੁੱਕ ਕਰੋ"
-              data-hi="2 दिन का निःशुल्क ट्रायल बुक करें"
-            >
-              Book Free 2-Day Trial
-            </div>
-            <button
-              class="btn-close-modal"
-              onclick="triggerTactile('click'); closeBookingModal();"
-            >
-              ✕
-            </button>
-          </div>
-          <div>
-            <input
-              type="text"
-              id="parentName"
-              class="input-field"
-              placeholder="Student / Parent Name"
-            />
-            <input
-              type="text"
-              id="parentSector"
-              class="input-field"
-              placeholder="Location e.g. Sector 15 / PU Campus"
-            />
-
-            <div
-              class="calc-row-label translatable"
-              style="margin-bottom:6px;"
-              data-en="Quick Select Location"
-              data-pa="ਸੈਕਟਰ ਚੁਣੋ"
-              data-hi="सेक्टर चुनें"
-            >
-              Quick Select Location
-            </div>
-            <div class="quick-chips">
-              <button
-                type="button"
-                class="chip-btn"
-                onclick="triggerTactile('click'); pickSector('Sector 14');"
-              >
-                Sector 14
-              </button>
-              <button
-                type="button"
-                class="chip-btn"
-                onclick="triggerTactile('click'); pickSector('Sector 15');"
-              >
-                Sector 15
-              </button>
-              <button
-                type="button"
-                class="chip-btn"
-                onclick="triggerTactile('click'); pickSector('Sector 11');"
-              >
-                Sector 11
-              </button>
-              <button
-                type="button"
-                class="chip-btn"
-                onclick="triggerTactile('click'); pickSector('Sector 24');"
-              >
-                Sector 24
-              </button>
-              <button
-                type="button"
-                class="chip-btn"
-                onclick="triggerTactile('click'); pickSector('PU Campus');"
-              >
-                PU Campus
-              </button>
-            </div>
-
-            <select id="modalClass" class="input-field">
-              <option value="Class 9th">Class 9th</option>
-              <option value="Class 10th (Board)">Class 10th (Board)</option>
-              <option value="Twins (Same Class Batch)">
-                Twins (Same Class - Combined Batch)
-              </option>
-              <option value="Siblings (9th & 10th Back-to-Back)">
-                Siblings (9th & 10th Back-to-Back)
-              </option>
-            </select>
-            <input
-              type="text"
-              id="modalSubjects"
-              class="input-field"
-              placeholder="Subject(s)"
-              value="Maths, Science, SST"
-            />
-
-            <button
-              onclick="triggerTactile('success'); submitModalToWhatsApp();"
-              style="width:100%; background:linear-gradient(90deg, #10b981, #059669); color:#fff; border:none; padding:13px; border-radius:14px; font-weight:800; font-size:14px; cursor:pointer;"
-              class="translatable"
-              data-en="Confirm via WhatsApp 📲"
-              data-pa="ਵਟਸਐਪ ਰਾਹੀਂ ਪੱਕਾ ਕਰੋ 📲"
-              data-hi="व्हाट्सएप द्वारा पुष्टि करें 📲"
-            >
-              Confirm via WhatsApp 📲
-            </button>
+          <div class="subj-checkbox-grid">
+            <label class="subj-check-label checked" id="lblS2Math" onclick="toggleSubj('s2', 'math')">
+              <span>📐</span>
+              <span class="translatable" data-en="Maths" data-pa="ਗਣਿਤ" data-hi="गणित">Maths</span>
+            </label>
+            <label class="subj-check-label checked" id="lblS2Sci" onclick="toggleSubj('s2', 'sci')">
+              <span>🔬</span>
+              <span class="translatable" data-en="Science" data-pa="ਵਿਗਿਆਨ" data-hi="विज्ञान">Science</span>
+            </label>
+            <label class="subj-check-label checked" id="lblS2Sst" onclick="toggleSubj('s2', 'sst')">
+              <span>🌍</span>
+              <span class="translatable" data-en="SST" data-pa="ਐਸ.ਐਸ.ਟੀ." data-hi="सामाजिक विज्ञान">SST</span>
+            </label>
           </div>
         </div>
       </div>
 
-      <!-- Dual Sticky Bottom Action Dock -->
-      <div class="sticky-dock">
-        <a
-          href="https://wa.me/919815485169?text=Hello%20Saurav,%20I%20am%20interested%20in%20Home%20Tuitions%20for%209th/10th%20grade%20around%20PU%20Chandigarh."
-          class="dock-action-btn dock-wa"
-          id="dockWaLink"
-          onclick="triggerTactile('success')"
-        >
-          <span>💬</span>
-          <span
-            class="translatable"
-            data-en="WhatsApp Chat"
-            data-pa="ਵਟਸਐਪ ਚੈਟ"
-            data-hi="व्हाट्सएप चैट"
-            >WhatsApp Chat</span
-          >
-        </a>
-        <a
-          href="tel:9815485169"
-          class="dock-action-btn dock-call"
-          onclick="triggerTactile('click')"
-        >
-          <span>📞</span>
-          <span
-            class="translatable"
-            data-en="Direct Call"
-            data-pa="ਸਿੱਧੀ ਕਾਲ ਕਰੋ"
-            data-hi="कॉल करें"
-            >Direct Call</span
-          >
-        </a>
+      <!-- Dynamic Price Output -->
+      <div class="calc-result-box">
+        <div class="calc-price-row">
+          <div>
+            <div style="font-size:11px; color:var(--text-dim); text-transform:uppercase; font-weight:700;" class="translatable" data-en="Estimated Monthly Fee" data-pa="ਅੰਦਾਜ਼ਨ ਮਹੀਨਾਵਾਰ ਫ਼ੀਸ" data-hi="अनुमानित मासिक शुल्क">Estimated Monthly Fee</div>
+            <div class="calc-price-val" id="displayFee">₹6,000</div>
+          </div>
+          <div style="text-align:right;">
+            <div style="font-size:11px; color:var(--cyan); font-weight:700;" id="displayHours">6 Days / Wk</div>
+            <div style="font-size:10px; color:var(--text-dim);" id="displayTimingNote">1.5 Hours / Day</div>
+          </div>
+        </div>
+        <div class="calc-meta-details">
+          <div class="calc-perk">✓ <span id="feePerkTag">Includes Free 2-Day Trial Session</span></div>
+          <div class="calc-perk">✓ <span class="translatable" data-en="NCERT Solutions & Weekly Progress Tests" data-pa="ਐਨਸੀਈਆਰਟੀ ਹੱਲ ਅਤੇ ਹਫ਼ਤਾਵਾਰੀ ਪ੍ਰਗਤੀ ਟੈਸਟ" data-hi="NCERT समाधान एवं साप्ताहिक प्रगति टेस्ट">NCERT Solutions & Weekly Progress Tests</span></div>
+        </div>
+        <button class="btn-book-plan translatable" onclick="triggerTactile('success'); bookConfiguredPlan();" data-en="Book Free Demo for this Configuration 📲" data-pa="ਇਸ ਪਲਾਨ ਲਈ ਮੁਫ਼ਤ ਡੈਮੋ ਬੁੱਕ ਕਰੋ 📲" data-hi="इस प्लान हेतु फ्री डेमो बुक करें 📲">Book Free Demo for this Configuration 📲</button>
+      </div>
+    </section>
+        <!-- Scrambled Interactive Concept Readiness Quiz -->
+    <section class="glass-card reveal">
+      <div class="sec-tag translatable" data-en="Interactive Concept Mini-Quiz" data-pa="ਇੰਟਰਐਕਟਿਵ ਮਿੰਨੀ ਕੰਸੈਪਟ ਕੁਇਜ਼" data-hi="इंटरएक्टिव मिनी कॉन्सेप्ट क्विज़">Interactive Concept Mini-Quiz</div>
+      <div class="quiz-card" id="quizContainer">
+        <div id="quizMeta" style="font-size:11px; color:var(--gold); font-weight:700; margin-bottom:6px;">QUESTION 1 OF 3</div>
+        <div class="quiz-question-txt" id="quizQuestion">Loading question...</div>
+        <div class="quiz-options-list" id="quizOptions"></div>
+        <div class="quiz-footer-status" id="quizFeedback"></div>
+      </div>
+    </section>
+
+    <!-- 4-Step Interactive Roadmap -->
+    <section class="glass-card reveal">
+      <div class="sec-tag translatable" data-en="4-Step Academic Blueprint (Click to Expand)" data-pa="4-ਕਦਮੀ ਅਕਾਦਮਿਕ ਰੋਡਮੈਪ (ਖੋਲ੍ਹਣ ਲਈ ਕਲਿੱਕ ਕਰੋ)" data-hi="4-चरणीय शैक्षणिक ब्लूप्रिंट (विस्तार हेतु क्लिक करें)">4-Step Academic Blueprint (Click to Expand)</div>
+      <div class="roadmap-track">
+        
+        <div class="roadmap-node active-node" onclick="triggerTactile('click'); toggleRoadmap(this);">
+          <div class="node-header">
+            <div class="node-num">1</div>
+            <div class="node-title-wrap">
+              <div class="node-title translatable" data-en="Concept Clarity First" data-pa="ਸੰਕਲਪਾਂ ਦੀ ਸਪੱਸ਼ਟ ਸਮਝ" data-hi="संकल्पनाओं की स्पष्ट समझ">Concept Clarity First</div>
+            </div>
+            <div class="node-expand-arrow">▶</div>
+          </div>
+          <div class="node-body translatable" data-en="No mechanical rote-learning. Physics laws, Maths proofs, and Economics models are explained using everyday Chandigarh real-world examples." data-pa="ਰੱਟੇ ਦੀ ਥਾਂ ਸੰਕਲਪਾਂ ਨੂੰ ਰੋਜ਼ਾਨਾ ਜੀਵਨ ਦੀਆਂ ਉਦਾਹਰਣਾਂ ਨਾਲ ਦਿਮਾਗ ਵਿੱਚ ਪੱਕਾ ਕੀਤਾ ਜਾਂਦਾ ਹੈ।" data-hi="बिना किसी रटंत प्रणाली के। विज्ञान, गणित और मॉडल्स को दैनिक जीवन के उदाहरणों से समझाया जाता है।">
+            No mechanical rote-learning. Physics laws, Maths proofs, and Economics models are explained using everyday Chandigarh real-world examples.
+          </div>
+        </div>
+
+        <div class="roadmap-node" onclick="triggerTactile('click'); toggleRoadmap(this);">
+          <div class="node-header">
+            <div class="node-num">2</div>
+            <div class="node-title-wrap">
+              <div class="node-title translatable" data-en="NCERT Problem-Solving Mastery" data-pa="ਐਨਸੀਈਆਰਟੀ ਸਵਾਲਾਂ 'ਤੇ ਮੁਹਾਰਤ" data-hi="NCERT प्रश्नों पर संपूर्ण पकड़">NCERT Problem-Solving Mastery</div>
+            </div>
+            <div class="node-expand-arrow">▶</div>
+          </div>
+          <div class="node-body translatable" data-en="Exhaustive coverage of back exercises, exemplary problems, and formulas with self-derived speed calculation shortcuts." data-pa="ਕਿਤਾਬ ਦੇ ਹਰ ਇੱਕ ਪ੍ਰਸ਼ਨ ਅਤੇ ਉਦਾਹਰਣ ਨੂੰ ਖ਼ੁਦ ਹੱਲ ਕਰਵਾਉਣਾ ਤਾਂ ਜੋ ਪੇਪਰ ਵਿੱਚ ਕੋਈ ਸ਼ੱਕ ਨਾ ਰਹੇ।" data-hi="पाठ्यपुस्तक के प्रत्येक प्रश्न और उदाहरण का गहन अभ्यास ताकि परीक्षा में कोई संशय न रहे।">
+            Exhaustive coverage of back exercises, exemplary problems, and formulas with self-derived speed calculation shortcuts.
+          </div>
+        </div>
+
+        <div class="roadmap-node" onclick="triggerTactile('click'); toggleRoadmap(this);">
+          <div class="node-header">
+            <div class="node-num">3</div>
+            <div class="node-title-wrap">
+              <div class="node-title translatable" data-en="Diagnostic Weekly Tests" data-pa="ਹਫ਼ਤਾਵਾਰੀ ਜਾਂਚ ਟੈਸਟ" data-hi="साप्ताहिक मूल्यांकन टेस्ट">Diagnostic Weekly Tests</div>
+            </div>
+            <div class="node-expand-arrow">▶</div>
+          </div>
+          <div class="node-body translatable" data-en="Timed 25-mark weekend evaluations mirroring school test formats, followed by direct WhatsApp performance updates to parents." data-pa="ਹਰ ਸ਼ਨੀਵਾਰ 25 ਨੰਬਰਾਂ ਦਾ ਟੈਸਟ ਅਤੇ ਮਾਪਿਆਂ ਨੂੰ ਵਿਦਿਆਰਥੀ ਦੀ ਪ੍ਰਗਤੀ ਬਾਰੇ ਪੂਰੀ ਜਾਣਕਾਰੀ।" data-hi="प्रत्येक शनिवार 25 अंकों का समयबद्ध टेस्ट एवं अभिभावकों को सीधे प्रगति रिपोर्ट साझा करना।">
+            Timed 25-mark weekend evaluations mirroring school test formats, followed by direct WhatsApp performance updates to parents.
+          </div>
+        </div>
+
+        <div class="roadmap-node" onclick="triggerTactile('click'); toggleRoadmap(this);">
+          <div class="node-header">
+            <div class="node-num">4</div>
+            <div class="node-title-wrap">
+              <div class="node-title translatable" data-en="Board Exam Score Maximization" data-pa="ਬੋਰਡ ਪ੍ਰੀਖਿਆ ਨੰਬਰ ਰਣਨੀਤੀ" data-hi="बोर्ड परीक्षा अंक संवर्धन रणनीति">Board Exam Score Maximization</div>
+            </div>
+            <div class="node-expand-arrow">▶</div>
+          </div>
+          <div class="node-body translatable" data-en="Point-wise structured answers for SST, neat diagrams for Science, and 5-year question paper trend decoding." data-pa="ਸਮਾਜਿਕ ਸਿੱਖਿਆ ਵਿੱਚ ਪੁਆਇੰਟਾਂ 'ਚ ਉੱਤਰ ਲਿਖਣੇ ਅਤੇ ਪਿਛਲੇ 5 ਸਾਲਾਂ ਦੇ ਪ੍ਰਸ਼ਨ-ਪੱਤਰ ਹੱਲ ਕਰਨੇ।" data-hi="सामाजिक विज्ञान में बिंदुवार उत्तर लेखन, विज्ञान के स्पष्ट आरेख और पिछले 5 वर्षों के प्रश्नपत्रों का विश्लेषण।">
+            Point-wise structured answers for SST, neat diagrams for Science, and 5-year question paper trend decoding.
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Subject Deep-Dive Tabs -->
+    <section class="glass-card reveal">
+      <div class="sec-tag translatable" data-en="Subject Deep-Dive & Key Chapters" data-pa="ਵਿਸ਼ੇ ਅਤੇ ਮੁੱਖ ਚੈਪਟਰ" data-hi="विषय एवं मुख्य अध्याय">Subject Deep-Dive & Key Chapters</div>
+      <div class="tab-nav-row">
+        <button class="tab-nav-btn active translatable" onclick="switchSubjectTab('tabMath', this)" data-en="Mathematics" data-pa="ਗਣਿਤ" data-hi="गणित">Mathematics</button>
+        <button class="tab-nav-btn translatable" onclick="switchSubjectTab('tabSci', this)" data-en="Science" data-pa="ਵਿਗਿਆਨ" data-hi="विज्ञान">Science</button>
+        <button class="tab-nav-btn translatable" onclick="switchSubjectTab('tabSst', this)" data-en="Social Studies" data-pa="ਸਮਾਜਿਕ ਸਿੱਖਿਆ" data-hi="सामाजिक विज्ञान">Social Studies</button>
+      </div>
+
+      <div class="tab-content-panel active" id="tabMath">
+        <h4 style="font-size:13px; color:var(--cyan); margin-bottom:8px;" class="translatable" data-en="High-Weightage Topics Covered:" data-pa="ਮੁੱਖ ਚੈਪਟਰ:" data-hi="प्रमुख अध्याय:">High-Weightage Topics Covered:</h4>
+        <div>
+          <span class="chapter-tag">Linear Equations</span>
+          <span class="chapter-tag">Quadratic Equations</span>
+          <span class="chapter-tag">Triangles & Geometry</span>
+          <span class="chapter-tag">Trigonometry</span>
+          <span class="chapter-tag">Statistics & Probability</span>
+        </div>
+        <p style="font-size:11.5px; color:var(--text-dim); margin-top:10px; line-height:1.45;" class="translatable" data-en="Methodology: Step-by-step formula sheets, error identification diary, and zero calculation blunders." data-pa="ਢੰਗ: ਫ਼ਾਰਮੂਲਾ ਸ਼ੀਟਾਂ ਤਿਆਰ ਕਰਵਾਉਣੀਆਂ ਅਤੇ ਗਣਨਾ ਵਿੱਚ ਗ਼ਲਤੀਆਂ ਖ਼ਤਮ ਕਰਨੀਆਂ।" data-hi="पद्धति: चरणबद्ध सूत्र-पुस्तिका, त्रुटि निवारण अभ्यास और गणना की गलतियों को शून्य करना।">
+          Methodology: Step-by-step formula sheets, error identification diary, and zero calculation blunders.
+        </p>
+      </div>
+
+      <div class="tab-content-panel" id="tabSci">
+        <h4 style="font-size:13px; color:var(--blue); margin-bottom:8px;" class="translatable" data-en="High-Weightage Topics Covered:" data-pa="ਮੁੱਖ ਚੈਪਟਰ:" data-hi="प्रमुख अध्याय:">High-Weightage Topics Covered:</h4>
+        <div>
+          <span class="chapter-tag">Chemical Reactions</span>
+          <span class="chapter-tag">Light & Reflection</span>
+          <span class="chapter-tag">Electricity & Magnetism</span>
+          <span class="chapter-tag">Life Processes</span>
+          <span class="chapter-tag">Control & Coordination</span>
+        </div>
+        <p style="font-size:11.5px; color:var(--text-dim); margin-top:10px; line-height:1.45;" class="translatable" data-en="Methodology: Balanced equation drills, ray diagrams, and scientific terminology mastery." data-pa="ਢੰਗ: ਰਸਾਇਣਕ ਸਮੀਕਰਨਾਂ ਸੰਤੁਲਿਤ ਕਰਨੀਆਂ ਅਤੇ ਲੇਬਲ ਵਾਲੇ ਸਾਫ਼ ਡਾਇਗ੍ਰਾਮ ਬਣਾਉਣੇ।" data-hi="पद्धति: रासायनिक समीकरण संतुलन, किरण आरेख और सटीक वैज्ञानिक शब्दावली पर पकड़।">
+          Methodology: Balanced equation drills, ray diagrams, and scientific terminology mastery.
+        </p>
+      </div>
+
+      <div class="tab-content-panel" id="tabSst">
+        <h4 style="font-size:13px; color:var(--gold); margin-bottom:8px;" class="translatable" data-en="High-Weightage Topics Covered:" data-pa="ਮੁੱਖ ਚੈਪਟਰ:" data-hi="प्रमुख अध्याय:">High-Weightage Topics Covered:</h4>
+        <div>
+          <span class="chapter-tag">Nationalism in India</span>
+          <span class="chapter-tag">Sectors of Indian Economy</span>
+          <span class="chapter-tag">Federalism & Democracy</span>
+          <span class="chapter-tag">Resources & Agriculture</span>
+          <span class="chapter-tag">Money & Credit</span>
+        </div>
+        <p style="font-size:11.5px; color:var(--text-dim); margin-top:10px; line-height:1.45;" class="translatable" data-en="Methodology: Flowcharts for historical timelines, map practice, and bulleted 5-mark answer writing." data-pa="ਢੰਗ: ਇਤਿਹਾਸ ਦੇ ਫ਼ਲੋ-ਚਾਰਟ, ਨਕਸ਼ੇ ਦਾ ਅਭਿਆਸ ਅਤੇ 5 ਨੰਬਰਾਂ ਵਾਲੇ ਵੱਡੇ ਉੱਤਰ ਸੌਖੇ ਲਿਖਣੇ।" data-hi="पद्धति: ऐतिहासिक घटनाओं का प्रवाह-चित्र (फ्लोचार्ट), मानचित्र अभ्यास और 5-अंकीय उत्तर लेखन।">
+          Methodology: Flowcharts for historical timelines, map practice, and bulleted 5-mark answer writing.
+        </p>
+      </div>
+    </section>
+
+    <!-- Co-Curricular Distinctions -->
+    <section class="glass-card reveal">
+      <div class="sec-tag translatable" data-en="Co-Curricular Distinctions" data-pa="ਸਹਿ-ਪਾਠਕ੍ਰਮ ਮੁਕਾਬਲਿਆਂ ਵਿੱਚ ਪ੍ਰਾਪਤੀਆਂ" data-hi="सह-पाठ्यक्रम उपलब्धियाँ">Co-Curricular Distinctions</div>
+      <div style="display:flex; flex-direction:column; gap:8px;">
+        <div style="display:flex; align-items:center; gap:10px; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.07); padding:10px 12px; border-radius:12px;">
+          <span style="font-size:18px;">🥇</span>
+          <div>
+            <div style="font-size:12.5px; font-weight:700;" class="translatable" data-en="1st Position — Science & Model Exhibition" data-pa="ਪਹਿਲਾ ਸਥਾਨ — ਸਾਇੰਸ ਮਾਡਲ ਪ੍ਰਦਰਸ਼ਨੀ" data-hi="प्रथम स्थान — विज्ञान एवं मॉडल प्रदर्शनी">1st Position — Science & Model Exhibition</div>
+            <div style="font-size:10.5px; color:var(--text-dim);" class="translatable" data-en="Block Level Competitive Honors" data-pa="ਬਲਾਕ ਪੱਧਰੀ ਮੁਕਾਬਲਾ" data-hi="ब्लॉक स्तरीय सम्मान">Block Level Competitive Honors</div>
+          </div>
+        </div>
+        <div style="display:flex; align-items:center; gap:10px; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.07); padding:10px 12px; border-radius:12px;">
+          <span style="font-size:18px;">🎭</span>
+          <div>
+            <div style="font-size:12.5px; font-weight:700;" class="translatable" data-en="1st & 2nd Positions — Role Play Competitions" data-pa="ਪਹਿਲਾ ਅਤੇ ਦੂਜਾ ਸਥਾਨ — ਰੋਲ ਪਲੇ ਮੁਕਾਬਲੇ" data-hi="प्रथम व द्वितीय स्थान — रोल प्ले प्रतियोगिता">1st & 2nd Positions — Role Play Competitions</div>
+            <div style="font-size:10.5px; color:var(--text-dim);" class="translatable" data-en="Stage Expression & Eloquence Honors" data-pa="ਬਲਾਕ ਪੱਧਰੀ ਮੰਚ ਸਨਮਾਨ" data-hi="मंचीय प्रस्तुति व अभिव्यक्ति सम्मान">Stage Expression & Eloquence Honors</div>
+          </div>
+        </div>
+        <div style="display:flex; align-items:center; gap:10px; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.07); padding:10px 12px; border-radius:12px;">
+          <span style="font-size:18px;">🥉</span>
+          <div>
+            <div style="font-size:12.5px; font-weight:700;" class="translatable" data-en="3rd Position — Presentation & Academic Quiz" data-pa="ਤੀਜਾ ਸਥਾਨ — ਪ੍ਰੈਜ਼ੈਂਟੇਸ਼ਨ ਅਤੇ ਕੁਇਜ਼" data-hi="तृतीय स्थान — प्रस्तुति एवं शैक्षणिक क्विज़">3rd Position — Presentation & Academic Quiz</div>
+            <div style="font-size:10.5px; color:var(--text-dim);" class="translatable" data-en="Block Level Competitions" data-pa="ਬਲਾਕ ਪੱਧਰੀ ਅਕਾਦਮਿਕ ਮੁਕਾਬਲੇ" data-hi="ब्लॉक स्तरीय शैक्षणिक प्रतियोगिता">Block Level Competitions</div>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top:12px; background:linear-gradient(135deg, rgba(236,72,153,0.1), rgba(121,40,202,0.1)); border:1px solid rgba(236,72,153,0.25); border-radius:12px; padding:12px; font-size:12px; color:#f472b6; font-style:italic;" class="translatable" data-en="&ldquo;Deep interest in poetry, literature, and eloquent communication, instilling intellectual confidence into every student.&rdquo;" data-pa="&ldquo;ਕਵਿਤਾ ਅਧਿਐਨ, ਸਾਹਿਤਕ ਰੁਚੀ ਅਤੇ ਪ੍ਰਭਾਵਸ਼ਾਲੀ ਗੱਲਬਾਤ ਕਲਾ—ਵਿਦਿਆਰਥੀਆਂ ਨੂੰ ਨਾ ਸਿਰਫ਼ ਅੰਕ ਲੈਣ ਸਗੋਂ ਜ਼ਿੰਦਗੀ ਵਿੱਚ ਭਰੋਸੇਮੰਦ ਬਣਨ ਵਿੱਚ ਸਹਾਈ।&rdquo;" data-hi="&ldquo;साहित्य, कविता और प्रभावशाली संवाद कला में विशेष रुचि—विद्यार्थियों में बौद्धिक आत्मविश्वास और एकाग्रता जगाने में सहायक।&rdquo;">
+        &ldquo;Deep interest in poetry, literature, and eloquent communication, instilling intellectual confidence into every student.&rdquo;
+      </div>
+    </section>
+
+    <!-- Parent Reviews / Testimonials -->
+    <section class="glass-card reveal">
+      <div class="sec-tag translatable" data-en="Parent & Student Feedback" data-pa="ਮਾਪਿਆਂ ਅਤੇ ਵਿਦਿਆਰਥੀਆਂ ਦੇ ਵਿਚਾਰ" data-hi="अभिभावकों व विद्यार्थियों के विचार">Parent & Student Feedback</div>
+      
+      <div class="review-card-unit">
+        <div class="star-bar">★★★★★</div>
+        <div class="review-quote translatable" data-en="&ldquo;Saurav's focus on NCERT basics helped my son improve his 10th maths score from 68% to 91% within 4 months. Extremely disciplined.&rdquo;" data-pa="&ldquo;ਸੌਰਵ ਦੇ ਐਨਸੀਈਆਰਟੀ ਬੇਸਿਕਸ 'ਤੇ ਜ਼ੋਰ ਦੇਣ ਨਾਲ ਮੇਰੇ ਬੇਟੇ ਦੇ 10ਵੀਂ ਗਣਿਤ ਦੇ ਨੰਬਰ 68% ਤੋਂ ਵਧ ਕੇ 91% ਹੋ ਗਏ। ਬਹੁਤ ਹੀ ਮਿਹਨਤੀ ਅਧਿਆਪਕ ਹਨ।&rdquo;" data-hi="&ldquo;सौरव के बुनियादी सिद्धांतों पर ध्यान देने से मेरे बेटे के 10वीं गणित के अंक 4 महीने में 68% से बढ़कर 91% हो गए। अत्यंत अनुशासित।&rdquo;">
+          &ldquo;Saurav's focus on NCERT basics helped my son improve his 10th maths score from 68% to 91% within 4 months. Extremely disciplined.&rdquo;
+        </div>
+        <div class="reviewer-identity">
+          <span>Dr. Manpreet S.</span>
+          <span>PU Campus, Sec 14</span>
+        </div>
+      </div>
+
+      <div class="review-card-unit">
+        <div class="star-bar">★★★★★</div>
+        <div class="review-quote translatable" data-en="&ldquo;He explained SST chapters like an interesting story. My daughter finally enjoyed social studies without rote memorization.&rdquo;" data-pa="&ldquo;ਇਤਿਹਾਸ ਅਤੇ ਸਮਾਜਿਕ ਸਿੱਖਿਆ ਨੂੰ ਕਹਾਣੀ ਵਾਂਗ ਸਮਝਾਇਆ, ਮੇਰੀ ਬੇਟੀ ਨੂੰ ਬਿਨਾਂ ਰੱਟੇ ਤੋਂ ਸਾਰੇ ਸੰਕਲਪ ਯਾਦ ਹੋ ਗਏ।&rdquo;" data-hi="&ldquo;इतिहास और सामाजिक अध्ययन को कहानी की तरह समझाया, मेरी बेटी बिना किसी रटंत के रुचि लेकर पढ़ने लगी।&rdquo;">
+          &ldquo;He explained SST chapters like an interesting story. My daughter finally enjoyed social studies without rote memorization.&rdquo;
+        </div>
+        <div class="reviewer-identity">
+          <span>Harpreet Kaur</span>
+          <span>Sector 15-B</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Booking Modal -->
+    <div class="modal-overlay" id="bookingModal" onclick="closeModalOnBg(event)">
+      <div class="modal-sheet">
+        <div class="modal-header">
+          <div class="modal-title translatable" data-en="Book Free 2-Day Trial" data-pa="2 ਦਿਨਾਂ ਦਾ ਮੁਫ਼ਤ ਟਰਾਇਲ ਬੁੱਕ ਕਰੋ" data-hi="2 दिन का निःशुल्क ट्रायल बुक करें">Book Free 2-Day Trial</div>
+          <button class="btn-close-modal" onclick="triggerTactile('click'); closeBookingModal();">✕</button>
+        </div>
+        <div>
+          <input type="text" id="parentName" class="input-field" placeholder="Student / Parent Name" />
+          <input type="text" id="parentSector" class="input-field" placeholder="Location e.g. Sector 15 / PU Campus" />
+          
+          <div class="calc-row-label translatable" style="margin-bottom:6px;" data-en="Quick Select Location" data-pa="ਸੈਕਟਰ ਚੁਣੋ" data-hi="सेक्टर चुनें">Quick Select Location</div>
+          <div class="quick-chips">
+            <button type="button" class="chip-btn" onclick="triggerTactile('click'); pickSector('Sector 14');">Sector 14</button>
+            <button type="button" class="chip-btn" onclick="triggerTactile('click'); pickSector('Sector 15');">Sector 15</button>
+            <button type="button" class="chip-btn" onclick="triggerTactile('click'); pickSector('Sector 11');">Sector 11</button>
+            <button type="button" class="chip-btn" onclick="triggerTactile('click'); pickSector('Sector 24');">Sector 24</button>
+            <button type="button" class="chip-btn" onclick="triggerTactile('click'); pickSector('PU Campus');">PU Campus</button>
+          </div>
+
+          <select id="modalClass" class="input-field">
+            <option value="Class 9th">Class 9th</option>
+            <option value="Class 10th (Board)">Class 10th (Board)</option>
+            <option value="Twins (Same Class Batch)">Twins (Same Class - Combined Batch)</option>
+            <option value="Siblings (9th & 10th Back-to-Back)">Siblings (9th & 10th Back-to-Back)</option>
+          </select>
+          <input type="text" id="modalSubjects" class="input-field" placeholder="Subject(s)" value="Maths, Science, SST" />
+          
+          <button onclick="triggerTactile('success'); submitModalToWhatsApp();" style="width:100%; background:linear-gradient(90deg, #10b981, #059669); color:#fff; border:none; padding:13px; border-radius:14px; font-weight:800; font-size:14px; cursor:pointer;" class="translatable" data-en="Confirm via WhatsApp 📲" data-pa="ਵਟਸਐਪ ਰਾਹੀਂ ਪੱਕਾ ਕਰੋ 📲" data-hi="व्हाट्सएप द्वारा पुष्टि करें 📲">Confirm via WhatsApp 📲</button>
+        </div>
       </div>
     </div>
+
+    <!-- Dual Sticky Bottom Action Dock -->
+    <div class="sticky-dock">
+      <a href="https://wa.me/919815485169?text=Hello%20Saurav,%20I%20am%20interested%20in%20Home%20Tuitions%20for%209th/10th%20grade%20around%20PU%20Chandigarh." class="dock-action-btn dock-wa" id="dockWaLink" onclick="triggerTactile('success')">
+        <span>💬</span> <span class="translatable" data-en="WhatsApp Chat" data-pa="ਵਟਸਐਪ ਚੈਟ" data-hi="व्हाट्सएप चैट">WhatsApp Chat</span>
+      </a>
+      <a href="tel:9815485169" class="dock-action-btn dock-call" onclick="triggerTactile('click')">
+        <span>📞</span> <span class="translatable" data-en="Direct Call" data-pa="ਸਿੱਧੀ ਕਾਲ ਕਰੋ" data-hi="कॉल करें">Direct Call</span>
+      </a>
+    </div>
+
+  </div>
     <script>
-      // Web Audio Synthesizer Engine
-      let audioCtx = null;
-      function getAudioCtx() {
-        if (!audioCtx) {
-          const AudioContextClass = window.AudioContext || window.webkitAudioContext;
-          if (AudioContextClass) audioCtx = new AudioContextClass();
-        }
-        if (audioCtx && audioCtx.state === 'suspended') {
-          audioCtx.resume();
-        }
-        return audioCtx;
+    // Web Audio Synthesizer Engine
+    let audioCtx = null;
+    function getAudioCtx() {
+      if (!audioCtx) {
+        const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+        if (AudioContextClass) audioCtx = new AudioContextClass();
+      }
+      if (audioCtx && audioCtx.state === 'suspended') {
+        audioCtx.resume();
+      }
+      return audioCtx;
+    }
+
+    function triggerTactile(type) {
+      if (navigator.vibrate) {
+        if (type === 'click') navigator.vibrate(15);
+        else if (type === 'toggle') navigator.vibrate([10, 30, 10]);
+        else if (type === 'success') navigator.vibrate([30, 50, 30]);
+        else if (type === 'wrong') navigator.vibrate([50, 40, 50]);
       }
 
-      function triggerTactile(type) {
-        if (navigator.vibrate) {
-          if (type === 'click') navigator.vibrate(15);
-          else if (type === 'toggle') navigator.vibrate([10, 30, 10]);
-          else if (type === 'success') navigator.vibrate([30, 50, 30]);
-          else if (type === 'wrong') navigator.vibrate([50, 40, 50]);
-        }
+      const ctx = getAudioCtx();
+      if (!ctx) return;
 
-        const ctx = getAudioCtx();
-        if (!ctx) return;
+      const now = ctx.currentTime;
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
+      osc.connect(gain);
+      gain.connect(ctx.destination);
 
-        const now = ctx.currentTime;
-        const osc = ctx.createOscillator();
-        const gain = ctx.createGain();
-        osc.connect(gain);
-        gain.connect(ctx.destination);
-
-        if (type === 'click') {
-          osc.type = 'sine';
-          osc.frequency.setValueAtTime(600, now);
-          osc.frequency.exponentialRampToValueAtTime(300, now + 0.05);
-          gain.gain.setValueAtTime(0.08, now);
-          gain.gain.linearRampToValueAtTime(0.001, now + 0.05);
-          osc.start(now);
-          osc.stop(now + 0.05);
-        } else if (type === 'toggle') {
-          osc.type = 'triangle';
-          osc.frequency.setValueAtTime(440, now);
-          osc.frequency.exponentialRampToValueAtTime(880, now + 0.08);
-          gain.gain.setValueAtTime(0.09, now);
-          gain.gain.linearRampToValueAtTime(0.001, now + 0.08);
-          osc.start(now);
-          osc.stop(now + 0.08);
-        } else if (type === 'success') {
-          osc.type = 'sine';
-          osc.frequency.setValueAtTime(523.25, now);
-          osc.frequency.setValueAtTime(659.25, now + 0.08);
-          osc.frequency.setValueAtTime(783.99, now + 0.16);
-          gain.gain.setValueAtTime(0.12, now);
-          gain.gain.linearRampToValueAtTime(0.001, now + 0.28);
-          osc.start(now);
-          osc.stop(now + 0.28);
-        } else if (type === 'wrong') {
-          osc.type = 'sawtooth';
-          osc.frequency.setValueAtTime(220, now);
-          osc.frequency.setValueAtTime(164.81, now + 0.1);
-          gain.gain.setValueAtTime(0.1, now);
-          gain.gain.linearRampToValueAtTime(0.001, now + 0.22);
-          osc.start(now);
-          osc.stop(now + 0.22);
-        }
+      if (type === 'click') {
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(600, now);
+        osc.frequency.exponentialRampToValueAtTime(300, now + 0.05);
+        gain.gain.setValueAtTime(0.08, now);
+        gain.gain.linearRampToValueAtTime(0.001, now + 0.05);
+        osc.start(now);
+        osc.stop(now + 0.05);
+      } else if (type === 'toggle') {
+        osc.type = 'triangle';
+        osc.frequency.setValueAtTime(440, now);
+        osc.frequency.exponentialRampToValueAtTime(880, now + 0.08);
+        gain.gain.setValueAtTime(0.09, now);
+        gain.gain.linearRampToValueAtTime(0.001, now + 0.08);
+        osc.start(now);
+        osc.stop(now + 0.08);
+      } else if (type === 'success') {
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(523.25, now);
+        osc.frequency.setValueAtTime(659.25, now + 0.08);
+        osc.frequency.setValueAtTime(783.99, now + 0.16);
+        gain.gain.setValueAtTime(0.12, now);
+        gain.gain.linearRampToValueAtTime(0.001, now + 0.28);
+        osc.start(now);
+        osc.stop(now + 0.28);
+      } else if (type === 'wrong') {
+        osc.type = 'sawtooth';
+        osc.frequency.setValueAtTime(220, now);
+        osc.frequency.setValueAtTime(164.81, now + 0.1);
+        gain.gain.setValueAtTime(0.1, now);
+        gain.gain.linearRampToValueAtTime(0.001, now + 0.22);
+        osc.start(now);
+        osc.stop(now + 0.22);
       }
+    }
 
-      document.addEventListener('touchstart', () => getAudioCtx(), { once: true });
-      document.addEventListener('click', () => getAudioCtx(), { once: true });
+    document.addEventListener('touchstart', () => getAudioCtx(), { once: true });
+    document.addEventListener('click', () => getAudioCtx(), { once: true });
 
-      // Scroll progress line
-      window.addEventListener('scroll', () => {
-        const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-        const scrolled = (winScroll / height) * 100;
-        document.getElementById('progressLine').style.width = scrolled + '%';
+    // Scroll progress line
+    window.addEventListener('scroll', () => {
+      const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      document.getElementById('progressLine').style.width = scrolled + '%';
+    });
+
+    // Reveal on scroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+          const counters = entry.target.querySelectorAll('.stat-number');
+          counters.forEach(runCounter);
+        }
       });
+    }, { threshold: 0.12 });
 
-      // Reveal on scroll
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('active');
-            const counters = entry.target.querySelectorAll('.stat-number');
-            counters.forEach(runCounter);
-          }
-        });
-      }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-      document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-      const countedSet = new Set();
-      function runCounter(el) {
-        if (countedSet.has(el)) return;
-        countedSet.add(el);
-        const target = parseInt(el.getAttribute('data-target'), 10);
-        const suffix = el.getAttribute('data-suffix') || '';
-        let current = 0;
-        const step = Math.max(1, Math.ceil(target / 30));
-        const timer = setInterval(() => {
-          current += step;
-          if (current >= target) {
-            current = target;
-            clearInterval(timer);
-          }
-          el.innerText = current + suffix;
-        }, 35);
-      }
-
-      // Interactive Dual-Subject Calculator Logic
-      let calcState = {
-        grade: 9,
-        mode: 'solo', // 'solo', 'twins', 'siblings'
-        singleSubjects: { math: true, sci: true, sst: true },
-        s1Subjects: { math: true, sci: true, sst: true }, // Student 1 (9th)
-        s2Subjects: { math: true, sci: true, sst: true }  // Student 2 (10th)
-      };
-
-      function setGrade(val) {
-        triggerTactile('toggle');
-        calcState.grade = val;
-        document.getElementById('btnGrade9').classList.toggle('selected', val === 9);
-        document.getElementById('btnGrade10').classList.toggle('selected', val === 10);
-        computePlan();
-      }
-
-      function toggleSubj(target, key) {
-        triggerTactile('toggle');
-        if (target === 'single') {
-          calcState.singleSubjects[key] = !calcState.singleSubjects[key];
-          const count = Object.values(calcState.singleSubjects).filter(Boolean).length;
-          if (count === 0) calcState.singleSubjects[key] = true;
-
-          document.getElementById('lblMath').classList.toggle('checked', calcState.singleSubjects.math);
-          document.getElementById('lblSci').classList.toggle('checked', calcState.singleSubjects.sci);
-          document.getElementById('lblSst').classList.toggle('checked', calcState.singleSubjects.sst);
-        } else if (target === 's1') {
-          calcState.s1Subjects[key] = !calcState.s1Subjects[key];
-          const count = Object.values(calcState.s1Subjects).filter(Boolean).length;
-          if (count === 0) calcState.s1Subjects[key] = true;
-
-          document.getElementById('lblS1Math').classList.toggle('checked', calcState.s1Subjects.math);
-          document.getElementById('lblS1Sci').classList.toggle('checked', calcState.s1Subjects.sci);
-          document.getElementById('lblS1Sst').classList.toggle('checked', calcState.s1Subjects.sst);
-        } else if (target === 's2') {
-          calcState.s2Subjects[key] = !calcState.s2Subjects[key];
-          const count = Object.values(calcState.s2Subjects).filter(Boolean).length;
-          if (count === 0) calcState.s2Subjects[key] = true;
-
-          document.getElementById('lblS2Math').classList.toggle('checked', calcState.s2Subjects.math);
-          document.getElementById('lblS2Sci').classList.toggle('checked', calcState.s2Subjects.sci);
-          document.getElementById('lblS2Sst').classList.toggle('checked', calcState.s2Subjects.sst);
+    const countedSet = new Set();
+    function runCounter(el) {
+      if (countedSet.has(el)) return;
+      countedSet.add(el);
+      const target = parseInt(el.getAttribute('data-target'), 10);
+      const suffix = el.getAttribute('data-suffix') || '';
+      let current = 0;
+      const step = Math.max(1, Math.ceil(target / 30));
+      const timer = setInterval(() => {
+        current += step;
+        if (current >= target) {
+          current = target;
+          clearInterval(timer);
         }
-        computePlan();
+        el.innerText = current + suffix;
+      }, 35);
+    }
+
+    // Interactive Dual-Subject Calculator Logic
+    let calcState = {
+      grade: 9,
+      mode: 'solo', // 'solo', 'twins', 'siblings'
+      singleSubjects: { math: true, sci: true, sst: true },
+      s1Subjects: { math: true, sci: true, sst: true }, // Student 1 (9th)
+      s2Subjects: { math: true, sci: true, sst: true }  // Student 2 (10th)
+    };
+
+    function setGrade(val) {
+      triggerTactile('toggle');
+      calcState.grade = val;
+      document.getElementById('btnGrade9').classList.toggle('selected', val === 9);
+      document.getElementById('btnGrade10').classList.toggle('selected', val === 10);
+      computePlan();
+    }
+
+    function toggleSubj(target, key) {
+      triggerTactile('toggle');
+      if (target === 'single') {
+        calcState.singleSubjects[key] = !calcState.singleSubjects[key];
+        const count = Object.values(calcState.singleSubjects).filter(Boolean).length;
+        if (count === 0) calcState.singleSubjects[key] = true;
+        
+        document.getElementById('lblMath').classList.toggle('checked', calcState.singleSubjects.math);
+        document.getElementById('lblSci').classList.toggle('checked', calcState.singleSubjects.sci);
+        document.getElementById('lblSst').classList.toggle('checked', calcState.singleSubjects.sst);
+      } else if (target === 's1') {
+        calcState.s1Subjects[key] = !calcState.s1Subjects[key];
+        const count = Object.values(calcState.s1Subjects).filter(Boolean).length;
+        if (count === 0) calcState.s1Subjects[key] = true;
+
+        document.getElementById('lblS1Math').classList.toggle('checked', calcState.s1Subjects.math);
+        document.getElementById('lblS1Sci').classList.toggle('checked', calcState.s1Subjects.sci);
+        document.getElementById('lblS1Sst').classList.toggle('checked', calcState.s1Subjects.sst);
+      } else if (target === 's2') {
+        calcState.s2Subjects[key] = !calcState.s2Subjects[key];
+        const count = Object.values(calcState.s2Subjects).filter(Boolean).length;
+        if (count === 0) calcState.s2Subjects[key] = true;
+
+        document.getElementById('lblS2Math').classList.toggle('checked', calcState.s2Subjects.math);
+        document.getElementById('lblS2Sci').classList.toggle('checked', calcState.s2Subjects.sci);
+        document.getElementById('lblS2Sst').classList.toggle('checked', calcState.s2Subjects.sst);
       }
+      computePlan();
+    }
 
-      function setMode(mode) {
-        triggerTactile('toggle');
-        calcState.mode = mode;
-        document.getElementById('btnSolo').classList.toggle('selected', mode === 'solo');
-        document.getElementById('btnTwins').classList.toggle('selected', mode === 'twins');
-        document.getElementById('btnSiblings').classList.toggle('selected', mode === 'siblings');
+    function setMode(mode) {
+      triggerTactile('toggle');
+      calcState.mode = mode;
+      document.getElementById('btnSolo').classList.toggle('selected', mode === 'solo');
+      document.getElementById('btnTwins').classList.toggle('selected', mode === 'twins');
+      document.getElementById('btnSiblings').classList.toggle('selected', mode === 'siblings');
 
-        if (mode === 'siblings') {
-          document.getElementById('gradeSelectorWrap').style.display = 'none';
-          document.getElementById('singleSubjWrap').style.display = 'none';
-          document.getElementById('siblingSubjWrap').style.display = 'block';
+      if (mode === 'siblings') {
+        document.getElementById('gradeSelectorWrap').style.display = 'none';
+        document.getElementById('singleSubjWrap').style.display = 'none';
+        document.getElementById('siblingSubjWrap').style.display = 'block';
+      } else {
+        document.getElementById('gradeSelectorWrap').style.display = 'block';
+        document.getElementById('singleSubjWrap').style.display = 'block';
+        document.getElementById('siblingSubjWrap').style.display = 'none';
+      }
+      computePlan();
+    }
+
+    function computePlan() {
+      let total = 0;
+      let timingTxt = "1.5 Hours / Day";
+      let perkTxtEn = "Includes Free 2-Day Trial Session";
+      let perkTxtPa = "2 ਦਿਨਾਂ ਦਾ ਮੁਫ਼ਤ ਟਰਾਇਲ ਸ਼ਾਮਲ ਹੈ";
+      let perkTxtHi = "2 दिन का निःशुल्क ट्रायल सत्र शामिल";
+      let totalHoursTxt = "6 Days / Wk";
+
+      if (calcState.mode === 'twins') {
+        const activeCount = Object.values(calcState.singleSubjects).filter(Boolean).length;
+        if (activeCount === 3) {
+          total = 5500; // Special 3-subject combined flat package for both twins
+        } else if (activeCount === 2) {
+          total = 4000;
         } else {
-          document.getElementById('gradeSelectorWrap').style.display = 'block';
-          document.getElementById('singleSubjWrap').style.display = 'block';
-          document.getElementById('siblingSubjWrap').style.display = 'none';
+          total = 2500;
         }
-        computePlan();
+        timingTxt = "1.5 Hrs / Combined Slot";
+        totalHoursTxt = (activeCount === 3) ? '6 Days / Wk' : ((activeCount === 2) ? '5 Days / Wk' : '3-4 Days / Wk');
+        perkTxtEn = "Combined Flat Fee for BOTH Students";
+        perkTxtPa = "ਦੋਵਾਂ ਵਿਦਿਆਰਥੀਆਂ ਦੀ ਕੁੱਲ ਫ਼ੀਸ (ਇਕੱਠਾ ਬੈਚ)";
+        perkTxtHi = "दोनों विद्यार्थियों का कुल संयुक्त शुल्क (समान बैच)";
+      } else if (calcState.mode === 'siblings') {
+        const count1 = Object.values(calcState.s1Subjects).filter(Boolean).length;
+        const count2 = Object.values(calcState.s2Subjects).filter(Boolean).length;
+
+        let fee1 = count1 * 2200 - (count1 === 3 ? 500 : 0);
+        let fee2 = count2 * 2500 - (count2 === 3 ? 500 : 0);
+
+        // Combined sum with 15% Sibling Family Rebate
+        total = Math.round((fee1 + fee2) * 0.85);
+        total = Math.ceil(total / 500) * 500;
+
+        timingTxt = "2.25 Hrs / Back-to-Back Slots";
+        const maxCount = Math.max(count1, count2);
+        totalHoursTxt = (maxCount === 3) ? '6 Days / Wk' : ((maxCount === 2) ? '5 Days / Wk' : '4 Days / Wk');
+        perkTxtEn = `Student 1 (${count1} Subj) + Student 2 (${count2} Subj) • 15% Off`;
+        perkTxtPa = `ਪਹਿਲਾ ਬੱਚਾ (${count1} ਵਿਸ਼ੇ) + ਦੂਜਾ ਬੱਚਾ (${count2} ਵਿਸ਼ੇ) • 15% ਛੋਟ`;
+        perkTxtHi = `पहला बच्चा (${count1} विषय) + दूसरा बच्चा (${count2} विषय) • 15% छूट`;
+      } else {
+        const activeCount = Object.values(calcState.singleSubjects).filter(Boolean).length;
+        let baseRate = (calcState.grade === 10) ? 2500 : 2200;
+        total = activeCount * baseRate;
+        if (activeCount === 3) total -= 500;
+        total = Math.ceil(total / 500) * 500;
+
+        timingTxt = "1.5 Hours / Day";
+        totalHoursTxt = (activeCount === 3) ? '6 Days / Wk' : ((activeCount === 2) ? '5 Days / Wk' : '3-4 Days / Wk');
+        perkTxtEn = "Includes Free 2-Day Trial Session";
+        perkTxtPa = "2 ਦਿਨਾਂ ਦਾ ਮੁਫ਼ਤ ਟਰਾਇਲ ਸ਼ਾਮਲ ਹੈ";
+        perkTxtHi = "2 दिन का निःशुल्क ट्रायल सत्र शामिल";
       }
 
-      function computePlan() {
-        let total = 0;
-        let timingTxt = "1.5 Hours / Day";
-        let perkTxtEn = "Includes Free 2-Day Trial Session";
-        let perkTxtPa = "2 ਦਿਨਾਂ ਦਾ ਮੁਫ਼ਤ ਟਰਾਇਲ ਸ਼ਾਮਲ ਹੈ";
-        let perkTxtHi = "2 दिन का निःशुल्क ट्रायल सत्र शामिल";
-        let totalHoursTxt = "6 Days / Wk";
+      document.getElementById('displayFee').innerText = '₹' + total.toLocaleString('en-IN');
+      document.getElementById('displayHours').innerText = totalHoursTxt;
+      document.getElementById('displayTimingNote').innerText = timingTxt;
 
-        if (calcState.mode === 'twins') {
-          const activeCount = Object.values(calcState.singleSubjects).filter(Boolean).length;
-          if (activeCount === 3) {
-            total = 5500; // Special 3-subject combined flat package for both twins
-          } else if (activeCount === 2) {
-            total = 4000;
-          } else {
-            total = 2500;
-          }
-          timingTxt = "1.5 Hrs / Combined Slot";
-          totalHoursTxt = (activeCount === 3) ? '6 Days / Wk' : ((activeCount === 2) ? '5 Days / Wk' : '3-4 Days / Wk');
-          perkTxtEn = "Combined Flat Fee for BOTH Students";
-          perkTxtPa = "ਦੋਵਾਂ ਵਿਦਿਆਰਥੀਆਂ ਦੀ ਕੁੱਲ ਫ਼ੀਸ (ਇਕੱਠਾ ਬੈਚ)";
-          perkTxtHi = "दोनों विद्यार्थियों का कुल संयुक्त शुल्क (समान बैच)";
-        } else if (calcState.mode === 'siblings') {
-          const count1 = Object.values(calcState.s1Subjects).filter(Boolean).length;
-          const count2 = Object.values(calcState.s2Subjects).filter(Boolean).length;
+      const feePerkTag = document.getElementById('feePerkTag');
+      feePerkTag.setAttribute('data-en', perkTxtEn);
+      feePerkTag.setAttribute('data-pa', perkTxtPa);
+      feePerkTag.setAttribute('data-hi', perkTxtHi);
+      feePerkTag.innerText = (currentLang === 'hi') ? perkTxtHi : ((currentLang === 'pa') ? perkTxtPa : perkTxtEn);
 
-          let fee1 = count1 * 2200 - (count1 === 3 ? 500 : 0);
-          let fee2 = count2 * 2500 - (count2 === 3 ? 500 : 0);
-
-          // Combined sum with 15% Sibling Family Rebate
-          total = Math.round((fee1 + fee2) * 0.85);
-          total = Math.ceil(total / 500) * 500;
-
-          timingTxt = "2.25 Hrs / Back-to-Back Slots";
-          const maxCount = Math.max(count1, count2);
-          totalHoursTxt = (maxCount === 3) ? '6 Days / Wk' : ((maxCount === 2) ? '5 Days / Wk' : '4 Days / Wk');
-          perkTxtEn = `Student 1 (${count1} Subj) + Student 2 (${count2} Subj) • 15% Off`;
-          perkTxtPa = `ਪਹਿਲਾ ਬੱਚਾ (${count1} ਵਿਸ਼ੇ) + ਦੂਜਾ ਬੱਚਾ (${count2} ਵਿਸ਼ੇ) • 15% ਛੋਟ`;
-          perkTxtHi = `पहला बच्चा (${count1} विषय) + दूसरा बच्चा (${count2} विषय) • 15% छूट`;
+      // Auto update modal subjects
+      const modalSubjInput = document.getElementById('modalSubjects');
+      if (modalSubjInput) {
+        if (calcState.mode === 'siblings') {
+          const s1List = Object.keys(calcState.s1Subjects).filter(k => calcState.s1Subjects[k]).map(k => k.toUpperCase()).join('/');
+          const s2List = Object.keys(calcState.s2Subjects).filter(k => calcState.s2Subjects[k]).map(k => k.toUpperCase()).join('/');
+          modalSubjInput.value = `Child 1 (9th): ${s1List} | Child 2 (10th): ${s2List}`;
         } else {
-          const activeCount = Object.values(calcState.singleSubjects).filter(Boolean).length;
-          let baseRate = (calcState.grade === 10) ? 2500 : 2200;
-          total = activeCount * baseRate;
-          if (activeCount === 3) total -= 500;
-          total = Math.ceil(total / 500) * 500;
-
-          timingTxt = "1.5 Hours / Day";
-          totalHoursTxt = (activeCount === 3) ? '6 Days / Wk' : ((activeCount === 2) ? '5 Days / Wk' : '3-4 Days / Wk');
-          perkTxtEn = "Includes Free 2-Day Trial Session";
-          perkTxtPa = "2 ਦਿਨਾਂ ਦਾ ਮੁਫ਼ਤ ਟਰਾਇਲ ਸ਼ਾਮਲ ਹੈ";
-          perkTxtHi = "2 दिन का निःशुल्क ट्रायल सत्र शामिल";
-        }
-
-        document.getElementById('displayFee').innerText = '₹' + total.toLocaleString('en-IN');
-        document.getElementById('displayHours').innerText = totalHoursTxt;
-        document.getElementById('displayTimingNote').innerText = timingTxt;
-
-        const feePerkTag = document.getElementById('feePerkTag');
-        feePerkTag.setAttribute('data-en', perkTxtEn);
-        feePerkTag.setAttribute('data-pa', perkTxtPa);
-        feePerkTag.setAttribute('data-hi', perkTxtHi);
-        feePerkTag.innerText = (currentLang === 'hi') ? perkTxtHi : ((currentLang === 'pa') ? perkTxtPa : perkTxtEn);
-
-        // Auto update modal subjects
-        const modalSubjInput = document.getElementById('modalSubjects');
-        if (modalSubjInput) {
-          if (calcState.mode === 'siblings') {
-            const s1List = Object.keys(calcState.s1Subjects).filter(k => calcState.s1Subjects[k]).map(k => k.toUpperCase()).join('/');
-            const s2List = Object.keys(calcState.s2Subjects).filter(k => calcState.s2Subjects[k]).map(k => k.toUpperCase()).join('/');
-            modalSubjInput.value = `Child 1 (9th): ${s1List} | Child 2 (10th): ${s2List}`;
-          } else {
-            const activeNames = [];
-            if (calcState.singleSubjects.math) activeNames.push('Maths');
-            if (calcState.singleSubjects.sci) activeNames.push('Science');
-            if (calcState.singleSubjects.sst) activeNames.push('SST');
-            modalSubjInput.value = activeNames.join(', ');
-          }
+          const activeNames = [];
+          if (calcState.singleSubjects.math) activeNames.push('Maths');
+          if (calcState.singleSubjects.sci) activeNames.push('Science');
+          if (calcState.singleSubjects.sst) activeNames.push('SST');
+          modalSubjInput.value = activeNames.join(', ');
         }
       }
+    }
 
-      function bookConfiguredPlan() {
-        let modeTxt = 'Individual 1-on-1';
-        let classTxt = `${calcState.grade}th`;
-        let subjDetails = '';
+    function bookConfiguredPlan() {
+      let modeTxt = 'Individual 1-on-1';
+      let classTxt = `${calcState.grade}th`;
+      let subjDetails = '';
 
-        if (calcState.mode === 'twins') {
-          const list = Object.keys(calcState.singleSubjects).filter(k => calcState.singleSubjects[k]).map(k => k.toUpperCase()).join(', ');
-          modeTxt = 'Twins / Same Class Combined Batch (Flat ₹5,500 rate)';
-          classTxt = `${calcState.grade}th (Both)`;
-          subjDetails = list;
-        } else if (calcState.mode === 'siblings') {
-          const s1List = Object.keys(calcState.s1Subjects).filter(k => calcState.s1Subjects[k]).map(k => k.toUpperCase()).join(', ');
-          const s2List = Object.keys(calcState.s2Subjects).filter(k => calcState.s2Subjects[k]).map(k => k.toUpperCase()).join(', ');
-          modeTxt = 'Siblings in Different Classes (Back-to-Back Slots)';
-          classTxt = '9th & 10th (Both)';
-          subjDetails = `Child 1 (9th): [${s1List}] | Child 2 (10th): [${s2List}]`;
+      if (calcState.mode === 'twins') {
+        const list = Object.keys(calcState.singleSubjects).filter(k => calcState.singleSubjects[k]).map(k => k.toUpperCase()).join(', ');
+        modeTxt = 'Twins / Same Class Combined Batch (Flat ₹5,500 rate)';
+        classTxt = `${calcState.grade}th (Both)`;
+        subjDetails = list;
+      } else if (calcState.mode === 'siblings') {
+        const s1List = Object.keys(calcState.s1Subjects).filter(k => calcState.s1Subjects[k]).map(k => k.toUpperCase()).join(', ');
+        const s2List = Object.keys(calcState.s2Subjects).filter(k => calcState.s2Subjects[k]).map(k => k.toUpperCase()).join(', ');
+        modeTxt = 'Siblings in Different Classes (Back-to-Back Slots)';
+        classTxt = '9th & 10th (Both)';
+        subjDetails = `Child 1 (9th): [${s1List}] | Child 2 (10th): [${s2List}]`;
+      } else {
+        const list = Object.keys(calcState.singleSubjects).filter(k => calcState.singleSubjects[k]).map(k => k.toUpperCase()).join(', ');
+        subjDetails = list;
+      }
+
+      const msg = encodeURIComponent(`Hello Saurav! I configured a Home Tuition plan on Swaran Academics:\n- Format: ${modeTxt}\n- Grades: ${classTxt}\n- Subjects: ${subjDetails}\n- Estimated Fee: ${document.getElementById('displayFee').innerText}/month\n\nI would like to book a Free 2-Day Trial Session.`);
+      window.open(`https://wa.me/919815485169?text=${msg}`, '_blank');
+    }
+
+    // Comprehensive Question Bank with Random Scrambler
+    const fullQuestionBank = [
+      {
+        q: "If 2x + 3 = 11, what is the value of x?",
+        options: ["2", "4", "3", "7"],
+        correct: 1,
+        tip: "Great start! 2x = 8, so x = 4."
+      },
+      {
+        q: "Which law explains why passengers lean forward when a bus suddenly stops?",
+        options: ["Newton's 1st Law (Inertia)", "Newton's 2nd Law (F=ma)", "Newton's 3rd Law", "Law of Gravitation"],
+        correct: 0,
+        tip: "Spot on! Inertia of motion keeps the body moving."
+      },
+      {
+        q: "In which sector of the Indian economy is Agriculture categorized?",
+        options: ["Secondary Sector", "Tertiary Sector", "Primary Sector", "IT Sector"],
+        correct: 2,
+        tip: "Excellent! Agriculture directly utilizes natural resources (Primary)."
+      },
+      {
+        q: "What is the degree of a Quadratic Polynomial?",
+        options: ["1", "2", "3", "0"],
+        correct: 1,
+        tip: "Correct! A quadratic polynomial always has highest power 2."
+      },
+      {
+        q: "What happens to resistance when the length of a metallic wire is doubled?",
+        options: ["Halved", "Remains same", "Doubled", "Quadrupled"],
+        correct: 2,
+        tip: "Spot on! Resistance is directly proportional to length (R ∝ L)."
+      },
+      {
+        q: "Which authority in India issues currency notes on behalf of the Central Government?",
+        options: ["State Bank of India", "Reserve Bank of India", "Ministry of Finance", "NITI Aayog"],
+        correct: 1,
+        tip: "Correct! RBI is India's central monetary authority."
+      },
+      {
+        q: "In which part of the green plant does photosynthesis primarily occur?",
+        options: ["Chloroplast", "Mitochondria", "Ribosome", "Vacuole"],
+        correct: 0,
+        tip: "Right! Chloroplasts contain chlorophyll required for photosynthesis."
+      }
+    ];
+
+    let activeQuizQuestions = [];
+    let quizIdx = 0;
+    let quizScore = 0;
+
+    function shuffleArray(arr) {
+      const copy = [...arr];
+      for (let i = copy.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [copy[i], copy[j]] = [copy[j], copy[i]];
+      }
+      return copy;
+    }
+
+    function initQuiz() {
+      // Pick 3 random questions from question pool
+      const shuffledAll = shuffleArray(fullQuestionBank);
+      activeQuizQuestions = shuffledAll.slice(0, 3).map(item => {
+        // Scramble options for every question
+        const originalCorrectAnswer = item.options[item.correct];
+        const shuffledOpts = shuffleArray(item.options);
+        return {
+          q: item.q,
+          options: shuffledOpts,
+          correct: shuffledOpts.indexOf(originalCorrectAnswer),
+          tip: item.tip
+        };
+      });
+      quizIdx = 0;
+      quizScore = 0;
+      renderCurrentQuestion();
+    }
+
+    function renderCurrentQuestion() {
+      const container = document.getElementById('quizContainer');
+      if (!container || activeQuizQuestions.length === 0) return;
+
+      const item = activeQuizQuestions[quizIdx];
+      container.innerHTML = `
+        <div id="quizMeta" style="font-size:11px; color:var(--gold); font-weight:700; margin-bottom:6px;">QUESTION ${quizIdx + 1} OF ${activeQuizQuestions.length}</div>
+        <div class="quiz-question-txt" id="quizQuestion">${item.q}</div>
+        <div class="quiz-options-list" id="quizOptions"></div>
+        <div class="quiz-footer-status" id="quizFeedback"></div>
+      `;
+
+      const optContainer = document.getElementById('quizOptions');
+      item.options.forEach((opt, idx) => {
+        const btn = document.createElement('button');
+        btn.className = 'quiz-opt-btn';
+        btn.innerText = opt;
+        btn.onclick = () => handleQuizAnswer(idx, btn);
+        optContainer.appendChild(btn);
+      });
+    }
+
+    function handleQuizAnswer(selectedIdx, clickedBtn) {
+      const item = activeQuizQuestions[quizIdx];
+      const allBtns = document.querySelectorAll('.quiz-opt-btn');
+      allBtns.forEach(b => b.disabled = true);
+
+      const feedback = document.getElementById('quizFeedback');
+      feedback.style.display = 'block';
+
+      if (selectedIdx === item.correct) {
+        triggerTactile('success');
+        clickedBtn.classList.add('correct');
+        feedback.innerText = "✓ " + item.tip;
+        quizScore++;
+      } else {
+        triggerTactile('wrong');
+        clickedBtn.classList.add('wrong');
+        allBtns[item.correct].classList.add('correct');
+        feedback.innerText = "Correct answer: " + item.options[item.correct];
+      }
+
+      setTimeout(() => {
+        quizIdx++;
+        if (quizIdx < activeQuizQuestions.length) {
+          renderCurrentQuestion();
         } else {
-          const list = Object.keys(calcState.singleSubjects).filter(k => calcState.singleSubjects[k]).map(k => k.toUpperCase()).join(', ');
-          subjDetails = list;
+          showQuizResults();
         }
+      }, 1500);
+    }
 
-        const msg = encodeURIComponent(`Hello Saurav! I configured a Home Tuition plan on Swaran Academics:\n- Format: ${modeTxt}\n- Grades: ${classTxt}\n- Subjects: ${subjDetails}\n- Estimated Fee: ${document.getElementById('displayFee').innerText}/month\n\nI would like to book a Free 2-Day Trial Session.`);
-        window.open(`https://wa.me/919815485169?text=${msg}`, '_blank');
-      }
-
-      // Comprehensive Question Bank with Random Scrambler
-      const fullQuestionBank = [
-        {
-          q: "If 2x + 3 = 11, what is the value of x?",
-          options: ["2", "4", "3", "7"],
-          correct: 1,
-          tip: "Great start! 2x = 8, so x = 4."
-        },
-        {
-          q: "Which law explains why passengers lean forward when a bus suddenly stops?",
-          options: ["Newton's 1st Law (Inertia)", "Newton's 2nd Law (F=ma)", "Newton's 3rd Law", "Law of Gravitation"],
-          correct: 0,
-          tip: "Spot on! Inertia of motion keeps the body moving."
-        },
-        {
-          q: "In which sector of the Indian economy is Agriculture categorized?",
-          options: ["Secondary Sector", "Tertiary Sector", "Primary Sector", "IT Sector"],
-          correct: 2,
-          tip: "Excellent! Agriculture directly utilizes natural resources (Primary)."
-        },
-        {
-          q: "What is the degree of a Quadratic Polynomial?",
-          options: ["1", "2", "3", "0"],
-          correct: 1,
-          tip: "Correct! A quadratic polynomial always has highest power 2."
-        },
-        {
-          q: "What happens to resistance when the length of a metallic wire is doubled?",
-          options: ["Halved", "Remains same", "Doubled", "Quadrupled"],
-          correct: 2,
-          tip: "Spot on! Resistance is directly proportional to length (R ∝ L)."
-        },
-        {
-          q: "Which authority in India issues currency notes on behalf of the Central Government?",
-          options: ["State Bank of India", "Reserve Bank of India", "Ministry of Finance", "NITI Aayog"],
-          correct: 1,
-          tip: "Correct! RBI is India's central monetary authority."
-        },
-        {
-          q: "In which part of the green plant does photosynthesis primarily occur?",
-          options: ["Chloroplast", "Mitochondria", "Ribosome", "Vacuole"],
-          correct: 0,
-          tip: "Right! Chloroplasts contain chlorophyll required for photosynthesis."
-        }
-      ];
-
-      let activeQuizQuestions = [];
-      let quizIdx = 0;
-      let quizScore = 0;
-
-      function shuffleArray(arr) {
-        const copy = [...arr];
-        for (let i = copy.length - 1; i > 0; i--) {
-          const j = Math.floor(Math.random() * (i + 1));
-          [copy[i], copy[j]] = [copy[j], copy[i]];
-        }
-        return copy;
-      }
-
-      function initQuiz() {
-        // Pick 3 random questions from question pool
-        const shuffledAll = shuffleArray(fullQuestionBank);
-        activeQuizQuestions = shuffledAll.slice(0, 3).map(item => {
-          // Scramble options for every question
-          const originalCorrectAnswer = item.options[item.correct];
-          const shuffledOpts = shuffleArray(item.options);
-          return {
-            q: item.q,
-            options: shuffledOpts,
-            correct: shuffledOpts.indexOf(originalCorrectAnswer),
-            tip: item.tip
-          };
-        });
-        quizIdx = 0;
-        quizScore = 0;
-        renderCurrentQuestion();
-      }
-
-      function renderCurrentQuestion() {
-        const container = document.getElementById('quizContainer');
-        if (!container || activeQuizQuestions.length === 0) return;
-
-        const item = activeQuizQuestions[quizIdx];
-        container.innerHTML = `
-          <div id="quizMeta" style="font-size:11px; color:var(--gold); font-weight:700; margin-bottom:6px;">QUESTION ${quizIdx + 1} OF ${activeQuizQuestions.length}</div>
-          <div class="quiz-question-txt" id="quizQuestion">${item.q}</div>
-          <div class="quiz-options-list" id="quizOptions"></div>
-          <div class="quiz-footer-status" id="quizFeedback"></div>
-        `;
-
-        const optContainer = document.getElementById('quizOptions');
-        item.options.forEach((opt, idx) => {
-          const btn = document.createElement('button');
-          btn.className = 'quiz-opt-btn';
-          btn.innerText = opt;
-          btn.onclick = () => handleQuizAnswer(idx, btn);
-          optContainer.appendChild(btn);
-        });
-      }
-
-      function handleQuizAnswer(selectedIdx, clickedBtn) {
-        const item = activeQuizQuestions[quizIdx];
-        const allBtns = document.querySelectorAll('.quiz-opt-btn');
-        allBtns.forEach(b => b.disabled = true);
-
-        const feedback = document.getElementById('quizFeedback');
-        feedback.style.display = 'block';
-
-        if (selectedIdx === item.correct) {
-          triggerTactile('success');
-          clickedBtn.classList.add('correct');
-          feedback.innerText = "✓ " + item.tip;
-          quizScore++;
-        } else {
-          triggerTactile('wrong');
-          clickedBtn.classList.add('wrong');
-          allBtns[item.correct].classList.add('correct');
-          feedback.innerText = "Correct answer: " + item.options[item.correct];
-        }
-
-        setTimeout(() => {
-          quizIdx++;
-          if (quizIdx < activeQuizQuestions.length) {
-            renderCurrentQuestion();
-          } else {
-            showQuizResults();
-          }
-        }, 1500);
-      }
-
-      function showQuizResults() {
-        const container = document.getElementById('quizContainer');
-        container.innerHTML = `
-          <div style="text-align:center; padding:10px 0;">
-            <div style="font-size:32px; margin-bottom:8px;">🎯</div>
-            <div style="font-size:16px; font-weight:800; color:#fff;">Score: ${quizScore} / ${activeQuizQuestions.length} Correct</div>
-            <p style="font-size:12px; color:var(--text-dim); margin:8px 0 14px 0;">
-              ${quizScore >= 2 ? 'Strong foundation! Ready for top board examination scores.' : 'Good effort! Targeted concept mentoring will quickly bridge these gaps.'}
-            </p>
-            <div style="display:flex; gap:8px; justify-content:center;">
-              <button onclick="initQuiz()" style="background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.15); color:#fff; font-weight:700; font-size:12px; padding:10px 14px; border-radius:10px; cursor:pointer;">
-                New Questions 🔄
-              </button>
-              <button onclick="triggerTactile('success'); openBookingModal();" style="background:linear-gradient(90deg, var(--cyan), var(--blue)); border:none; color:#070a13; font-weight:800; font-size:12px; padding:10px 16px; border-radius:10px; cursor:pointer;">
-                Book Free Trial Session
-              </button>
-            </div>
+    function showQuizResults() {
+      const container = document.getElementById('quizContainer');
+      container.innerHTML = `
+        <div style="text-align:center; padding:10px 0;">
+          <div style="font-size:32px; margin-bottom:8px;">🎯</div>
+          <div style="font-size:16px; font-weight:800; color:#fff;">Score: ${quizScore} / ${activeQuizQuestions.length} Correct</div>
+          <p style="font-size:12px; color:var(--text-dim); margin:8px 0 14px 0;">
+            ${quizScore >= 2 ? 'Strong foundation! Ready for top board examination scores.' : 'Good effort! Targeted concept mentoring will quickly bridge these gaps.'}
+          </p>
+          <div style="display:flex; gap:8px; justify-content:center;">
+            <button onclick="initQuiz()" style="background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.15); color:#fff; font-weight:700; font-size:12px; padding:10px 14px; border-radius:10px; cursor:pointer;">
+              New Questions 🔄
+            </button>
+            <button onclick="triggerTactile('success'); openBookingModal();" style="background:linear-gradient(90deg, var(--cyan), var(--blue)); border:none; color:#070a13; font-weight:800; font-size:12px; padding:10px 16px; border-radius:10px; cursor:pointer;">
+              Book Free Trial Session
+            </button>
           </div>
-        `;
+        </div>
+      `;
+    }
+
+    // Accordion Roadmap
+    function toggleRoadmap(node) {
+      const wasActive = node.classList.contains('active-node');
+      document.querySelectorAll('.roadmap-node').forEach(n => n.classList.remove('active-node'));
+      if (!wasActive) node.classList.add('active-node');
+    }
+
+    // Subject tabs
+    function switchSubjectTab(tabId, btn) {
+      triggerTactile('click');
+      document.querySelectorAll('.tab-nav-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.tab-content-panel').forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById(tabId).classList.add('active');
+    }
+
+    // Modal
+    function pickSector(val) {
+      document.getElementById('parentSector').value = val + ', Chandigarh';
+    }
+
+          function openBookingModal() {
+      const modalClassSelect = document.getElementById('modalClass');
+      if (calcState.mode === 'twins') {
+        modalClassSelect.value = "Twins (Same Class Batch)";
+      } else if (calcState.mode === 'siblings') {
+        modalClassSelect.value = "Siblings (9th & 10th Back-to-Back)";
+      } else {
+        modalClassSelect.value = (calcState.grade === 9) ? 'Class 9th' : 'Class 10th (Board)';
       }
+      document.getElementById('bookingModal').classList.add('open');
+    }
 
-      // Accordion Roadmap
-      function toggleRoadmap(node) {
-        const wasActive = node.classList.contains('active-node');
-        document.querySelectorAll('.roadmap-node').forEach(n => n.classList.remove('active-node'));
-        if (!wasActive) node.classList.add('active-node');
-      }
+    function closeBookingModal() {
+      document.getElementById('bookingModal').classList.remove('open');
+    }
 
-      // Subject tabs
-      function switchSubjectTab(tabId, btn) {
-        triggerTactile('click');
-        document.querySelectorAll('.tab-nav-btn').forEach(b => b.classList.remove('active'));
-        document.querySelectorAll('.tab-content-panel').forEach(p => p.classList.remove('active'));
-        btn.classList.add('active');
-        document.getElementById(tabId).classList.add('active');
-      }
+    function closeModalOnBg(e) {
+      if (e.target.id === 'bookingModal') closeBookingModal();
+    }
 
-      // Modal
-      function pickSector(val) {
-        document.getElementById('parentSector').value = val + ', Chandigarh';
-      }
+    function submitModalToWhatsApp() {
+      const name = document.getElementById('parentName').value.trim() || 'Parent/Student';
+      const sector = document.getElementById('parentSector').value.trim() || 'Near PU Chandigarh';
+      const grade = document.getElementById('modalClass').value;
+      const subjects = document.getElementById('modalSubjects').value.trim();
 
-      function openBookingModal() {
-          const modalClassSelect = document.getElementById('modalClass');
-        if (calcState.mode === 'twins') {
-          modalClassSelect.value = "Twins (Same Class Batch)";
-        } else if (calcState.mode === 'siblings') {
-          modalClassSelect.value = "Siblings (9th & 10th Back-to-Back)";
-        } else {
-          modalClassSelect.value = (calcState.grade === 9) ? 'Class 9th' : 'Class 10th (Board)';
-        }
-        document.getElementById('bookingModal').classList.add('open');
-      }
+      const text = encodeURIComponent(`Hello Saurav! I would like to book a Free 2-Day Trial Class via Swaran Academics:\n- Name: ${name}\n- Area: ${sector}\n- Format/Grade: ${grade}\n- Subjects: ${subjects}`);
+      window.open(`https://wa.me/919815485169?text=${text}`, '_blank');
+      closeBookingModal();
+    }
 
-      function closeBookingModal() {
-        document.getElementById('bookingModal').classList.remove('open');
-      }
+    // Tri-Lingual Engine (English, Punjabi, Hindi)
+    let currentLang = 'en';
 
-            let currentLang = 'en';
+    function switchLang(lang) {
+      currentLang = lang;
+      triggerTactile('toggle');
 
-      function submitModalToWhatsapp() {
-        const name = document.getElementById('parentName') ? document.getElementById('parentName').value.trim() : '';
-        const sector = document.getElementById('parentSector') ? document.getElementById('parentSector').value.trim() : '';
-        const grade = document.getElementById('modalClass') ? document.getElementById('modalClass').value : '';
-        const subjects = document.getElementById('modalSubjects') ? document.getElementById('modalSubjects').value : '';
+      document.querySelectorAll('.lang-pill').forEach(btn => btn.classList.remove('active'));
+      if (lang === 'en') document.getElementById('btnLangEn').classList.add('active');
+      if (lang === 'pa') document.getElementById('btnLangPa').classList.add('active');
+      if (lang === 'hi') document.getElementById('btnLangHi').classList.add('active');
 
-        if (!name || !sector) {
-          alert(currentLang === 'pa' ? 'ਕਿਰਪਾ ਕਰਕੇ ਸਾਰੇ ਖਾਨੇ ਭਰੋ।' : (currentLang === 'hi' ? 'कृपया सभी विवरण भरें।' : 'Please fill all details.'));
-          return;
-        }
-
-        let text = '';
-        if (currentLang === 'pa') {
-          text = `ਸਤਿ ਸ਼੍ਰੀ ਅਕਾਲ ਸੌਰਵ ਜੀ, ਮੈਂ ਮੁਫ਼ਤ 2 ਦਿਨਾਂ ਦਾ ਟ੍ਰਾਇਲ ਬੁੱਕ ਕਰਨਾ ਚਾਹੁੰਦਾ/ਚਾਹੁੰਦੀ ਹਾਂ।\n\nਵਿਦਿਆਰਥੀ/ਮਾਪੇ ਦਾ ਨਾਂ: ${name}\nਇਲਾਕਾ/ਸੈਕਟਰ: ${sector}\nਜਮਾਤ: ${grade}\nਵਿਸ਼ੇ: ${subjects}`;
-        } else if (currentLang === 'hi') {
-          text = `नमस्ते सौरभ जी, मैं 2 दिन का फ्री ट्रायल बुक करना चाहता/चाहती हूँ।\n\nछात्र/अभिभावक का नाम: ${name}\nइलाका/सेक्टर: ${sector}\nकक्षा: ${grade}\nविषय: ${subjects}`;
-        } else {
-          text = `Hello Saurav, I would like to book a Free 2-Day Trial.\n\nStudent/Parent Name: ${name}\nLocation: ${sector}\nGrade: ${grade}\nSubjects: ${subjects}`;
-        }
-
-        const encodedText = encodeURIComponent(text);
-        window.open(`https://api.whatsapp.com/send?phone=919815485169&text=${encodedText}`, '_blank');
-        closeBookingModal();
-      }
-
-      function switchLang(lang) {
-        currentLang = lang;
-        triggerTactile('toggle');
-
-        document.querySelectorAll('.lang-pill').forEach(btn => btn.classList.remove('active'));
-        if (lang === 'en') document.getElementById('btnLangEn').classList.add('active');
-        if (lang === 'pa') document.getElementById('btnLangPa').classList.add('active');
-        if (lang === 'hi') document.getElementById('btnLangHi').classList.add('active');
-
-        document.querySelectorAll('.translatable').forEach(el => {
-          const val = el.getAttribute('data-' + lang);
-          if (val) el.innerHTML = val;
-        });
-
-        const nameInput = document.getElementById('parentName');
-        const sectorInput = document.getElementById('parentSector');
-        if (nameInput && sectorInput) {
-          if (lang === 'hi') {
-            nameInput.placeholder = 'विद्यार्थी या अभिभावक का नाम';
-            sectorInput.placeholder = 'क्षेत्र जैसे सेक्टर 15 या पीयू कैंपस';
-          } else if (lang === 'pa') {
-            nameInput.placeholder = 'ਵਿਦਿਆਰਥੀ ਜਾਂ ਮਾਪਿਆਂ ਦਾ ਨਾਮ';
-            sectorInput.placeholder = 'ਖੇਤਰ ਜਿਵੇਂ ਸੈਕਟਰ 15 ਜਾਂ ਪੀਯੂ ਕੈਂਪਸ';
-          } else {
-            nameInput.placeholder = 'Student / Parent Name';
-            sectorInput.placeholder = 'Location e.g. Sector 15 / PU Campus';
-          }
-        }
-
-        // Bottom dock Whatsapp link update
-        const dockWa = document.getElementById('dockWaLink');
-        if (dockWa) {
-          let dockMsg = '';
-          if (lang === 'pa') {
-            dockMsg = 'ਸਤਿ ਸ਼੍ਰੀ ਅਕਾਲ ਸੌਰਵ ਜੀ, ਮੈਂ ਪੰਜਾਬ ਯੂਨੀਵਰਸਿਟੀ / ਚੰਡੀਗੜ੍ਹ ਦੇ ਆਸ-ਪਾਸ 9ਵੀਂ/10ਵੀਂ ਜਮਾਤ ਦੀਆਂ ਹੋਮ ਟਿਊਸ਼ਨਾਂ ਬਾਰੇ ਗੱਲਬਾਤ ਕਰਨੀ ਚਾਹੁੰਦਾ/ਚਾਹੁੰਦੀ ਹਾਂ।';
-          } else if (lang === 'hi') {
-            dockMsg = 'नमस्ते सौरभ जी, मैं पंजाब यूनिवर्सिटी / चंडीगढ़ के आस-पास 9वीं/10वीं कक्षा के होम ट्यूशन के बारे में जानकारी लेना चाहता/चाहती हूँ।';
-          } else {
-            dockMsg = 'Hello Saurav, I am interested in Home Tuitions for 9th/10th grade around PU Chandigarh.';
-          }
-          dockWa.href = `https://wa.me/919815485169?text=${encodeURIComponent(dockMsg)}`;
-        }
-
-        computePlan();
-      }
-
-      // Page initialization
-      window.addEventListener('DOMContentLoaded', () => {
-        computePlan();
-        initQuiz();
+      document.querySelectorAll('.translatable').forEach(el => {
+        const val = el.getAttribute('data-' + lang);
+        if (val) el.innerHTML = val;
       });
-    </script>
-  </body>
+
+      const nameInput = document.getElementById('parentName');
+      const sectorInput = document.getElementById('parentSector');
+      if (nameInput && sectorInput) {
+        if (lang === 'hi') {
+          nameInput.placeholder = 'विद्यार्थी या अभिभावक का नाम';
+          sectorInput.placeholder = 'क्षेत्र जैसे सेक्टर 15 या पीयू कैंपस';
+        } else if (lang === 'pa') {
+          nameInput.placeholder = 'ਵਿਦਿਆਰਥੀ ਜਾਂ ਮਾਪਿਆਂ ਦਾ ਨਾਮ';
+          sectorInput.placeholder = 'ਖੇਤਰ ਜਿਵੇਂ ਸੈਕਟਰ 15 ਜਾਂ ਪੀਯੂ ਕੈਂਪਸ';
+        } else {
+          nameInput.placeholder = 'Student / Parent Name';
+          sectorInput.placeholder = 'Location e.g. Sector 15 / PU Campus';
+        }
+      }
+
+      computePlan();
+    }
+
+    // Page initialization
+    window.addEventListener('DOMContentLoaded', () => {
+      computePlan();
+      initQuiz();
+    });
+  </script>
+</body>
 </html>
