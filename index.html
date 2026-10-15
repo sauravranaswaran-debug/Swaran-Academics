@@ -366,6 +366,17 @@
       box-shadow: 0 4px 14px rgba(0, 242, 254, 0.25);
     }
 
+    .subj-notice-bar {
+      background: rgba(251, 191, 36, 0.1);
+      border: 1px solid rgba(251, 191, 36, 0.3);
+      color: #fef08a;
+      font-size: 11px;
+      padding: 8px 12px;
+      border-radius: 12px;
+      margin-bottom: 12px;
+      line-height: 1.4;
+    }
+
     .subj-box-block {
       background: rgba(255, 255, 255, 0.02);
       border: 1px solid rgba(255, 255, 255, 0.07);
@@ -381,16 +392,6 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-    }
-    .child-grade-select {
-      background: rgba(0, 242, 254, 0.1);
-      border: 1px solid var(--border-card);
-      color: #fff;
-      padding: 3px 6px;
-      border-radius: 6px;
-      font-size: 11px;
-      font-weight: 700;
-      outline: none;
     }
 
     .subj-checkbox-grid {
@@ -832,15 +833,14 @@
 
   <div class="app-container">
 
-    <!-- Top Action Bar with 3-Way Language Switcher -->
     <header class="top-header">
       <div class="live-chip">
         <span class="live-dot"></span>
         <span class="translatable" 
-          data-en="Admissions Open 2027-28 • Only 2 Home Slots Left!" 
-          data-pa="ਨਵੇਂ ਦਾਖ਼ਲੇ ਖੁੱਲ੍ਹੇ ਹਨ 2027-28 • ਸਿਰਫ਼ 2 ਸੀਟਾਂ ਬਾਕੀ!" 
-          data-hi="प्रवेश प्रारंभ 2027-28 • केवल 2 स्लॉट शेष!">
-          Admissions Open 2027-28 • Only 2 Home Slots Left!
+          data-en="Admissions Open 2026-27 • Only 2 Home Slots Left!" 
+          data-pa="ਨਵੇਂ ਦਾਖ਼ਲੇ ਖੁੱਲ੍ਹੇ ਹਨ 2026-27 • ਸਿਰਫ਼ 2 ਸੀਟਾਂ ਬਾਕੀ!" 
+          data-hi="प्रवेश प्रारंभ 2026-27 • केवल 2 स्लॉट शेष!">
+          Admissions Open 2026-27 • Only 2 Home Slots Left!
         </span>
       </div>
       <div class="lang-switch-dock">
@@ -850,7 +850,6 @@
       </div>
     </header>
 
-    <!-- Hero Card Profile with Custom Image Logo -->
     <section class="glass-card hero-container reveal active">
       <div class="brand-unit">
         <span class="brand-name">SWARAN ACADEMICS</span>
@@ -879,7 +878,6 @@
       <button onclick="triggerTactile('success'); openBookingModal();" style="margin-top:16px; background:linear-gradient(90deg, var(--cyan), var(--blue)); border:none; color:#070a13; font-weight:800; font-size:13px; padding:12px 18px; border-radius:12px; cursor:pointer; width:100%; box-shadow:0 6px 20px rgba(0, 242, 254, 0.35);" class="translatable" data-en="⚡ Schedule Free 2-Day Trial at Home" data-pa="⚡ ਘਰ ਬੈਠੇ 2 ਦਿਨਾਂ ਦੀ ਮੁਫ਼ਤ ਡੈਮੋ ਬੁੱਕ ਕਰੋ" data-hi="⚡ घर बैठे 2 दिन का फ्री ट्रायल बुक करें">⚡ Schedule Free 2-Day Trial at Home</button>
     </section>
 
-    <!-- Verified Academic Track Record with Counters -->
     <section class="glass-card reveal">
       <div class="sec-tag translatable" data-en="Verified Academic Credentials" data-pa="ਪ੍ਰਮਾਣਿਤ ਅਕਾਦਮਿਕ ਰਿਕਾਰਡ" data-hi="प्रमाणित शैक्षणिक रिकॉर्ड">Verified Academic Credentials</div>
       <div class="stats-trio">
@@ -901,11 +899,9 @@
       </div>
     </section>
 
-    <!-- Interactive Fee & Multi-Tier Plan Calculator -->
     <section class="glass-card reveal">
       <div class="sec-tag translatable" data-en="Interactive Plan & Fee Calculator" data-pa="ਇੰਟਰਐਕਟਿਵ ਫ਼ੀਸ ਅਤੇ ਯੋਜਨਾ ਕੈਲਕੁਲੇਟਰ" data-hi="इंटरएक्टिव फीस व योजना कैलकुलेटर">Interactive Plan & Fee Calculator</div>
 
-      <!-- Batch Type -->
       <div class="calc-row-label translatable" data-en="Student / Batch Format" data-pa="ਵਿਦਿਆਰਥੀ / ਬੈਚ ਫਾਰਮੈਟ" data-hi="विद्यार्थी / बैच प्रारूप">Student / Batch Format</div>
       <div class="calc-toggle-group">
         <button class="calc-option-btn selected translatable" id="btnSolo" onclick="setMode('solo')" data-en="1-on-1 Solo" data-pa="1-ਆਨ-1" data-hi="1-ऑन-1">1-on-1 Solo</button>
@@ -914,7 +910,20 @@
         <button class="calc-option-btn translatable" id="btnGroup3" onclick="setMode('group3')" data-en="3 Kids / Group" data-pa="3 ਬੱਚੇ / ਗਰੁੱਪ" data-hi="3 बच्चे / समूह">3 Kids / Group</button>
       </div>
 
-      <!-- Grade selector for single / twins -->
+      <div id="groupPolicyNotice" class="subj-notice-bar translatable" style="display:none;"
+        data-en="Group and twin discount policy applies strictly to shared subjects for all students in the batch."
+        data-pa="ਜੁੜਵਾਂ ਅਤੇ ਗਰੁੱਪ ਛੋਟ ਨੀਤੀ ਸਿਰਫ਼ ਬੈਚ ਦੇ ਸਾਰੇ ਬੱਚਿਆਂ ਵੱਲੋਂ ਸਾਂਝੇ ਵਿਸ਼ੇ ਚੁਣਨ 'ਤੇ ਹੀ ਲਾਗੂ ਹੁੰਦੀ ਹੈ।"
+        data-hi="ट्विन्स व समूह छूट केवल तभी लागू होगी जब बैच के सभी विद्यार्थी समान विषय पढ़ेंगे।">
+        Group and twin discount policy applies strictly to shared subjects for all students in the batch.
+      </div>
+
+      <div id="siblingPolicyNotice" class="subj-notice-bar translatable" style="display:none;"
+        data-en="Sequential 2-Hour Home Slot: 1 dedicated hour for 9th and 1 dedicated hour for 10th with zero commute delay."
+        data-pa="ਲਗਾਤਾਰ 2 ਘੰਟੇ ਦਾ ਘਰੇਲੂ ਸਲਾਟ: 1 ਘੰਟਾ 9ਵੀਂ ਲਈ ਅਤੇ 1 ਘੰਟਾ 10ਵੀਂ ਲਈ ਪੂਰੇ ਨਿੱਜੀ ਧਿਆਨ ਨਾਲ।"
+        data-hi="लगातार 2 घंटे का स्लॉट: 1 घंटा 9वीं हेतु और 1 घंटा 10वीं हेतु पूर्ण व्यक्तिगत मार्गदर्शन के साथ।">
+        Sequential 2-Hour Home Slot: 1 dedicated hour for 9th and 1 dedicated hour for 10th with zero commute delay.
+      </div>
+
       <div id="gradeSelectorWrap">
         <div class="calc-row-label translatable" data-en="Target Grade" data-pa="ਜਮਾਤ ਚੁਣੋ" data-hi="कक्षा चुनें">Target Grade</div>
         <div class="calc-toggle-group" style="grid-template-columns: 1fr 1fr;">
@@ -923,9 +932,8 @@
         </div>
       </div>
 
-      <!-- Standard single / twins subject selector -->
       <div id="singleSubjWrap">
-        <div class="calc-row-label translatable" data-en="Select Subjects Needed" data-pa="ਵਿਸ਼ੇ ਚੁਣੋ" data-hi="विषय चुनें">Select Subjects Needed</div>
+        <div class="calc-row-label translatable" id="subjSelectionLabel" data-en="Select Subjects Needed" data-pa="ਵਿਸ਼ੇ ਚੁਣੋ" data-hi="विषय चुनें">Select Subjects Needed</div>
         <div class="subj-checkbox-grid">
           <label class="subj-check-label checked" id="lblMath" onclick="toggleSubj('single', 'math')">
             <span>📐</span>
@@ -942,128 +950,46 @@
         </div>
       </div>
 
-      <!-- 2 Siblings separate subjects selector -->
       <div id="siblingSubjWrap" style="display:none;">
-        <div class="calc-row-label translatable" data-en="Configure Separate Subjects for Each Child" data-pa="ਹਰੇਕ ਬੱਚੇ ਲਈ ਵੱਖਰੇ ਵਿਸ਼ੇ ਚੁਣੋ" data-hi="प्रत्येक बच्चे के लिए अलग-अलग विषय चुनें">Configure Separate Subjects for Each Child</div>
+        <div class="calc-row-label translatable" data-en="Select Subject for Each Student (1 Hour Slot Each)" data-pa="ਹਰੇਕ ਬੱਚੇ ਲਈ ਵਿਸ਼ਾ ਚੁਣੋ (1-1 ਘੰਟਾ ਸਲਾਟ)" data-hi="प्रत्येक बच्चे के लिए विषय चुनें (1-1 घंटा स्लॉट)">Select Subject for Each Student (1 Hour Slot Each)</div>
         
         <div class="subj-box-block">
           <div class="subj-student-tag">
-            <span class="translatable" data-en="Student 1" data-pa="ਪਹਿਲਾ ਬੱਚਾ" data-hi="पहला बच्चा">Student 1</span>
-            <select id="s1GradeSelect" class="child-grade-select" onchange="calcState.s1Grade = parseInt(this.value); computePlan();">
-              <option value="9">Class 9th</option>
-              <option value="10">Class 10th</option>
-            </select>
+            <span class="translatable" data-en="Child 1 (Class 9th)" data-pa="ਪਹਿਲਾ ਬੱਚਾ (9ਵੀਂ ਜਮਾਤ)" data-hi="पहला बच्चा (9वीं कक्षा)">Child 1 (Class 9th)</span>
+            <span style="font-size:10.5px; color:var(--text-dim);">Slot: 1 Hour</span>
           </div>
           <div class="subj-checkbox-grid">
             <label class="subj-check-label checked" id="lblS1Math" onclick="toggleSubj('s1', 'math')">
-              <span>📐</span>
-              <span class="translatable" data-en="Maths" data-pa="ਗਣਿਤ" data-hi="गणित">Maths</span>
+              <span>📐</span> <span class="translatable" data-en="Maths" data-pa="ਗਣਿਤ" data-hi="गणित">Maths</span>
             </label>
             <label class="subj-check-label checked" id="lblS1Sci" onclick="toggleSubj('s1', 'sci')">
-              <span>🔬</span>
-              <span class="translatable" data-en="Science" data-pa="ਵਿਗਿਆਨ" data-hi="विज्ञान">Science</span>
+              <span>🔬</span> <span class="translatable" data-en="Science" data-pa="ਵਿਗਿਆਨ" data-hi="विज्ञान">Science</span>
             </label>
             <label class="subj-check-label checked" id="lblS1Sst" onclick="toggleSubj('s1', 'sst')">
-              <span>🌍</span>
-              <span class="translatable" data-en="SST" data-pa="ਐਸ.ਐਸ.ਟੀ." data-hi="सामाजिक विज्ञान">SST</span>
+              <span>🌍</span> <span class="translatable" data-en="SST" data-pa="ਐਸ.ਐਸ.ਟੀ." data-hi="सामाजिक विज्ञान">SST</span>
             </label>
           </div>
         </div>
 
         <div class="subj-box-block">
           <div class="subj-student-tag">
-            <span class="translatable" data-en="Student 2" data-pa="ਦੂਜਾ ਬੱਚਾ" data-hi="दूसरा बच्चा">Student 2</span>
-            <select id="s2GradeSelect" class="child-grade-select" onchange="calcState.s2Grade = parseInt(this.value); computePlan();">
-              <option value="10">Class 10th</option>
-              <option value="9">Class 9th</option>
-            </select>
+            <span class="translatable" data-en="Child 2 (Class 10th Board)" data-pa="ਦੂਜਾ ਬੱਚਾ (10ਵੀਂ ਬੋਰਡ)" data-hi="दूसरा बच्चा (10वीं बोर्ड)">Child 2 (Class 10th Board)</span>
+            <span style="font-size:10.5px; color:var(--text-dim);">Slot: 1 Hour</span>
           </div>
           <div class="subj-checkbox-grid">
             <label class="subj-check-label checked" id="lblS2Math" onclick="toggleSubj('s2', 'math')">
-              <span>📐</span>
-              <span class="translatable" data-en="Maths" data-pa="ਗਣਿਤ" data-hi="गणित">Maths</span>
+              <span>📐</span> <span class="translatable" data-en="Maths" data-pa="ਗਣਿਤ" data-hi="गणित">Maths</span>
             </label>
             <label class="subj-check-label checked" id="lblS2Sci" onclick="toggleSubj('s2', 'sci')">
-              <span>🔬</span>
-              <span class="translatable" data-en="Science" data-pa="ਵਿਗਿਆਨ" data-hi="विज्ञान">Science</span>
+              <span>🔬</span> <span class="translatable" data-en="Science" data-pa="ਵਿਗਿਆਨ" data-hi="विज्ञान">Science</span>
             </label>
             <label class="subj-check-label checked" id="lblS2Sst" onclick="toggleSubj('s2', 'sst')">
-              <span>🌍</span>
-              <span class="translatable" data-en="SST" data-pa="ਐਸ.ਐਸ.ਟੀ." data-hi="सामाजिक विज्ञान">SST</span>
-            </label>
-          </div>
-        </div>
-      </div>
-
-      <!-- 3 Kids / Group separate subjects selector -->
-      <div id="group3SubjWrap" style="display:none;">
-        <div class="calc-row-label translatable" data-en="Configure for 3 Students (Special Family / Group Discount)" data-pa="3 ਬੱਚਿਆਂ ਲਈ ਵੱਖਰੇ ਵਿਸ਼ੇ ਚੁਣੋ (ਵਿਸ਼ੇਸ਼ ਗਰੁੱਪ ਛੋਟ)" data-hi="3 विद्यार्थियों हेतु विषय चुनें (विशेष समूह छूट)">Configure for 3 Students (Special Group Discount)</div>
-        
-        <div class="subj-box-block">
-          <div class="subj-student-tag">
-            <span class="translatable" data-en="Student 1" data-pa="ਪਹਿਲਾ ਬੱਚਾ" data-hi="पहला बच्चा">Student 1</span>
-            <select id="g1GradeSelect" class="child-grade-select" onchange="calcState.g1Grade = parseInt(this.value); computePlan();">
-              <option value="9">Class 9th</option>
-              <option value="10">Class 10th</option>
-            </select>
-          </div>
-          <div class="subj-checkbox-grid">
-            <label class="subj-check-label checked" id="lblG1Math" onclick="toggleSubj('g1', 'math')">
-              <span>📐</span> <span class="translatable" data-en="Maths" data-pa="ਗਣਿਤ" data-hi="गणित">Maths</span>
-            </label>
-            <label class="subj-check-label checked" id="lblG1Sci" onclick="toggleSubj('g1', 'sci')">
-              <span>🔬</span> <span class="translatable" data-en="Science" data-pa="ਵਿਗਿਆਨ" data-hi="विज्ञान">Science</span>
-            </label>
-            <label class="subj-check-label checked" id="lblG1Sst" onclick="toggleSubj('g1', 'sst')">
-              <span>🌍</span> <span class="translatable" data-en="SST" data-pa="ਐਸ.ਐਸ.ਟੀ." data-hi="सामाजिक विज्ञान">SST</span>
-            </label>
-          </div>
-        </div>
-
-        <div class="subj-box-block">
-          <div class="subj-student-tag">
-            <span class="translatable" data-en="Student 2" data-pa="ਦੂਜਾ ਬੱਚਾ" data-hi="दूसरा बच्चा">Student 2</span>
-            <select id="g2GradeSelect" class="child-grade-select" onchange="calcState.g2Grade = parseInt(this.value); computePlan();">
-              <option value="9">Class 9th</option>
-              <option value="10">Class 10th</option>
-            </select>
-          </div>
-          <div class="subj-checkbox-grid">
-            <label class="subj-check-label checked" id="lblG2Math" onclick="toggleSubj('g2', 'math')">
-              <span>📐</span> <span class="translatable" data-en="Maths" data-pa="ਗਣਿਤ" data-hi="गणित">Maths</span>
-            </label>
-            <label class="subj-check-label checked" id="lblG2Sci" onclick="toggleSubj('g2', 'sci')">
-              <span>🔬</span> <span class="translatable" data-en="Science" data-pa="ਵਿਗਿਆਨ" data-hi="विज्ञान">Science</span>
-            </label>
-            <label class="subj-check-label checked" id="lblG2Sst" onclick="toggleSubj('g2', 'sst')">
-              <span>🌍</span> <span class="translatable" data-en="SST" data-pa="ਐਸ.ਐਸ.ਟੀ." data-hi="सामाजिक विज्ञान">SST</span>
-            </label>
-          </div>
-        </div>
-
-        <div class="subj-box-block">
-          <div class="subj-student-tag">
-            <span class="translatable" data-en="Student 3" data-pa="ਤੀਜਾ ਬੱਚਾ" data-hi="तीसरा बच्चा">Student 3</span>
-            <select id="g3GradeSelect" class="child-grade-select" onchange="calcState.g3Grade = parseInt(this.value); computePlan();">
-              <option value="10">Class 10th</option>
-              <option value="9">Class 9th</option>
-            </select>
-          </div>
-          <div class="subj-checkbox-grid">
-            <label class="subj-check-label checked" id="lblG3Math" onclick="toggleSubj('g3', 'math')">
-              <span>📐</span> <span class="translatable" data-en="Maths" data-pa="ਗਣਿਤ" data-hi="गणित">Maths</span>
-            </label>
-            <label class="subj-check-label checked" id="lblG3Sci" onclick="toggleSubj('g3', 'sci')">
-              <span>🔬</span> <span class="translatable" data-en="Science" data-pa="ਵਿਗਿਆਨ" data-hi="विज्ञान">Science</span>
-            </label>
-            <label class="subj-check-label checked" id="lblG3Sst" onclick="toggleSubj('g3', 'sst')">
               <span>🌍</span> <span class="translatable" data-en="SST" data-pa="ਐਸ.ਐਸ.ਟੀ." data-hi="सामाजिक विज्ञान">SST</span>
             </label>
           </div>
         </div>
       </div>
 
-      <!-- Dynamic Price Output -->
       <div class="calc-result-box">
         <div class="calc-price-row">
           <div>
@@ -1077,13 +1003,12 @@
         </div>
         <div class="calc-meta-details">
           <div class="calc-perk">✓ <span id="feePerkTag">Includes Free 2-Day Trial Session</span></div>
-          <div class="calc-perk">✓ <span class="translatable" data-en="NCERT Solutions & Weekly Progress Tests" data-pa="ਐਨਸੀਈਆਰਟੀ ਹੱਲ ਅਤੇ ਹਫ਼ਤਾਵਾਰੀ ਪ੍ਰਗਤੀ ਟੈਸਟ" data-hi="NCERT समाधान एवं साप्ताहिक प्रगति टेस्ट">NCERT Solutions & Weekly Progress Tests</span></div>
+          <div class="calc-perk">✓ <span class="translatable" data-en="Latest NCERT Syllabus Coverage & Weekend Tests" data-pa="ਨਵੇਂ ਐਨਸੀਈਆਰਟੀ ਪਾਠਕ੍ਰਮ ਮੁਤਾਬਕ ਪੜ੍ਹਾਈ ਅਤੇ ਹਫ਼ਤਾਵਾਰੀ ਟੈਸਟ" data-hi="नवीनतम NCERT पाठ्यक्रम अनुसार अध्ययन व साप्ताहिक टेस्ट">Latest NCERT Syllabus Coverage & Weekend Tests</span></div>
         </div>
         <button class="btn-book-plan translatable" onclick="triggerTactile('success'); bookConfiguredPlan();" data-en="Book Free Demo for this Configuration 📲" data-pa="ਇਸ ਪਲਾਨ ਲਈ ਮੁਫ਼ਤ ਡੈਮੋ ਬੁੱਕ ਕਰੋ 📲" data-hi="इस प्लान हेतु फ्री डेमो बुक करें 📲">Book Free Demo for this Configuration 📲</button>
       </div>
     </section>
 
-    <!-- Scrambled Interactive Concept Readiness Quiz -->
     <section class="glass-card reveal">
       <div class="sec-tag translatable" data-en="Interactive Concept Mini-Quiz" data-pa="ਇੰਟਰਐਕਟਿਵ ਮਿੰਨੀ ਕੰਸੈਪਟ ਕੁਇਜ਼" data-hi="इंटरएक्टिव मिनी कॉन्सेप्ट क्विज़">Interactive Concept Mini-Quiz</div>
       <div class="quiz-card" id="quizContainer">
@@ -1094,7 +1019,6 @@
       </div>
     </section>
 
-    <!-- 4-Step Interactive Roadmap -->
     <section class="glass-card reveal">
       <div class="sec-tag translatable" data-en="4-Step Academic Blueprint (Click to Expand)" data-pa="4-ਕਦਮੀ ਅਕਾਦਮਿਕ ਰੋਡਮੈਪ (ਖੋਲ੍ਹਣ ਲਈ ਕਲਿੱਕ ਕਰੋ)" data-hi="4-चरणीय शैक्षणिक ब्लूप्रिंट (विस्तार हेतु क्लिक करें)">4-Step Academic Blueprint (Click to Expand)</div>
       <div class="roadmap-track">
@@ -1120,8 +1044,8 @@
             </div>
             <div class="node-expand-arrow">▶</div>
           </div>
-          <div class="node-body translatable" data-en="Exhaustive coverage of back exercises, exemplary problems, and formulas with self-derived speed calculation shortcuts." data-pa="ਕਿਤਾਬ ਦੇ ਹਰ ਇੱਕ ਪ੍ਰਸ਼ਨ ਅਤੇ ਉਦਾਹਰਣ ਨੂੰ ਖ਼ੁਦ ਹੱਲ ਕਰਵਾਉਣਾ ਤਾਂ ਜੋ ਪੇਪਰ ਵਿੱਚ ਕੋਈ ਸ਼ੱਕ ਨਾ ਰਹੇ।" data-hi="पाठ्यपुस्तक के प्रत्येक प्रश्न और उदाहरण का गहन अभ्यास ताकि परीक्षा में कोई संशय न रहे।">
-            Exhaustive coverage of back exercises, exemplary problems, and formulas with self-derived speed calculation shortcuts.
+          <div class="node-body translatable" data-en="Exhaustive coverage of textbook exercises, exemplary problems, and formulas with self-derived speed calculation shortcuts." data-pa="ਕਿਤਾਬ ਦੇ ਹਰ ਇੱਕ ਪ੍ਰਸ਼ਨ ਅਤੇ ਉਦਾਹਰਣ ਨੂੰ ਖ਼ੁਦ ਹੱਲ ਕਰਵਾਉਣਾ ਤਾਂ ਜੋ ਪੇਪਰ ਵਿੱਚ ਕੋਈ ਸ਼ੱਕ ਨਾ ਰਹੇ।" data-hi="पाठ्यपुस्तक के प्रत्येक प्रश्न और उदाहरण का गहन अभ्यास ताकि परीक्षा में कोई संशय न रहे।">
+            Exhaustive coverage of textbook exercises, exemplary problems, and formulas with self-derived speed calculation shortcuts.
           </div>
         </div>
 
@@ -1154,58 +1078,45 @@
       </div>
     </section>
 
-    <!-- Latest NCERT Syllabus Deep-Dive with Class 9th & 10th Selector -->
     <section class="glass-card reveal">
-      <div class="sec-tag translatable" data-en="Latest Rationalised NCERT Syllabus (Class 9 & 10)" data-pa="ਨਵਾਂ ਐਨ.ਸੀ.ਈ.ਆਰ.ਟੀ. ਸਿਲੇਬਸ (9ਵੀਂ ਅਤੇ 10ਵੀਂ)" data-hi="नवीनतम NCERT पाठ्यक्रम (कक्षा 9 व 10)">Latest Rationalised NCERT Syllabus</div>
+      <div class="sec-tag translatable" data-en="Latest NCERT Syllabus (Class 9 & 10)" data-pa="ਨਵਾਂ ਐਨ.ਸੀ.ਈ.ਆਰ.ਟੀ. ਪਾਠਕ੍ਰਮ (9ਵੀਂ ਅਤੇ 10ਵੀਂ)" data-hi="नवीनतम NCERT पाठ्यक्रम (कक्षा 9 व 10)">Latest NCERT Syllabus</div>
       
-      <!-- Class 9th vs 10th Toggle Buttons -->
       <div class="class-selector-dock">
-        <button class="class-btn active" id="btnSyllabusClass9" onclick="switchSyllabusClass(9)">Class 9th NCERT</button>
+        <button class="class-btn active" id="btnSyllabusClass9" onclick="switchSyllabusClass(9)">Class 9th NCERT (Latest)</button>
         <button class="class-btn" id="btnSyllabusClass10" onclick="switchSyllabusClass(10)">Class 10th Board NCERT</button>
       </div>
 
-      <!-- Subject Tabs -->
       <div class="tab-nav-row">
         <button class="tab-nav-btn active translatable" id="tabNavMath" onclick="switchSubjectTab('tabMath', this)" data-en="Mathematics" data-pa="ਗਣਿਤ" data-hi="गणित">Mathematics</button>
         <button class="tab-nav-btn translatable" id="tabNavSci" onclick="switchSubjectTab('tabSci', this)" data-en="Science" data-pa="ਵਿਗਿਆਨ" data-hi="विज्ञान">Science</button>
         <button class="tab-nav-btn translatable" id="tabNavSst" onclick="switchSubjectTab('tabSst', this)" data-en="Social Science" data-pa="ਸਮਾਜਿਕ ਵਿਗਿਆਨ" data-hi="सामाजिक विज्ञान">Social Science</button>
       </div>
 
-      <!-- Math Panel -->
       <div class="tab-content-panel active" id="tabMath">
-        <h4 style="font-size:13px; color:var(--cyan); margin-bottom:8px;" id="mathHeaderTitle">Class 9th Mathematics (NCERT):</h4>
-        <div id="mathChaptersList">
-          <!-- Populated dynamically via JS -->
-        </div>
-        <p style="font-size:11.5px; color:var(--text-dim); margin-top:10px; line-height:1.45;" class="translatable" data-en="Methodology: Daily NCERT exercise verification, formula deriving practice, and zero-error calculation worksheets." data-pa="ਢੰਗ: ਐਨਸੀਈਆਰਟੀ ਅਭਿਆਸ, ਫ਼ਾਰਮੂਲਾ ਸ਼ੀਟਾਂ ਤਿਆਰ ਕਰਵਾਉਣੀਆਂ ਅਤੇ ਗਣਨਾ ਵਿੱਚ ਗ਼ਲਤੀਆਂ ਖ਼ਤਮ ਕਰਨੀਆਂ।" data-hi="पद्धति: NCERT अभ्यास, चरणबद्ध सूत्र-पुस्तिका और गणना की त्रुटि निवारण कार्यशालाएँ।">
-          Methodology: Daily NCERT exercise verification, formula deriving practice, and zero-error calculation worksheets.
+        <h4 style="font-size:13px; color:var(--cyan); margin-bottom:8px;" id="mathHeaderTitle">Class 9th Mathematics (New NCERT):</h4>
+        <div id="mathChaptersList"></div>
+        <p style="font-size:11.5px; color:var(--text-dim); margin-top:10px; line-height:1.45;" class="translatable" data-en="Methodology: Daily NCERT exercise verification, formula derivation sheets, and zero-error calculation drills." data-pa="ਢੰਗ: ਐਨਸੀਈਆਰਟੀ ਅਭਿਆਸ, ਫ਼ਾਰਮੂਲਾ ਸ਼ੀਟਾਂ ਤਿਆਰ ਕਰਵਾਉਣੀਆਂ ਅਤੇ ਗਣਨਾ ਵਿੱਚ ਗ਼ਲਤੀਆਂ ਖ਼ਤਮ ਕਰਨੀਆਂ।" data-hi="पद्धति: NCERT अभ्यास, चरणबद्ध सूत्र-पुस्तिका और गणना की त्रुटि निवारण कार्यशालाएँ।">
+          Methodology: Daily NCERT exercise verification, formula derivation sheets, and zero-error calculation drills.
         </p>
       </div>
 
-      <!-- Science Panel -->
       <div class="tab-content-panel" id="tabSci">
-        <h4 style="font-size:13px; color:var(--blue); margin-bottom:8px;" id="sciHeaderTitle">Class 9th Science (NCERT):</h4>
-        <div id="sciChaptersList">
-          <!-- Populated dynamically via JS -->
-        </div>
-        <p style="font-size:11.5px; color:var(--text-dim); margin-top:10px; line-height:1.45;" class="translatable" data-en="Methodology: Conceptual experiments, balanced reaction drill, ray diagrams, and scientific key terms mastery." data-pa="ਢੰਗ: ਰਸਾਇਣਕ ਸਮੀਕਰਨਾਂ ਸੰਤੁਲਿਤ ਕਰਨੀਆਂ, ਲੇਬਲ ਵਾਲੇ ਸਾਫ਼ ਡਾਇਗ੍ਰਾਮ ਅਤੇ ਵਿਗਿਆਨਕ ਸ਼ਬਦਾਵਲੀ 'ਤੇ ਪਕੜ।" data-hi="पद्धति: रासायनिक समीकरण संतुलन, किरण आरेख और सटीक वैज्ञानिक शब्दावली पर पूर्ण नियंत्रण।">
-          Methodology: Conceptual experiments, balanced reaction drill, ray diagrams, and scientific key terms mastery.
+        <h4 style="font-size:13px; color:var(--blue); margin-bottom:8px;" id="sciHeaderTitle">Class 9th Science (New NCERT):</h4>
+        <div id="sciChaptersList"></div>
+        <p style="font-size:11.5px; color:var(--text-dim); margin-top:10px; line-height:1.45;" class="translatable" data-en="Methodology: Conceptual experiments, balanced reaction drills, ray diagrams, and scientific terminology mastery." data-pa="ਢੰਗ: ਰਸਾਇਣਕ ਸਮੀਕਰਨਾਂ ਸੰਤੁਲਿਤ ਕਰਨੀਆਂ, ਲੇਬਲ ਵਾਲੇ ਸਾਫ਼ ਡਾਇਗ੍ਰਾਮ ਅਤੇ ਵਿਗਿਆਨਕ ਸ਼ਬਦਾਵਲੀ 'ਤੇ ਪਕੜ।" data-hi="पद्धति: रासायनिक समीकरण संतुलन, किरण आरेख और सटीक वैज्ञानिक शब्दावली पर पूर्ण नियंत्रण।">
+          Methodology: Conceptual experiments, balanced reaction drills, ray diagrams, and scientific terminology mastery.
         </p>
       </div>
 
-      <!-- SST Panel -->
       <div class="tab-content-panel" id="tabSst">
-        <h4 style="font-size:13px; color:var(--gold); margin-bottom:8px;" id="sstHeaderTitle">Class 9th Social Science (NCERT):</h4>
-        <div id="sstChaptersList">
-          <!-- Populated dynamically via JS -->
-        </div>
-        <p style="font-size:11.5px; color:var(--text-dim); margin-top:10px; line-height:1.45;" class="translatable" data-en="Methodology: Chronological historical flowcharts, geography map plotting, and 5-mark point-wise answer structure." data-pa="ਢੰਗ: ਇਤਿਹਾਸ ਦੇ ਫ਼ਲੋ-ਚਾਰਟ, ਨਕਸ਼ੇ ਦਾ ਅਭਿਆਸ ਅਤੇ 5 ਨੰਬਰਾਂ ਵਾਲੇ ਵੱਡੇ ਉੱਤਰ ਪੁਆਇੰਟਾਂ ਵਿੱਚ ਸੌਖੇ ਲਿਖਣੇ।" data-hi="पद्धति: ऐतिहासिक घटनाओं का प्रवाह-चित्र, मानचित्र अभ्यास और 5-अंकीय बिंदुवार उत्तर लेखन।">
-          Methodology: Chronological historical flowcharts, geography map plotting, and 5-mark point-wise answer structure.
+        <h4 style="font-size:13px; color:var(--gold); margin-bottom:8px;" id="sstHeaderTitle">Class 9th Social Science (New NCERT):</h4>
+        <div id="sstChaptersList"></div>
+        <p style="font-size:11.5px; color:var(--text-dim); margin-top:10px; line-height:1.45;" class="translatable" data-en="Methodology: Chronological history flowcharts, geography map plotting, and 5-mark point-wise answer structure." data-pa="ਢੰਗ: ਇਤਿਹਾਸ ਦੇ ਫ਼ਲੋ-ਚਾਰਟ, ਨਕਸ਼ੇ ਦਾ ਅਭਿਆਸ ਅਤੇ 5 ਨੰਬਰਾਂ ਵਾਲੇ ਵੱਡੇ ਉੱਤਰ ਪੁਆਇੰਟਾਂ ਵਿੱਚ ਸੌਖੇ ਲਿਖਣੇ।" data-hi="पद्धति: ऐतिहासिक घटनाओं का प्रवाह-चित्र, मानचित्र अभ्यास और 5-अंकीय बिंदुवार उत्तर लेखन।">
+          Methodology: Chronological history flowcharts, geography map plotting, and 5-mark point-wise answer structure.
         </p>
       </div>
     </section>
 
-    <!-- Co-Curricular Distinctions -->
     <section class="glass-card reveal">
       <div class="sec-tag translatable" data-en="Co-Curricular Distinctions" data-pa="ਸਹਿ-ਪਾਠਕ੍ਰਮ ਮੁਕਾਬਲਿਆਂ ਵਿੱਚ ਪ੍ਰਾਪਤੀਆਂ" data-hi="सह-पाठ्यक्रम उपलब्धियाँ">Co-Curricular Distinctions</div>
       <div style="display:flex; flex-direction:column; gap:8px;">
@@ -1231,12 +1142,11 @@
           </div>
         </div>
       </div>
-      <div style="margin-top:12px; background:linear-gradient(135deg, rgba(236,72,153,0.1), rgba(121,40,202,0.1)); border:1px solid rgba(236,72,153,0.25); border-radius:12px; padding:12px; font-size:12px; color:#f472b6; font-style:italic;" class="translatable" data-en="&ldquo;Deep interest in poetry, literature, and eloquent communication, instilling intellectual confidence into every student.&rdquo;" data-pa="&ldquo;ਕਵਿਤਾ ਅਧਿਐਨ, ਸਾਹਿਤਕ ਰੁਚੀ ਅਤੇ ਪ੍ਰਭਾਵਸ਼ਾਲੀ ਗੱਲਬਾਤ ਕਲਾ—ਵਿਦਿਆਰਥੀਆਂ ਨੂੰ ਨਾ ਸਿਰਫ਼ ਅੰਕ ਲੈਣ ਸਗੋਂ ਜ਼ਿੰਦਗੀ ਵਿੱਚ ਭਰੋਸੇਮੰਦ ਬਣਨ ਵਿੱਚ ਸਹਾਈ।&rdquo;" data-hi="&ldquo;साहित्य, कविता और प्रभावशाली संवाद कला में विशेष रुचि—विद्यार्थियों में बौद्धिक आत्मविश्वास और एकाग्रता जगाने में सहायक।&rdquo;">
-        &ldquo;Deep interest in poetry, literature, and eloquent communication, instilling intellectual confidence into every student.&rdquo;
+      <div style="margin-top:12px; background:linear-gradient(135deg, rgba(236,72,153,0.1), rgba(121,40,202,0.1)); border:1px solid rgba(236,72,153,0.25); border-radius:12px; padding:12px; font-size:12px; color:#f472b6; font-style:italic;" class="translatable" data-en="&ldquo;Deep interest in literature and clear articulation, instilling intellectual confidence into every student.&rdquo;" data-pa="&ldquo;ਕਵਿਤਾ ਅਧਿਐਨ, ਸਾਹਿਤਕ ਰੁਚੀ ਅਤੇ ਪ੍ਰਭਾਵਸ਼ਾਲੀ ਗੱਲਬਾਤ ਕਲਾ—ਵਿਦਿਆਰਥੀਆਂ ਨੂੰ ਨਾ ਸਿਰਫ਼ ਅੰਕ ਲੈਣ ਸਗੋਂ ਜ਼ਿੰਦਗੀ ਵਿੱਚ ਭਰੋਸੇਮੰਦ ਬਣਨ ਵਿੱਚ ਸਹਾਈ।&rdquo;" data-hi="&ldquo;साहित्य, कविता और प्रभावशाली संवाद कला में विशेष रुचि—विद्यार्थियों में बौद्धिक आत्मविश्वास और एकाग्रता जगाने में सहायक।&rdquo;">
+        &ldquo;Deep interest in literature and clear articulation, instilling intellectual confidence into every student.&rdquo;
       </div>
     </section>
 
-    <!-- Parent Reviews / Testimonials -->
     <section class="glass-card reveal">
       <div class="sec-tag translatable" data-en="Parent & Student Feedback" data-pa="ਮਾਪਿਆਂ ਅਤੇ ਵਿਦਿਆਰਥੀਆਂ ਦੇ ਵਿਚਾਰ" data-hi="अभिभावकों व विद्यार्थियों के विचार">Parent & Student Feedback</div>
       
@@ -1263,7 +1173,6 @@
       </div>
     </section>
 
-    <!-- Booking Modal -->
     <div class="modal-overlay" id="bookingModal" onclick="closeModalOnBg(event)">
       <div class="modal-sheet">
         <div class="modal-header">
@@ -1286,9 +1195,9 @@
           <select id="modalClass" class="input-field">
             <option value="Class 9th">Class 9th</option>
             <option value="Class 10th (Board)">Class 10th (Board)</option>
-            <option value="Twins (Same Class Batch)">Twins (Same Class Batch)</option>
-            <option value="2 Siblings (Different Classes)">2 Siblings (Different Classes)</option>
-            <option value="3 Students / Small Group Batch">3 Students / Small Group Batch</option>
+            <option value="Twins (Same Class Shared Batch)">Twins (Same Class Shared Batch)</option>
+            <option value="2 Siblings (Back-to-Back 2 Hr Slot)">2 Siblings (Back-to-Back 2 Hr Slot)</option>
+            <option value="3 Students Group (Shared Subjects)">3 Students Group (Shared Subjects)</option>
           </select>
           <input type="text" id="modalSubjects" class="input-field" placeholder="Subject(s)" value="Maths, Science, SST" />
           
@@ -1297,7 +1206,6 @@
       </div>
     </div>
 
-    <!-- Dual Sticky Bottom Action Dock -->
     <div class="sticky-dock">
       <a href="https://wa.me/919815485169?text=Hello%20Saurav,%20I%20am%20interested%20in%20Home%20Tuitions%20for%209th/10th%20grade%20around%20PU%20Chandigarh." class="dock-action-btn dock-wa" id="dockWaLink" onclick="triggerTactile('success')">
         <span>💬</span> <span class="translatable" data-en="WhatsApp Chat" data-pa="ਵਟਸਐਪ ਚੈਟ" data-hi="व्हाट्सएप चैट">WhatsApp Chat</span>
@@ -1310,7 +1218,6 @@
   </div>
 
   <script>
-    // Web Audio Synthesizer Engine
     let audioCtx = null;
     function getAudioCtx() {
       if (!audioCtx) {
@@ -1379,7 +1286,6 @@
     document.addEventListener('touchstart', () => getAudioCtx(), { once: true });
     document.addEventListener('click', () => getAudioCtx(), { once: true });
 
-    // Scroll progress line
     window.addEventListener('scroll', () => {
       const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
       const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
@@ -1387,7 +1293,6 @@
       document.getElementById('progressLine').style.width = scrolled + '%';
     });
 
-    // Reveal on scroll
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -1418,21 +1323,12 @@
       }, 35);
     }
 
-    // Calculator State with 3 Kids / Group Setup
     let calcState = {
       grade: 9,
-      mode: 'solo', // 'solo', 'twins', 'siblings', 'group3'
-      singleSubjects: { math: true, sci: true, sst: true },
-      s1Grade: 9,
+      mode: 'solo',
+      sharedSubjects: { math: true, sci: true, sst: true },
       s1Subjects: { math: true, sci: true, sst: true },
-      s2Grade: 10,
-      s2Subjects: { math: true, sci: true, sst: true },
-      g1Grade: 9,
-      g1Subjects: { math: true, sci: true, sst: true },
-      g2Grade: 9,
-      g2Subjects: { math: true, sci: true, sst: true },
-      g3Grade: 10,
-      g3Subjects: { math: true, sci: true, sst: true }
+      s2Subjects: { math: true, sci: true, sst: true }
     };
 
     function setGrade(val) {
@@ -1446,11 +1342,11 @@
     function toggleSubj(target, key) {
       triggerTactile('toggle');
       if (target === 'single') {
-        calcState.singleSubjects[key] = !calcState.singleSubjects[key];
-        if (Object.values(calcState.singleSubjects).filter(Boolean).length === 0) calcState.singleSubjects[key] = true;
-        document.getElementById('lblMath').classList.toggle('checked', calcState.singleSubjects.math);
-        document.getElementById('lblSci').classList.toggle('checked', calcState.singleSubjects.sci);
-        document.getElementById('lblSst').classList.toggle('checked', calcState.singleSubjects.sst);
+        calcState.sharedSubjects[key] = !calcState.sharedSubjects[key];
+        if (Object.values(calcState.sharedSubjects).filter(Boolean).length === 0) calcState.sharedSubjects[key] = true;
+        document.getElementById('lblMath').classList.toggle('checked', calcState.sharedSubjects.math);
+        document.getElementById('lblSci').classList.toggle('checked', calcState.sharedSubjects.sci);
+        document.getElementById('lblSst').classList.toggle('checked', calcState.sharedSubjects.sst);
       } else if (target === 's1') {
         calcState.s1Subjects[key] = !calcState.s1Subjects[key];
         if (Object.values(calcState.s1Subjects).filter(Boolean).length === 0) calcState.s1Subjects[key] = true;
@@ -1463,24 +1359,6 @@
         document.getElementById('lblS2Math').classList.toggle('checked', calcState.s2Subjects.math);
         document.getElementById('lblS2Sci').classList.toggle('checked', calcState.s2Subjects.sci);
         document.getElementById('lblS2Sst').classList.toggle('checked', calcState.s2Subjects.sst);
-      } else if (target === 'g1') {
-        calcState.g1Subjects[key] = !calcState.g1Subjects[key];
-        if (Object.values(calcState.g1Subjects).filter(Boolean).length === 0) calcState.g1Subjects[key] = true;
-        document.getElementById('lblG1Math').classList.toggle('checked', calcState.g1Subjects.math);
-        document.getElementById('lblG1Sci').classList.toggle('checked', calcState.g1Subjects.sci);
-        document.getElementById('lblG1Sst').classList.toggle('checked', calcState.g1Subjects.sst);
-      } else if (target === 'g2') {
-        calcState.g2Subjects[key] = !calcState.g2Subjects[key];
-        if (Object.values(calcState.g2Subjects).filter(Boolean).length === 0) calcState.g2Subjects[key] = true;
-        document.getElementById('lblG2Math').classList.toggle('checked', calcState.g2Subjects.math);
-        document.getElementById('lblG2Sci').classList.toggle('checked', calcState.g2Subjects.sci);
-        document.getElementById('lblG2Sst').classList.toggle('checked', calcState.g2Subjects.sst);
-      } else if (target === 'g3') {
-        calcState.g3Subjects[key] = !calcState.g3Subjects[key];
-        if (Object.values(calcState.g3Subjects).filter(Boolean).length === 0) calcState.g3Subjects[key] = true;
-        document.getElementById('lblG3Math').classList.toggle('checked', calcState.g3Subjects.math);
-        document.getElementById('lblG3Sci').classList.toggle('checked', calcState.g3Subjects.sci);
-        document.getElementById('lblG3Sst').classList.toggle('checked', calcState.g3Subjects.sst);
       }
       computePlan();
     }
@@ -1493,10 +1371,22 @@
       document.getElementById('btnSiblings').classList.toggle('selected', mode === 'siblings');
       document.getElementById('btnGroup3').classList.toggle('selected', mode === 'group3');
 
-      document.getElementById('gradeSelectorWrap').style.display = (mode === 'solo' || mode === 'twins') ? 'block' : 'none';
-      document.getElementById('singleSubjWrap').style.display = (mode === 'solo' || mode === 'twins') ? 'block' : 'none';
+      const isSharedBatch = (mode === 'solo' || mode === 'twins' || mode === 'group3');
+      document.getElementById('gradeSelectorWrap').style.display = isSharedBatch ? 'block' : 'none';
+      document.getElementById('singleSubjWrap').style.display = isSharedBatch ? 'block' : 'none';
       document.getElementById('siblingSubjWrap').style.display = (mode === 'siblings') ? 'block' : 'none';
-      document.getElementById('group3SubjWrap').style.display = (mode === 'group3') ? 'block' : 'none';
+
+      document.getElementById('groupPolicyNotice').style.display = (mode === 'twins' || mode === 'group3') ? 'block' : 'none';
+      document.getElementById('siblingPolicyNotice').style.display = (mode === 'siblings') ? 'block' : 'none';
+
+      const lbl = document.getElementById('subjSelectionLabel');
+      if (mode === 'twins') {
+        lbl.innerText = "Select Shared Subjects for Twins (Same Class)";
+      } else if (mode === 'group3') {
+        lbl.innerText = "Select Shared Subjects for 3-Student Group";
+      } else {
+        lbl.innerText = "Select Subjects Needed";
+      }
 
       computePlan();
     }
@@ -1510,58 +1400,45 @@
       let totalHoursTxt = "6 Days / Wk";
 
       if (calcState.mode === 'twins') {
-        const activeCount = Object.values(calcState.singleSubjects).filter(Boolean).length;
+        const activeCount = Object.values(calcState.sharedSubjects).filter(Boolean).length;
         if (activeCount === 3) total = 5500;
         else if (activeCount === 2) total = 4000;
         else total = 2500;
 
         timingTxt = "1.5 Hrs / Combined Slot";
         totalHoursTxt = (activeCount === 3) ? '6 Days / Wk' : ((activeCount === 2) ? '5 Days / Wk' : '3-4 Days / Wk');
-        perkTxtEn = "Combined Flat Fee for BOTH Students";
-        perkTxtPa = "ਦੋਵਾਂ ਵਿਦਿਆਰਥੀਆਂ ਦੀ ਕੁੱਲ ਫ਼ੀਸ (ਸਾਂਝਾ ਬੈਚ)";
-        perkTxtHi = "दोनों विद्यार्थियों का कुल संयुक्त शुल्क (समान बैच)";
-      } else if (calcState.mode === 'siblings') {
-        const count1 = Object.values(calcState.s1Subjects).filter(Boolean).length;
-        const count2 = Object.values(calcState.s2Subjects).filter(Boolean).length;
+        perkTxtEn = "Flat Fee for BOTH Students (Shared Subjects Policy)";
+        perkTxtPa = "ਦੋਵਾਂ ਬੱਚਿਆਂ ਦੀ ਕੁੱਲ ਸਾਂਝੀ ਫ਼ੀਸ (ਸਾਂਝੇ ਵਿਸ਼ੇ ਨਿਯਮ)";
+        perkTxtHi = "दोनों विद्यार्थियों का कुल संयुक्त शुल्क (समान विषय नीति)";
+      } else if (calcState.mode === 'group3') {
+        const activeCount = Object.values(calcState.sharedSubjects).filter(Boolean).length;
+        let baseRate = (calcState.grade === 10) ? 2500 : 2200;
+        let singleChildFee = (activeCount * baseRate) - (activeCount === 3 ? 500 : 0);
+        total = Math.round(singleChildFee * 3 * 0.80);
+        total = Math.ceil(total / 500) * 500;
 
-        let rate1 = (calcState.s1Grade === 10) ? 2500 : 2200;
-        let rate2 = (calcState.s2Grade === 10) ? 2500 : 2200;
-        let fee1 = count1 * rate1 - (count1 === 3 ? 500 : 0);
-        let fee2 = count2 * rate2 - (count2 === 3 ? 500 : 0);
+        timingTxt = "1.75 Hrs / Interactive Group";
+        totalHoursTxt = '6 Days / Wk';
+        perkTxtEn = "Flat 20% Group Rebate (Shared Subjects Policy)";
+        perkTxtPa = "ਸਾਰੇ 3 ਬੱਚਿਆਂ ਲਈ 20% ਗਰੁੱਪ ਛੋਟ (ਸਾਂਝੇ ਵਿਸ਼ੇ ਨਿਯਮ)";
+        perkTxtHi = "तीनों विद्यार्थियों हेतु 20% समूह छूट (समान विषय नीति)";
+      } else if (calcState.mode === 'siblings') {
+        const c1 = Object.values(calcState.s1Subjects).filter(Boolean).length;
+        const c2 = Object.values(calcState.s2Subjects).filter(Boolean).length;
+
+        let fee1 = (c1 * 2200) - (c1 === 3 ? 500 : 0);
+        let fee2 = (c2 * 2500) - (c2 === 3 ? 500 : 0);
 
         total = Math.round((fee1 + fee2) * 0.85);
         total = Math.ceil(total / 500) * 500;
 
-        timingTxt = "2.25 Hrs / Structured Slots";
-        const maxCount = Math.max(count1, count2);
-        totalHoursTxt = (maxCount === 3) ? '6 Days / Wk' : '5 Days / Wk';
-        perkTxtEn = `2 Students (${count1}+${count2} Subj) • 15% Sibling Rebate`;
-        perkTxtPa = `2 ਬੱਚੇ (${count1}+${count2} ਵਿਸ਼ੇ) • 15% ਵਿਸ਼ੇਸ਼ ਪਰਿਵਾਰਕ ਛੋਟ`;
-        perkTxtHi = `2 विद्यार्थी (${count1}+${count2} विषय) • 15% विशेष छूट`;
-      } else if (calcState.mode === 'group3') {
-        const c1 = Object.values(calcState.g1Subjects).filter(Boolean).length;
-        const c2 = Object.values(calcState.g2Subjects).filter(Boolean).length;
-        const c3 = Object.values(calcState.g3Subjects).filter(Boolean).length;
-
-        let r1 = (calcState.g1Grade === 10) ? 2500 : 2200;
-        let r2 = (calcState.g2Grade === 10) ? 2500 : 2200;
-        let r3 = (calcState.g3Grade === 10) ? 2500 : 2200;
-
-        let f1 = c1 * r1 - (c1 === 3 ? 500 : 0);
-        let f2 = c2 * r2 - (c2 === 3 ? 500 : 0);
-        let f3 = c3 * r3 - (c3 === 3 ? 500 : 0);
-
-        // 20% Group Rebate for 3 students
-        total = Math.round((f1 + f2 + f3) * 0.80);
-        total = Math.ceil(total / 500) * 500;
-
-        timingTxt = "3.0 Hrs / Tailored Combined Slots";
+        timingTxt = "2.0 Hours (1 Hr 9th + 1 Hr 10th)";
         totalHoursTxt = '6 Days / Wk';
-        perkTxtEn = `3 Students (${c1}+${c2}+${c3} Subj) • 20% Multi-Student Discount`;
-        perkTxtPa = `3 ਬੱਚੇ (${c1}+${c2}+${c3} ਵਿਸ਼ੇ) • 20% ਵਿਸ਼ੇਸ਼ ਗਰੁੱਪ ਛੋਟ`;
-        perkTxtHi = `3 विद्यार्थी (${c1}+${c2}+${c3} विषय) • 20% समूह छूट`;
+        perkTxtEn = "Consecutive 2-Hr Home Slot (15% Sibling Rebate)";
+        perkTxtPa = "ਲਗਾਤਾਰ 2 ਘੰਟੇ ਦਾ ਹੋਮ ਸਲਾਟ (15% ਪਰਿਵਾਰਕ ਛੋਟ)";
+        perkTxtHi = "लगातार 2 घंटे का स्लॉट (15% पारिवारिक छूट)";
       } else {
-        const activeCount = Object.values(calcState.singleSubjects).filter(Boolean).length;
+        const activeCount = Object.values(calcState.sharedSubjects).filter(Boolean).length;
         let baseRate = (calcState.grade === 10) ? 2500 : 2200;
         total = activeCount * baseRate;
         if (activeCount === 3) total -= 500;
@@ -1569,9 +1446,9 @@
 
         timingTxt = "1.5 Hours / Day";
         totalHoursTxt = (activeCount === 3) ? '6 Days / Wk' : ((activeCount === 2) ? '5 Days / Wk' : '3-4 Days / Wk');
-        perkTxtEn = "Includes Free 2-Day Trial Session";
-        perkTxtPa = "2 ਦਿਨਾਂ ਦਾ ਮੁਫ਼ਤ ਟਰਾਇਲ ਸ਼ਾਮਲ ਹੈ";
-        perkTxtHi = "2 दिन का निःशुल्क ट्रायल सत्र शामिल";
+        perkTxtEn = "Dedicated 1-on-1 Personalized Mentoring";
+        perkTxtPa = "ਵਿਅਕਤੀਗਤ 1-ਆਨ-1 ਨਿੱਜੀ ਅਧਿਆਪਨ";
+        perkTxtHi = "व्यक्तिगत 1-ऑन-1 व्यक्तिगत मार्गदर्शन";
       }
 
       document.getElementById('displayFee').innerText = '₹' + total.toLocaleString('en-IN');
@@ -1586,20 +1463,15 @@
 
       const modalSubjInput = document.getElementById('modalSubjects');
       if (modalSubjInput) {
-        if (calcState.mode === 'group3') {
-          const g1 = Object.keys(calcState.g1Subjects).filter(k => calcState.g1Subjects[k]).map(k => k.toUpperCase()).join('/');
-          const g2 = Object.keys(calcState.g2Subjects).filter(k => calcState.g2Subjects[k]).map(k => k.toUpperCase()).join('/');
-          const g3 = Object.keys(calcState.g3Subjects).filter(k => calcState.g3Subjects[k]).map(k => k.toUpperCase()).join('/');
-          modalSubjInput.value = `3 Kids [C1(${calcState.g1Grade}th):${g1} | C2(${calcState.g2Grade}th):${g2} | C3(${calcState.g3Grade}th):${g3}]`;
-        } else if (calcState.mode === 'siblings') {
+        if (calcState.mode === 'siblings') {
           const s1 = Object.keys(calcState.s1Subjects).filter(k => calcState.s1Subjects[k]).map(k => k.toUpperCase()).join('/');
           const s2 = Object.keys(calcState.s2Subjects).filter(k => calcState.s2Subjects[k]).map(k => k.toUpperCase()).join('/');
-          modalSubjInput.value = `C1 (${calcState.s1Grade}th): ${s1} | C2 (${calcState.s2Grade}th): ${s2}`;
+          modalSubjInput.value = `Siblings [9th (1 Hr): ${s1} | 10th (1 Hr): ${s2}]`;
         } else {
           const activeNames = [];
-          if (calcState.singleSubjects.math) activeNames.push('Maths');
-          if (calcState.singleSubjects.sci) activeNames.push('Science');
-          if (calcState.singleSubjects.sst) activeNames.push('SST');
+          if (calcState.sharedSubjects.math) activeNames.push('Maths');
+          if (calcState.sharedSubjects.sci) activeNames.push('Science');
+          if (calcState.sharedSubjects.sst) activeNames.push('SST');
           modalSubjInput.value = activeNames.join(', ');
         }
       }
@@ -1607,68 +1479,61 @@
 
     function bookConfiguredPlan() {
       let feeVal = document.getElementById('displayFee').innerText;
+      let modeName = calcState.mode;
       let text = '';
 
       if (currentLang === 'pa') {
-        text = `ਸਤਿ ਸ਼੍ਰੀ ਅਕਾਲ ਸੌਰਵ ਜੀ, ਮੈਂ ਸਵਰਨ ਅਕੈਡਮਿਕਸ 'ਤੇ ਹੋਮ ਟਿਊਸ਼ਨ ਦੀ ਯੋਜਨਾ ਚੁਣੀ ਹੈ।\n\nਅੰਦਾਜ਼ਨ ਮਹੀਨਾਵਾਰ ਫ਼ੀਸ: ${feeVal}\nਮੈਂ ਮੁਫ਼ਤ 2 ਦਿਨਾਂ ਦਾ ਟ੍ਰਾਇਲ ਸੈਸ਼ਨ ਬੁੱਕ ਕਰਨਾ ਚਾਹੁੰਦਾ/ਚਾਹੁੰਦੀ ਹਾਂ।`;
+        text = `ਸਤਿ ਸ਼੍ਰੀ ਅਕਾਲ ਸੌਰਵ ਜੀ, ਮੈਂ ਸਵਰਨ ਅਕੈਡਮਿਕਸ 'ਤੇ ਹੋਮ ਟਿਊਸ਼ਨ ਦੀ ਯੋਜਨਾ (${modeName}) ਚੁਣੀ ਹੈ।\nਅੰਦਾਜ਼ਨ ਫ਼ੀਸ: ${feeVal}\nਮੈਂ 2 ਦਿਨਾਂ ਦਾ ਮੁਫ਼ਤ ਟ੍ਰਾਇਲ ਸੈਸ਼ਨ ਬੁੱਕ ਕਰਨਾ ਚਾਹੁੰਦਾ/ਚਾਹੁੰਦੀ ਹਾਂ।`;
       } else if (currentLang === 'hi') {
-        text = `नमस्ते सौरभ जी, मैंने स्वर्ण एकेडेमिक्स पर होम ट्यूशन का प्लान चुना है।\n\nअनुमानित मासिक शुल्क: ${feeVal}\nमैं 2 दिन का फ्री ट्रायल सत्र बुक करना चाहता/चाहती हूँ।`;
+        text = `नमस्ते सौरभ जी, मैंने स्वर्ण एकेडेमिक्स पर होम ट्यूशन का प्लान (${modeName}) चुना है।\nअनुमानित शुल्क: ${feeVal}\nमैं 2 दिन का फ्री ट्रायल सत्र बुक करना चाहता/चाहती हूँ।`;
       } else {
-        text = `Hello Saurav! I configured a Home Tuition plan on Swaran Academics.\n\nEstimated Fee: ${feeVal}\nI would like to book a Free 2-Day Trial Session.`;
+        text = `Hello Saurav! I configured a Home Tuition plan (${modeName}) on Swaran Academics.\nEstimated Fee: ${feeVal}\nI would like to book a Free 2-Day Trial Session.`;
       }
 
       window.open(`https://wa.me/919815485169?text=${encodeURIComponent(text)}`, '_blank');
     }
 
-    // NCERT Latest Rationalised Syllabus Data Bank (Class 9 & 10)
     const ncertCurriculum = {
       9: {
         math: [
-          "Number Systems",
-          "Polynomials",
-          "Coordinate Geometry",
-          "Linear Equations in Two Variables",
-          "Introduction to Euclid's Geometry",
-          "Lines and Angles",
-          "Triangles",
-          "Quadrilaterals",
-          "Circles",
-          "Heron's Formula",
-          "Surface Areas and Volumes",
-          "Statistics"
+          "Ch 1: Orienting Yourself: The Use of Coordinates",
+          "Ch 2: Introduction to Linear Polynomials",
+          "Ch 3: The World of Numbers",
+          "Ch 4: Exploring Algebraic Identities",
+          "Ch 5: Circles: I'm Up and Down, and Round and Round",
+          "Ch 6: Measuring Space: Perimeter and Area",
+          "Ch 7: The Mathematics of Maybe: Probability",
+          "Ch 8: Predicting What Comes Next: Sequences & Progressions",
+          "Axioms, Postulates & Euclid's Geometry",
+          "Lines, Angles & Triangles Congruence",
+          "4-gons (Quadrilaterals)",
+          "Surface Area and Volume",
+          "Statistics & Measures of Central Tendency"
         ],
         sci: [
-          "Matter in Our Surroundings",
-          "Is Matter Around Us Pure?",
-          "Atoms and Molecules",
-          "Structure of the Atom",
-          "The Fundamental Unit of Life (Cell)",
-          "Tissues",
-          "Motion",
-          "Force and Laws of Motion",
-          "Gravitation",
-          "Work and Energy",
-          "Sound",
-          "Improvement in Food Resources"
+          "Ch 2: Cell: The Building Block of Life",
+          "Ch 3: Tissues in Action",
+          "Ch 4: Describing Motion Around Us",
+          "Ch 5: Exploring Mixtures and their Separation",
+          "Ch 6: How Forces Affect Motion",
+          "Ch 7: Work, Energy and Simple Machines",
+          "Ch 8: Journey Inside the Atom",
+          "Ch 9: Atomic Foundations of Matter",
+          "Ch 10: Sound Waves: Characteristics & Applications",
+          "Ch 11: Reproduction: How Life Continues",
+          "Ch 12: Patterns in Life: Diversity and Classification",
+          "Ch 13: Earth as a System: Energy, Matter and Life"
         ],
         sst: [
-          "History: The French Revolution",
-          "History: Socialism in Europe & Russian Revolution",
-          "History: Nazism & the Rise of Hitler",
-          "Geography: India – Size and Location",
-          "Geography: Physical Features of India",
-          "Geography: Drainage System",
-          "Geography: Climate",
-          "Geography: Population",
-          "Civics: What is Democracy? Why Democracy?",
-          "Civics: Constitutional Design",
-          "Civics: Electoral Politics",
-          "Civics: Working of Institutions",
-          "Civics: Democratic Rights",
-          "Economics: The Story of Village Palampur",
-          "Economics: People as Resource",
-          "Economics: Poverty as a Challenge",
-          "Economics: Food Security in India"
+          "Theme 1: Understanding Social Science",
+          "Theme 2: Shaping of the Earth's Surface",
+          "Theme 3: Atmosphere and Climate",
+          "Theme 4: Early Humans and Beginning of Civilisation",
+          "Theme 5: State and Society (upto 1000 CE)",
+          "Theme 6: Democracy: Roots & Principles",
+          "Theme 7: Elections & Electoral Systems",
+          "Theme 8: Building Blocks in Economics",
+          "Theme 9: The Price Puzzle: What Drives the Market"
         ]
       },
       10: {
@@ -1681,7 +1546,7 @@
           "Triangles",
           "Coordinate Geometry",
           "Introduction to Trigonometry",
-          "Some Applications of Trigonometry",
+          "Applications of Trigonometry",
           "Circles",
           "Areas Related to Circles",
           "Surface Areas and Volumes",
@@ -1740,9 +1605,9 @@
 
     function renderSyllabusUI() {
       const g = activeSyllabusGrade;
-      document.getElementById('mathHeaderTitle').innerText = `Class ${g}th Mathematics (Latest NCERT):`;
-      document.getElementById('sciHeaderTitle').innerText = `Class ${g}th Science (Latest NCERT):`;
-      document.getElementById('sstHeaderTitle').innerText = `Class ${g}th Social Science (Latest NCERT):`;
+      document.getElementById('mathHeaderTitle').innerText = `Class ${g}th Mathematics (New NCERT):`;
+      document.getElementById('sciHeaderTitle').innerText = `Class ${g}th Science (New NCERT):`;
+      document.getElementById('sstHeaderTitle').innerText = `Class ${g}th Social Science (New NCERT):`;
 
       const mBox = document.getElementById('mathChaptersList');
       const scBox = document.getElementById('sciChaptersList');
@@ -1761,13 +1626,12 @@
       document.getElementById(tabId).classList.add('active');
     }
 
-    // Comprehensive Question Bank with Random Scrambler
     const fullQuestionBank = [
       {
-        q: "If 2x + 3 = 11, what is the value of x?",
-        options: ["2", "4", "3", "7"],
+        q: "In the 2-D Cartesian plane, what is the distance between (0,0) and (3,4)?",
+        options: ["7", "5", "1", "12"],
         correct: 1,
-        tip: "Great start! 2x = 8, so x = 4."
+        tip: "Spot on! By distance formula, √(3² + 4²) = √25 = 5."
       },
       {
         q: "Which law explains why passengers lean forward when a bus suddenly stops?",
@@ -1776,34 +1640,22 @@
         tip: "Spot on! Inertia of motion keeps the body moving."
       },
       {
-        q: "In which sector of the Indian economy is Agriculture categorized?",
-        options: ["Secondary Sector", "Tertiary Sector", "Primary Sector", "IT Sector"],
-        correct: 2,
-        tip: "Excellent! Agriculture directly utilizes natural resources (Primary)."
-      },
-      {
-        q: "What is the degree of a Quadratic Polynomial?",
-        options: ["1", "2", "3", "0"],
-        correct: 1,
-        tip: "Correct! A quadratic polynomial always has highest power 2."
-      },
-      {
-        q: "What happens to resistance when the length of a metallic wire is doubled?",
-        options: ["Halved", "Remains same", "Doubled", "Quadrupled"],
-        correct: 2,
-        tip: "Spot on! Resistance is directly proportional to length (R ∝ L)."
-      },
-      {
-        q: "Which authority in India issues currency notes on behalf of the Central Government?",
-        options: ["State Bank of India", "Reserve Bank of India", "Ministry of Finance", "NITI Aayog"],
-        correct: 1,
-        tip: "Correct! RBI is India's central monetary authority."
-      },
-      {
-        q: "In which part of the green plant does photosynthesis primarily occur?",
-        options: ["Chloroplast", "Mitochondria", "Ribosome", "Vacuole"],
+        q: "What drives market price equilibrium according to foundational Economics?",
+        options: ["Demand & Supply intersection", "Government decree only", "Fixed retail margins", "Export quotas"],
         correct: 0,
-        tip: "Right! Chloroplasts contain chlorophyll required for photosynthesis."
+        tip: "Right! Equilibrium is where quantity demanded equals quantity supplied."
+      },
+      {
+        q: "What is the degree of a Linear Polynomial?",
+        options: ["1", "2", "3", "0"],
+        correct: 0,
+        tip: "Correct! A linear polynomial always has degree 1."
+      },
+      {
+        q: "Which cell organelle is known as the powerhouse of the cell?",
+        options: ["Mitochondria", "Chloroplast", "Ribosome", "Endoplasmic Reticulum"],
+        correct: 0,
+        tip: "Accurate! Mitochondria generate cellular ATP energy."
       }
     ];
 
@@ -1896,7 +1748,7 @@
           <div style="font-size:32px; margin-bottom:8px;">🎯</div>
           <div style="font-size:16px; font-weight:800; color:#fff;">Score: ${quizScore} / ${activeQuizQuestions.length} Correct</div>
           <p style="font-size:12px; color:var(--text-dim); margin:8px 0 14px 0;">
-            ${quizScore >= 2 ? 'Strong foundation! Ready for top board examination scores.' : 'Good effort! Targeted concept mentoring will quickly bridge these gaps.'}
+            ${quizScore >= 2 ? 'Strong conceptual grip! Ready for top scores.' : 'Good attempt! Dedicated concept coaching will quickly bridge all gaps.'}
           </p>
           <div style="display:flex; gap:8px; justify-content:center;">
             <button onclick="initQuiz()" style="background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.15); color:#fff; font-weight:700; font-size:12px; padding:10px 14px; border-radius:10px; cursor:pointer;">
@@ -1910,14 +1762,12 @@
       `;
     }
 
-    // Accordion Roadmap
     function toggleRoadmap(node) {
       const wasActive = node.classList.contains('active-node');
       document.querySelectorAll('.roadmap-node').forEach(n => n.classList.remove('active-node'));
       if (!wasActive) node.classList.add('active-node');
     }
 
-    // Modal
     function pickSector(val) {
       document.getElementById('parentSector').value = val + ', Chandigarh';
     }
@@ -1925,11 +1775,11 @@
     function openBookingModal() {
       const modalClassSelect = document.getElementById('modalClass');
       if (calcState.mode === 'twins') {
-        modalClassSelect.value = "Twins (Same Class Batch)";
+        modalClassSelect.value = "Twins (Same Class Shared Batch)";
       } else if (calcState.mode === 'siblings') {
-        modalClassSelect.value = "2 Siblings (Different Classes)";
+        modalClassSelect.value = "2 Siblings (Back-to-Back 2 Hr Slot)";
       } else if (calcState.mode === 'group3') {
-        modalClassSelect.value = "3 Students / Small Group Batch";
+        modalClassSelect.value = "3 Students Group (Shared Subjects)";
       } else {
         modalClassSelect.value = (calcState.grade === 9) ? 'Class 9th' : 'Class 10th (Board)';
       }
@@ -1968,7 +1818,6 @@
       closeBookingModal();
     }
 
-    // Tri-Lingual Engine (English, Punjabi, Hindi)
     let currentLang = 'en';
 
     function switchLang(lang) {
@@ -2016,7 +1865,6 @@
       computePlan();
     }
 
-    // Page initialization
     window.addEventListener('DOMContentLoaded', () => {
       computePlan();
       initQuiz();
