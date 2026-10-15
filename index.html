@@ -116,6 +116,7 @@
       border-color: var(--border-glow);
       box-shadow: 0 20px 48px rgba(0, 0, 0, 0.65), 0 0 24px rgba(0, 242, 254, 0.15);
     }
+
     .top-header {
       display: flex;
       justify-content: space-between;
@@ -183,7 +184,7 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 10px;
+      gap: 8px;
       margin-bottom: 12px;
       background: rgba(255, 255, 255, 0.04);
       border: 1px solid rgba(255, 255, 255, 0.08);
@@ -191,7 +192,7 @@
       border-radius: 20px;
     }
     .brand-name {
-      font-size: 17px;
+      font-size: 16px;
       font-weight: 900;
       letter-spacing: 0.8px;
       background: linear-gradient(135deg, var(--gold), var(--cyan));
@@ -200,28 +201,24 @@
     }
     .profile-avatar-wrap {
       position: relative;
-      width: 92px;
-      height: 92px;
+      width: 125px;
+      height: 125px;
       margin: 0 auto 12px auto;
     }
-    .avatar-disc {
+    .avatar-img-disc {
       width: 100%;
       height: 100%;
       border-radius: 50%;
-      background: linear-gradient(135deg, var(--cyan), var(--purple));
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 32px;
-      font-weight: 900;
-      color: #070a13;
-      border: 3.5px solid rgba(255, 255, 255, 0.4);
+      object-fit: cover;
+      background: #0d1322;
+      border: 3.5px solid rgba(0, 242, 254, 0.6);
       box-shadow: 0 10px 30px rgba(0, 242, 254, 0.4);
+      display: block;
     }
     .floating-demo-badge {
       position: absolute;
-      bottom: -6px;
-      right: -8px;
+      bottom: -4px;
+      right: -6px;
       background: linear-gradient(90deg, #10b981, #059669);
       color: #fff;
       font-size: 9.5px;
@@ -345,18 +342,18 @@
       letter-spacing: 0.8px;
     }
     .calc-toggle-group {
-      display: flex;
-      gap: 8px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 6px;
       margin-bottom: 15px;
     }
     .calc-option-btn {
-      flex: 1;
       background: rgba(255, 255, 255, 0.04);
       border: 1px solid rgba(255, 255, 255, 0.1);
       color: var(--text-main);
-      padding: 10px 8px;
+      padding: 9px 4px;
       border-radius: 12px;
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 700;
       cursor: pointer;
       text-align: center;
@@ -374,7 +371,7 @@
       border: 1px solid rgba(255, 255, 255, 0.07);
       border-radius: 16px;
       padding: 12px 10px;
-      margin-bottom: 14px;
+      margin-bottom: 12px;
     }
     .subj-student-tag {
       font-size: 11.5px;
@@ -383,6 +380,17 @@
       margin-bottom: 8px;
       display: flex;
       justify-content: space-between;
+      align-items: center;
+    }
+    .child-grade-select {
+      background: rgba(0, 242, 254, 0.1);
+      border: 1px solid var(--border-card);
+      color: #fff;
+      padding: 3px 6px;
+      border-radius: 6px;
+      font-size: 11px;
+      font-weight: 700;
+      outline: none;
     }
 
     .subj-checkbox-grid {
@@ -401,7 +409,7 @@
       flex-direction: column;
       align-items: center;
       gap: 4px;
-      font-size: 11.5px;
+      font-size: 11px;
       font-weight: 700;
       transition: all 0.2s ease;
     }
@@ -583,6 +591,30 @@
       display: block;
     }
 
+    .class-selector-dock {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+    .class-btn {
+      flex: 1;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: #cbd5e1;
+      padding: 8px;
+      border-radius: 12px;
+      font-size: 12px;
+      font-weight: 800;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .class-btn.active {
+      background: linear-gradient(135deg, var(--cyan), var(--blue));
+      color: #070a13;
+      border-color: var(--cyan);
+      box-shadow: 0 4px 12px rgba(0, 242, 254, 0.25);
+    }
+
     .tab-nav-row {
       display: flex;
       gap: 6px;
@@ -618,13 +650,13 @@
     .tab-content-panel.active { display: block; }
     .chapter-tag {
       display: inline-block;
-      background: rgba(0, 242, 254, 0.1);
-      border: 1px solid rgba(0, 242, 254, 0.25);
-      color: var(--cyan);
+      background: rgba(0, 242, 254, 0.08);
+      border: 1px solid rgba(0, 242, 254, 0.22);
+      color: #bae6fd;
       font-size: 10.5px;
       font-weight: 600;
-      padding: 3px 8px;
-      border-radius: 6px;
+      padding: 4px 9px;
+      border-radius: 8px;
       margin: 3px 2px;
     }
 
@@ -818,15 +850,15 @@
       </div>
     </header>
 
-    <!-- Hero Card Profile with Custom Image Logo & Quote -->
+    <!-- Hero Card Profile with Custom Image Logo -->
     <section class="glass-card hero-container reveal active">
       <div class="brand-unit">
-        <img src="87503.png" alt="Swaran Academics Logo" style="width: 34px; height: 34px; object-fit: contain; border-radius: 6px;">
         <span class="brand-name">SWARAN ACADEMICS</span>
       </div>
 
       <div class="profile-avatar-wrap">
-        <div class="avatar-disc">SR</div>
+        <img src="87503.png" alt="Swaran Academics Logo" class="avatar-img-disc" onerror="this.style.display='none'; document.getElementById('fallbackAvatar').style.display='flex';">
+        <div id="fallbackAvatar" style="display:none; width:100%; height:100%; border-radius:50%; background:linear-gradient(135deg, var(--cyan), var(--purple)); align-items:center; justify-content:center; font-size:36px; font-weight:900; color:#070a13;">SR</div>
         <div class="floating-demo-badge translatable" data-en="Free 2-Day Demo" data-pa="2 ਦਿਨ ਮੁਫ਼ਤ ਡੈਮੋ" data-hi="2 दिन मुफ्त डेमो">Free 2-Day Demo</div>
       </div>
       <span class="hero-badge translatable" data-en="EXECUTIVE HOME TUITIONS" data-pa="ਪ੍ਰੀਮੀਅਮ ਹੋਮ ਟਿਊਸ਼ਨ" data-hi="प्रीमियम होम ट्यूशन">EXECUTIVE HOME TUITIONS</span>
@@ -876,21 +908,22 @@
       <!-- Batch Type -->
       <div class="calc-row-label translatable" data-en="Student / Batch Format" data-pa="ਵਿਦਿਆਰਥੀ / ਬੈਚ ਫਾਰਮੈਟ" data-hi="विद्यार्थी / बैच प्रारूप">Student / Batch Format</div>
       <div class="calc-toggle-group">
-        <button class="calc-option-btn selected translatable" id="btnSolo" onclick="setMode('solo')" data-en="1-on-1 Solo" data-pa="ਨਿੱਜੀ 1-ਆਨ-1" data-hi="1-ऑन-1 व्यक्तिगत">1-on-1 Solo</button>
-        <button class="calc-option-btn translatable" id="btnTwins" onclick="setMode('twins')" data-en="Twins (Same Class)" data-pa="ਜੁੜਵਾਂ (ਇਕੋ ਜਮਾਤ)" data-hi="ट्विन्स (समान कक्षा)">Twins (Same Class)</button>
-        <button class="calc-option-btn translatable" id="btnSiblings" onclick="setMode('siblings')" data-en="Siblings (Diff Class)" data-pa="ਭੈਣ-ਭਰਾ (ਵੱਖਰੀ ਜਮਾਤ)" data-hi="भाई-बहन (अलग कक्षा)">Siblings (Diff Class)</button>
+        <button class="calc-option-btn selected translatable" id="btnSolo" onclick="setMode('solo')" data-en="1-on-1 Solo" data-pa="1-ਆਨ-1" data-hi="1-ऑन-1">1-on-1 Solo</button>
+        <button class="calc-option-btn translatable" id="btnTwins" onclick="setMode('twins')" data-en="Twins" data-pa="ਜੁੜਵਾਂ" data-hi="ट्विन्स">Twins</button>
+        <button class="calc-option-btn translatable" id="btnSiblings" onclick="setMode('siblings')" data-en="2 Siblings" data-pa="2 ਭੈਣ-ਭਰਾ" data-hi="2 भाई-बहन">2 Siblings</button>
+        <button class="calc-option-btn translatable" id="btnGroup3" onclick="setMode('group3')" data-en="3 Kids / Group" data-pa="3 ਬੱਚੇ / ਗਰੁੱਪ" data-hi="3 बच्चे / समूह">3 Kids / Group</button>
       </div>
 
       <!-- Grade selector for single / twins -->
       <div id="gradeSelectorWrap">
         <div class="calc-row-label translatable" data-en="Target Grade" data-pa="ਜਮਾਤ ਚੁਣੋ" data-hi="कक्षा चुनें">Target Grade</div>
-        <div class="calc-toggle-group">
+        <div class="calc-toggle-group" style="grid-template-columns: 1fr 1fr;">
           <button class="calc-option-btn selected" id="btnGrade9" onclick="setGrade(9)">Class 9th</button>
           <button class="calc-option-btn" id="btnGrade10" onclick="setGrade(10)">Class 10th (Board)</button>
         </div>
       </div>
 
-      <!-- Standard single student subject selector -->
+      <!-- Standard single / twins subject selector -->
       <div id="singleSubjWrap">
         <div class="calc-row-label translatable" data-en="Select Subjects Needed" data-pa="ਵਿਸ਼ੇ ਚੁਣੋ" data-hi="विषय चुनें">Select Subjects Needed</div>
         <div class="subj-checkbox-grid">
@@ -909,13 +942,17 @@
         </div>
       </div>
 
-      <!-- Siblings separate subjects selector -->
+      <!-- 2 Siblings separate subjects selector -->
       <div id="siblingSubjWrap" style="display:none;">
         <div class="calc-row-label translatable" data-en="Configure Separate Subjects for Each Child" data-pa="ਹਰੇਕ ਬੱਚੇ ਲਈ ਵੱਖਰੇ ਵਿਸ਼ੇ ਚੁਣੋ" data-hi="प्रत्येक बच्चे के लिए अलग-अलग विषय चुनें">Configure Separate Subjects for Each Child</div>
         
         <div class="subj-box-block">
           <div class="subj-student-tag">
-            <span class="translatable" data-en="Student 1 (Class 9th)" data-pa="ਪਹਿਲਾ ਬੱਚਾ (9ਵੀਂ ਜਮਾਤ)" data-hi="पहला बच्चा (9वीं कक्षा)">Student 1 (Class 9th)</span>
+            <span class="translatable" data-en="Student 1" data-pa="ਪਹਿਲਾ ਬੱਚਾ" data-hi="पहला बच्चा">Student 1</span>
+            <select id="s1GradeSelect" class="child-grade-select" onchange="calcState.s1Grade = parseInt(this.value); computePlan();">
+              <option value="9">Class 9th</option>
+              <option value="10">Class 10th</option>
+            </select>
           </div>
           <div class="subj-checkbox-grid">
             <label class="subj-check-label checked" id="lblS1Math" onclick="toggleSubj('s1', 'math')">
@@ -935,7 +972,11 @@
 
         <div class="subj-box-block">
           <div class="subj-student-tag">
-            <span class="translatable" data-en="Student 2 (Class 10th Board)" data-pa="ਦੂਜਾ ਬੱਚਾ (10ਵੀਂ ਬੋਰਡ)" data-hi="दूसरा बच्चा (10वीं बोर्ड)">Student 2 (Class 10th Board)</span>
+            <span class="translatable" data-en="Student 2" data-pa="ਦੂਜਾ ਬੱਚਾ" data-hi="दूसरा बच्चा">Student 2</span>
+            <select id="s2GradeSelect" class="child-grade-select" onchange="calcState.s2Grade = parseInt(this.value); computePlan();">
+              <option value="10">Class 10th</option>
+              <option value="9">Class 9th</option>
+            </select>
           </div>
           <div class="subj-checkbox-grid">
             <label class="subj-check-label checked" id="lblS2Math" onclick="toggleSubj('s2', 'math')">
@@ -949,6 +990,74 @@
             <label class="subj-check-label checked" id="lblS2Sst" onclick="toggleSubj('s2', 'sst')">
               <span>🌍</span>
               <span class="translatable" data-en="SST" data-pa="ਐਸ.ਐਸ.ਟੀ." data-hi="सामाजिक विज्ञान">SST</span>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3 Kids / Group separate subjects selector -->
+      <div id="group3SubjWrap" style="display:none;">
+        <div class="calc-row-label translatable" data-en="Configure for 3 Students (Special Family / Group Discount)" data-pa="3 ਬੱਚਿਆਂ ਲਈ ਵੱਖਰੇ ਵਿਸ਼ੇ ਚੁਣੋ (ਵਿਸ਼ੇਸ਼ ਗਰੁੱਪ ਛੋਟ)" data-hi="3 विद्यार्थियों हेतु विषय चुनें (विशेष समूह छूट)">Configure for 3 Students (Special Group Discount)</div>
+        
+        <div class="subj-box-block">
+          <div class="subj-student-tag">
+            <span class="translatable" data-en="Student 1" data-pa="ਪਹਿਲਾ ਬੱਚਾ" data-hi="पहला बच्चा">Student 1</span>
+            <select id="g1GradeSelect" class="child-grade-select" onchange="calcState.g1Grade = parseInt(this.value); computePlan();">
+              <option value="9">Class 9th</option>
+              <option value="10">Class 10th</option>
+            </select>
+          </div>
+          <div class="subj-checkbox-grid">
+            <label class="subj-check-label checked" id="lblG1Math" onclick="toggleSubj('g1', 'math')">
+              <span>📐</span> <span class="translatable" data-en="Maths" data-pa="ਗਣਿਤ" data-hi="गणित">Maths</span>
+            </label>
+            <label class="subj-check-label checked" id="lblG1Sci" onclick="toggleSubj('g1', 'sci')">
+              <span>🔬</span> <span class="translatable" data-en="Science" data-pa="ਵਿਗਿਆਨ" data-hi="विज्ञान">Science</span>
+            </label>
+            <label class="subj-check-label checked" id="lblG1Sst" onclick="toggleSubj('g1', 'sst')">
+              <span>🌍</span> <span class="translatable" data-en="SST" data-pa="ਐਸ.ਐਸ.ਟੀ." data-hi="सामाजिक विज्ञान">SST</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="subj-box-block">
+          <div class="subj-student-tag">
+            <span class="translatable" data-en="Student 2" data-pa="ਦੂਜਾ ਬੱਚਾ" data-hi="दूसरा बच्चा">Student 2</span>
+            <select id="g2GradeSelect" class="child-grade-select" onchange="calcState.g2Grade = parseInt(this.value); computePlan();">
+              <option value="9">Class 9th</option>
+              <option value="10">Class 10th</option>
+            </select>
+          </div>
+          <div class="subj-checkbox-grid">
+            <label class="subj-check-label checked" id="lblG2Math" onclick="toggleSubj('g2', 'math')">
+              <span>📐</span> <span class="translatable" data-en="Maths" data-pa="ਗਣਿਤ" data-hi="गणित">Maths</span>
+            </label>
+            <label class="subj-check-label checked" id="lblG2Sci" onclick="toggleSubj('g2', 'sci')">
+              <span>🔬</span> <span class="translatable" data-en="Science" data-pa="ਵਿਗਿਆਨ" data-hi="विज्ञान">Science</span>
+            </label>
+            <label class="subj-check-label checked" id="lblG2Sst" onclick="toggleSubj('g2', 'sst')">
+              <span>🌍</span> <span class="translatable" data-en="SST" data-pa="ਐਸ.ਐਸ.ਟੀ." data-hi="सामाजिक विज्ञान">SST</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="subj-box-block">
+          <div class="subj-student-tag">
+            <span class="translatable" data-en="Student 3" data-pa="ਤੀਜਾ ਬੱਚਾ" data-hi="तीसरा बच्चा">Student 3</span>
+            <select id="g3GradeSelect" class="child-grade-select" onchange="calcState.g3Grade = parseInt(this.value); computePlan();">
+              <option value="10">Class 10th</option>
+              <option value="9">Class 9th</option>
+            </select>
+          </div>
+          <div class="subj-checkbox-grid">
+            <label class="subj-check-label checked" id="lblG3Math" onclick="toggleSubj('g3', 'math')">
+              <span>📐</span> <span class="translatable" data-en="Maths" data-pa="ਗਣਿਤ" data-hi="गणित">Maths</span>
+            </label>
+            <label class="subj-check-label checked" id="lblG3Sci" onclick="toggleSubj('g3', 'sci')">
+              <span>🔬</span> <span class="translatable" data-en="Science" data-pa="ਵਿਗਿਆਨ" data-hi="विज्ञान">Science</span>
+            </label>
+            <label class="subj-check-label checked" id="lblG3Sst" onclick="toggleSubj('g3', 'sst')">
+              <span>🌍</span> <span class="translatable" data-en="SST" data-pa="ਐਸ.ਐਸ.ਟੀ." data-hi="सामाजिक विज्ञान">SST</span>
             </label>
           </div>
         </div>
@@ -1045,54 +1154,53 @@
       </div>
     </section>
 
-    <!-- Subject Deep-Dive Tabs -->
+    <!-- Latest NCERT Syllabus Deep-Dive with Class 9th & 10th Selector -->
     <section class="glass-card reveal">
-      <div class="sec-tag translatable" data-en="Subject Deep-Dive & Key Chapters" data-pa="ਵਿਸ਼ੇ ਅਤੇ ਮੁੱਖ ਚੈਪਟਰ" data-hi="विषय एवं मुख्य अध्याय">Subject Deep-Dive & Key Chapters</div>
+      <div class="sec-tag translatable" data-en="Latest Rationalised NCERT Syllabus (Class 9 & 10)" data-pa="ਨਵਾਂ ਐਨ.ਸੀ.ਈ.ਆਰ.ਟੀ. ਸਿਲੇਬਸ (9ਵੀਂ ਅਤੇ 10ਵੀਂ)" data-hi="नवीनतम NCERT पाठ्यक्रम (कक्षा 9 व 10)">Latest Rationalised NCERT Syllabus</div>
+      
+      <!-- Class 9th vs 10th Toggle Buttons -->
+      <div class="class-selector-dock">
+        <button class="class-btn active" id="btnSyllabusClass9" onclick="switchSyllabusClass(9)">Class 9th NCERT</button>
+        <button class="class-btn" id="btnSyllabusClass10" onclick="switchSyllabusClass(10)">Class 10th Board NCERT</button>
+      </div>
+
+      <!-- Subject Tabs -->
       <div class="tab-nav-row">
-        <button class="tab-nav-btn active translatable" onclick="switchSubjectTab('tabMath', this)" data-en="Mathematics" data-pa="ਗਣਿਤ" data-hi="गणित">Mathematics</button>
-        <button class="tab-nav-btn translatable" onclick="switchSubjectTab('tabSci', this)" data-en="Science" data-pa="ਵਿਗਿਆਨ" data-hi="विज्ञान">Science</button>
-        <button class="tab-nav-btn translatable" onclick="switchSubjectTab('tabSst', this)" data-en="Social Studies" data-pa="ਸਮਾਜਿਕ ਸਿੱਖਿਆ" data-hi="सामाजिक विज्ञान">Social Studies</button>
+        <button class="tab-nav-btn active translatable" id="tabNavMath" onclick="switchSubjectTab('tabMath', this)" data-en="Mathematics" data-pa="ਗਣਿਤ" data-hi="गणित">Mathematics</button>
+        <button class="tab-nav-btn translatable" id="tabNavSci" onclick="switchSubjectTab('tabSci', this)" data-en="Science" data-pa="ਵਿਗਿਆਨ" data-hi="विज्ञान">Science</button>
+        <button class="tab-nav-btn translatable" id="tabNavSst" onclick="switchSubjectTab('tabSst', this)" data-en="Social Science" data-pa="ਸਮਾਜਿਕ ਵਿਗਿਆਨ" data-hi="सामाजिक विज्ञान">Social Science</button>
       </div>
 
+      <!-- Math Panel -->
       <div class="tab-content-panel active" id="tabMath">
-        <h4 style="font-size:13px; color:var(--cyan); margin-bottom:8px;" class="translatable" data-en="High-Weightage Topics Covered:" data-pa="ਮੁੱਖ ਚੈਪਟਰ:" data-hi="प्रमुख अध्याय:">High-Weightage Topics Covered:</h4>
-        <div>
-          <span class="chapter-tag">Linear Equations</span>
-          <span class="chapter-tag">Quadratic Equations</span>
-          <span class="chapter-tag">Triangles & Geometry</span>
-          <span class="chapter-tag">Trigonometry</span>
-          <span class="chapter-tag">Statistics & Probability</span>
+        <h4 style="font-size:13px; color:var(--cyan); margin-bottom:8px;" id="mathHeaderTitle">Class 9th Mathematics (NCERT):</h4>
+        <div id="mathChaptersList">
+          <!-- Populated dynamically via JS -->
         </div>
-        <p style="font-size:11.5px; color:var(--text-dim); margin-top:10px; line-height:1.45;" class="translatable" data-en="Methodology: Step-by-step formula sheets, error identification diary, and zero calculation blunders." data-pa="ਢੰਗ: ਫ਼ਾਰਮੂਲਾ ਸ਼ੀਟਾਂ ਤਿਆਰ ਕਰਵਾਉਣੀਆਂ ਅਤੇ ਗਣਨਾ ਵਿੱਚ ਗ਼ਲਤੀਆਂ ਖ਼ਤਮ ਕਰਨੀਆਂ।" data-hi="पद्धति: चरणबद्ध सूत्र-पुस्तिका, त्रुटि निवारण अभ्यास और गणना की गलतियों को शून्य करना।">
-          Methodology: Step-by-step formula sheets, error identification diary, and zero calculation blunders.
+        <p style="font-size:11.5px; color:var(--text-dim); margin-top:10px; line-height:1.45;" class="translatable" data-en="Methodology: Daily NCERT exercise verification, formula deriving practice, and zero-error calculation worksheets." data-pa="ਢੰਗ: ਐਨਸੀਈਆਰਟੀ ਅਭਿਆਸ, ਫ਼ਾਰਮੂਲਾ ਸ਼ੀਟਾਂ ਤਿਆਰ ਕਰਵਾਉਣੀਆਂ ਅਤੇ ਗਣਨਾ ਵਿੱਚ ਗ਼ਲਤੀਆਂ ਖ਼ਤਮ ਕਰਨੀਆਂ।" data-hi="पद्धति: NCERT अभ्यास, चरणबद्ध सूत्र-पुस्तिका और गणना की त्रुटि निवारण कार्यशालाएँ।">
+          Methodology: Daily NCERT exercise verification, formula deriving practice, and zero-error calculation worksheets.
         </p>
       </div>
 
+      <!-- Science Panel -->
       <div class="tab-content-panel" id="tabSci">
-        <h4 style="font-size:13px; color:var(--blue); margin-bottom:8px;" class="translatable" data-en="High-Weightage Topics Covered:" data-pa="ਮੁੱਖ ਚੈਪਟਰ:" data-hi="प्रमुख अध्याय:">High-Weightage Topics Covered:</h4>
-        <div>
-          <span class="chapter-tag">Chemical Reactions</span>
-          <span class="chapter-tag">Light & Reflection</span>
-          <span class="chapter-tag">Electricity & Magnetism</span>
-          <span class="chapter-tag">Life Processes</span>
-          <span class="chapter-tag">Control & Coordination</span>
+        <h4 style="font-size:13px; color:var(--blue); margin-bottom:8px;" id="sciHeaderTitle">Class 9th Science (NCERT):</h4>
+        <div id="sciChaptersList">
+          <!-- Populated dynamically via JS -->
         </div>
-        <p style="font-size:11.5px; color:var(--text-dim); margin-top:10px; line-height:1.45;" class="translatable" data-en="Methodology: Balanced equation drills, ray diagrams, and scientific terminology mastery." data-pa="ਢੰਗ: ਰਸਾਇਣਕ ਸਮੀਕਰਨਾਂ ਸੰਤੁਲਿਤ ਕਰਨੀਆਂ ਅਤੇ ਲੇਬਲ ਵਾਲੇ ਸਾਫ਼ ਡਾਇਗ੍ਰਾਮ ਬਣਾਉਣੇ।" data-hi="पद्धति: रासायनिक समीकरण संतुलन, किरण आरेख और सटीक वैज्ञानिक शब्दावली पर पकड़।">
-          Methodology: Balanced equation drills, ray diagrams, and scientific terminology mastery.
+        <p style="font-size:11.5px; color:var(--text-dim); margin-top:10px; line-height:1.45;" class="translatable" data-en="Methodology: Conceptual experiments, balanced reaction drill, ray diagrams, and scientific key terms mastery." data-pa="ਢੰਗ: ਰਸਾਇਣਕ ਸਮੀਕਰਨਾਂ ਸੰਤੁਲਿਤ ਕਰਨੀਆਂ, ਲੇਬਲ ਵਾਲੇ ਸਾਫ਼ ਡਾਇਗ੍ਰਾਮ ਅਤੇ ਵਿਗਿਆਨਕ ਸ਼ਬਦਾਵਲੀ 'ਤੇ ਪਕੜ।" data-hi="पद्धति: रासायनिक समीकरण संतुलन, किरण आरेख और सटीक वैज्ञानिक शब्दावली पर पूर्ण नियंत्रण।">
+          Methodology: Conceptual experiments, balanced reaction drill, ray diagrams, and scientific key terms mastery.
         </p>
       </div>
 
+      <!-- SST Panel -->
       <div class="tab-content-panel" id="tabSst">
-        <h4 style="font-size:13px; color:var(--gold); margin-bottom:8px;" class="translatable" data-en="High-Weightage Topics Covered:" data-pa="ਮੁੱਖ ਚੈਪਟਰ:" data-hi="प्रमुख अध्याय:">High-Weightage Topics Covered:</h4>
-        <div>
-          <span class="chapter-tag">Nationalism in India</span>
-          <span class="chapter-tag">Sectors of Indian Economy</span>
-          <span class="chapter-tag">Federalism & Democracy</span>
-          <span class="chapter-tag">Resources & Agriculture</span>
-          <span class="chapter-tag">Money & Credit</span>
+        <h4 style="font-size:13px; color:var(--gold); margin-bottom:8px;" id="sstHeaderTitle">Class 9th Social Science (NCERT):</h4>
+        <div id="sstChaptersList">
+          <!-- Populated dynamically via JS -->
         </div>
-        <p style="font-size:11.5px; color:var(--text-dim); margin-top:10px; line-height:1.45;" class="translatable" data-en="Methodology: Flowcharts for historical timelines, map practice, and bulleted 5-mark answer writing." data-pa="ਢੰਗ: ਇਤਿਹਾਸ ਦੇ ਫ਼ਲੋ-ਚਾਰਟ, ਨਕਸ਼ੇ ਦਾ ਅਭਿਆਸ ਅਤੇ 5 ਨੰਬਰਾਂ ਵਾਲੇ ਵੱਡੇ ਉੱਤਰ ਸੌਖੇ ਲਿਖਣੇ।" data-hi="पद्धति: ऐतिहासिक घटनाओं का प्रवाह-चित्र (फ्लोचार्ट), मानचित्र अभ्यास और 5-अंकीय उत्तर लेखन।">
-          Methodology: Flowcharts for historical timelines, map practice, and bulleted 5-mark answer writing.
+        <p style="font-size:11.5px; color:var(--text-dim); margin-top:10px; line-height:1.45;" class="translatable" data-en="Methodology: Chronological historical flowcharts, geography map plotting, and 5-mark point-wise answer structure." data-pa="ਢੰਗ: ਇਤਿਹਾਸ ਦੇ ਫ਼ਲੋ-ਚਾਰਟ, ਨਕਸ਼ੇ ਦਾ ਅਭਿਆਸ ਅਤੇ 5 ਨੰਬਰਾਂ ਵਾਲੇ ਵੱਡੇ ਉੱਤਰ ਪੁਆਇੰਟਾਂ ਵਿੱਚ ਸੌਖੇ ਲਿਖਣੇ।" data-hi="पद्धति: ऐतिहासिक घटनाओं का प्रवाह-चित्र, मानचित्र अभ्यास और 5-अंकीय बिंदुवार उत्तर लेखन।">
+          Methodology: Chronological historical flowcharts, geography map plotting, and 5-mark point-wise answer structure.
         </p>
       </div>
     </section>
@@ -1178,8 +1286,9 @@
           <select id="modalClass" class="input-field">
             <option value="Class 9th">Class 9th</option>
             <option value="Class 10th (Board)">Class 10th (Board)</option>
-            <option value="Twins (Same Class Batch)">Twins (Same Class - Combined Batch)</option>
-            <option value="Siblings (9th & 10th Back-to-Back)">Siblings (9th & 10th Back-to-Back)</option>
+            <option value="Twins (Same Class Batch)">Twins (Same Class Batch)</option>
+            <option value="2 Siblings (Different Classes)">2 Siblings (Different Classes)</option>
+            <option value="3 Students / Small Group Batch">3 Students / Small Group Batch</option>
           </select>
           <input type="text" id="modalSubjects" class="input-field" placeholder="Subject(s)" value="Maths, Science, SST" />
           
@@ -1309,13 +1418,21 @@
       }, 35);
     }
 
-    // Interactive Dual-Subject Calculator Logic
+    // Calculator State with 3 Kids / Group Setup
     let calcState = {
       grade: 9,
-      mode: 'solo',
+      mode: 'solo', // 'solo', 'twins', 'siblings', 'group3'
       singleSubjects: { math: true, sci: true, sst: true },
+      s1Grade: 9,
       s1Subjects: { math: true, sci: true, sst: true },
-      s2Subjects: { math: true, sci: true, sst: true }
+      s2Grade: 10,
+      s2Subjects: { math: true, sci: true, sst: true },
+      g1Grade: 9,
+      g1Subjects: { math: true, sci: true, sst: true },
+      g2Grade: 9,
+      g2Subjects: { math: true, sci: true, sst: true },
+      g3Grade: 10,
+      g3Subjects: { math: true, sci: true, sst: true }
     };
 
     function setGrade(val) {
@@ -1330,28 +1447,40 @@
       triggerTactile('toggle');
       if (target === 'single') {
         calcState.singleSubjects[key] = !calcState.singleSubjects[key];
-        const count = Object.values(calcState.singleSubjects).filter(Boolean).length;
-        if (count === 0) calcState.singleSubjects[key] = true;
-        
+        if (Object.values(calcState.singleSubjects).filter(Boolean).length === 0) calcState.singleSubjects[key] = true;
         document.getElementById('lblMath').classList.toggle('checked', calcState.singleSubjects.math);
         document.getElementById('lblSci').classList.toggle('checked', calcState.singleSubjects.sci);
         document.getElementById('lblSst').classList.toggle('checked', calcState.singleSubjects.sst);
       } else if (target === 's1') {
         calcState.s1Subjects[key] = !calcState.s1Subjects[key];
-        const count = Object.values(calcState.s1Subjects).filter(Boolean).length;
-        if (count === 0) calcState.s1Subjects[key] = true;
-
+        if (Object.values(calcState.s1Subjects).filter(Boolean).length === 0) calcState.s1Subjects[key] = true;
         document.getElementById('lblS1Math').classList.toggle('checked', calcState.s1Subjects.math);
         document.getElementById('lblS1Sci').classList.toggle('checked', calcState.s1Subjects.sci);
         document.getElementById('lblS1Sst').classList.toggle('checked', calcState.s1Subjects.sst);
       } else if (target === 's2') {
         calcState.s2Subjects[key] = !calcState.s2Subjects[key];
-        const count = Object.values(calcState.s2Subjects).filter(Boolean).length;
-        if (count === 0) calcState.s2Subjects[key] = true;
-
+        if (Object.values(calcState.s2Subjects).filter(Boolean).length === 0) calcState.s2Subjects[key] = true;
         document.getElementById('lblS2Math').classList.toggle('checked', calcState.s2Subjects.math);
         document.getElementById('lblS2Sci').classList.toggle('checked', calcState.s2Subjects.sci);
         document.getElementById('lblS2Sst').classList.toggle('checked', calcState.s2Subjects.sst);
+      } else if (target === 'g1') {
+        calcState.g1Subjects[key] = !calcState.g1Subjects[key];
+        if (Object.values(calcState.g1Subjects).filter(Boolean).length === 0) calcState.g1Subjects[key] = true;
+        document.getElementById('lblG1Math').classList.toggle('checked', calcState.g1Subjects.math);
+        document.getElementById('lblG1Sci').classList.toggle('checked', calcState.g1Subjects.sci);
+        document.getElementById('lblG1Sst').classList.toggle('checked', calcState.g1Subjects.sst);
+      } else if (target === 'g2') {
+        calcState.g2Subjects[key] = !calcState.g2Subjects[key];
+        if (Object.values(calcState.g2Subjects).filter(Boolean).length === 0) calcState.g2Subjects[key] = true;
+        document.getElementById('lblG2Math').classList.toggle('checked', calcState.g2Subjects.math);
+        document.getElementById('lblG2Sci').classList.toggle('checked', calcState.g2Subjects.sci);
+        document.getElementById('lblG2Sst').classList.toggle('checked', calcState.g2Subjects.sst);
+      } else if (target === 'g3') {
+        calcState.g3Subjects[key] = !calcState.g3Subjects[key];
+        if (Object.values(calcState.g3Subjects).filter(Boolean).length === 0) calcState.g3Subjects[key] = true;
+        document.getElementById('lblG3Math').classList.toggle('checked', calcState.g3Subjects.math);
+        document.getElementById('lblG3Sci').classList.toggle('checked', calcState.g3Subjects.sci);
+        document.getElementById('lblG3Sst').classList.toggle('checked', calcState.g3Subjects.sst);
       }
       computePlan();
     }
@@ -1362,16 +1491,13 @@
       document.getElementById('btnSolo').classList.toggle('selected', mode === 'solo');
       document.getElementById('btnTwins').classList.toggle('selected', mode === 'twins');
       document.getElementById('btnSiblings').classList.toggle('selected', mode === 'siblings');
+      document.getElementById('btnGroup3').classList.toggle('selected', mode === 'group3');
 
-      if (mode === 'siblings') {
-        document.getElementById('gradeSelectorWrap').style.display = 'none';
-        document.getElementById('singleSubjWrap').style.display = 'none';
-        document.getElementById('siblingSubjWrap').style.display = 'block';
-      } else {
-        document.getElementById('gradeSelectorWrap').style.display = 'block';
-        document.getElementById('singleSubjWrap').style.display = 'block';
-        document.getElementById('siblingSubjWrap').style.display = 'none';
-      }
+      document.getElementById('gradeSelectorWrap').style.display = (mode === 'solo' || mode === 'twins') ? 'block' : 'none';
+      document.getElementById('singleSubjWrap').style.display = (mode === 'solo' || mode === 'twins') ? 'block' : 'none';
+      document.getElementById('siblingSubjWrap').style.display = (mode === 'siblings') ? 'block' : 'none';
+      document.getElementById('group3SubjWrap').style.display = (mode === 'group3') ? 'block' : 'none';
+
       computePlan();
     }
 
@@ -1385,34 +1511,55 @@
 
       if (calcState.mode === 'twins') {
         const activeCount = Object.values(calcState.singleSubjects).filter(Boolean).length;
-        if (activeCount === 3) {
-          total = 5500;
-        } else if (activeCount === 2) {
-          total = 4000;
-        } else {
-          total = 2500;
-        }
+        if (activeCount === 3) total = 5500;
+        else if (activeCount === 2) total = 4000;
+        else total = 2500;
+
         timingTxt = "1.5 Hrs / Combined Slot";
         totalHoursTxt = (activeCount === 3) ? '6 Days / Wk' : ((activeCount === 2) ? '5 Days / Wk' : '3-4 Days / Wk');
         perkTxtEn = "Combined Flat Fee for BOTH Students";
-        perkTxtPa = "ਦੋਵਾਂ ਵਿਦਿਆਰਥੀਆਂ ਦੀ ਕੁੱਲ ਫ਼ੀਸ (ਇਕੱਠਾ ਬੈਚ)";
+        perkTxtPa = "ਦੋਵਾਂ ਵਿਦਿਆਰਥੀਆਂ ਦੀ ਕੁੱਲ ਫ਼ੀਸ (ਸਾਂਝਾ ਬੈਚ)";
         perkTxtHi = "दोनों विद्यार्थियों का कुल संयुक्त शुल्क (समान बैच)";
       } else if (calcState.mode === 'siblings') {
         const count1 = Object.values(calcState.s1Subjects).filter(Boolean).length;
         const count2 = Object.values(calcState.s2Subjects).filter(Boolean).length;
 
-        let fee1 = count1 * 2200 - (count1 === 3 ? 500 : 0);
-        let fee2 = count2 * 2500 - (count2 === 3 ? 500 : 0);
+        let rate1 = (calcState.s1Grade === 10) ? 2500 : 2200;
+        let rate2 = (calcState.s2Grade === 10) ? 2500 : 2200;
+        let fee1 = count1 * rate1 - (count1 === 3 ? 500 : 0);
+        let fee2 = count2 * rate2 - (count2 === 3 ? 500 : 0);
 
         total = Math.round((fee1 + fee2) * 0.85);
         total = Math.ceil(total / 500) * 500;
 
-        timingTxt = "2.25 Hrs / Back-to-Back Slots";
+        timingTxt = "2.25 Hrs / Structured Slots";
         const maxCount = Math.max(count1, count2);
-        totalHoursTxt = (maxCount === 3) ? '6 Days / Wk' : ((maxCount === 2) ? '5 Days / Wk' : '4 Days / Wk');
-        perkTxtEn = `Student 1 (${count1} Subj) + Student 2 (${count2} Subj) • 15% Off`;
-        perkTxtPa = `ਪਹਿਲਾ ਬੱਚਾ (${count1} ਵਿਸ਼ੇ) + ਦੂਜਾ ਬੱਚਾ (${count2} ਵਿਸ਼ੇ) • 15% ਛੋਟ`;
-        perkTxtHi = `पहला बच्चा (${count1} विषय) + दूसरा बच्चा (${count2} विषय) • 15% छूट`;
+        totalHoursTxt = (maxCount === 3) ? '6 Days / Wk' : '5 Days / Wk';
+        perkTxtEn = `2 Students (${count1}+${count2} Subj) • 15% Sibling Rebate`;
+        perkTxtPa = `2 ਬੱਚੇ (${count1}+${count2} ਵਿਸ਼ੇ) • 15% ਵਿਸ਼ੇਸ਼ ਪਰਿਵਾਰਕ ਛੋਟ`;
+        perkTxtHi = `2 विद्यार्थी (${count1}+${count2} विषय) • 15% विशेष छूट`;
+      } else if (calcState.mode === 'group3') {
+        const c1 = Object.values(calcState.g1Subjects).filter(Boolean).length;
+        const c2 = Object.values(calcState.g2Subjects).filter(Boolean).length;
+        const c3 = Object.values(calcState.g3Subjects).filter(Boolean).length;
+
+        let r1 = (calcState.g1Grade === 10) ? 2500 : 2200;
+        let r2 = (calcState.g2Grade === 10) ? 2500 : 2200;
+        let r3 = (calcState.g3Grade === 10) ? 2500 : 2200;
+
+        let f1 = c1 * r1 - (c1 === 3 ? 500 : 0);
+        let f2 = c2 * r2 - (c2 === 3 ? 500 : 0);
+        let f3 = c3 * r3 - (c3 === 3 ? 500 : 0);
+
+        // 20% Group Rebate for 3 students
+        total = Math.round((f1 + f2 + f3) * 0.80);
+        total = Math.ceil(total / 500) * 500;
+
+        timingTxt = "3.0 Hrs / Tailored Combined Slots";
+        totalHoursTxt = '6 Days / Wk';
+        perkTxtEn = `3 Students (${c1}+${c2}+${c3} Subj) • 20% Multi-Student Discount`;
+        perkTxtPa = `3 ਬੱਚੇ (${c1}+${c2}+${c3} ਵਿਸ਼ੇ) • 20% ਵਿਸ਼ੇਸ਼ ਗਰੁੱਪ ਛੋਟ`;
+        perkTxtHi = `3 विद्यार्थी (${c1}+${c2}+${c3} विषय) • 20% समूह छूट`;
       } else {
         const activeCount = Object.values(calcState.singleSubjects).filter(Boolean).length;
         let baseRate = (calcState.grade === 10) ? 2500 : 2200;
@@ -1439,10 +1586,15 @@
 
       const modalSubjInput = document.getElementById('modalSubjects');
       if (modalSubjInput) {
-        if (calcState.mode === 'siblings') {
-          const s1List = Object.keys(calcState.s1Subjects).filter(k => calcState.s1Subjects[k]).map(k => k.toUpperCase()).join('/');
-          const s2List = Object.keys(calcState.s2Subjects).filter(k => calcState.s2Subjects[k]).map(k => k.toUpperCase()).join('/');
-          modalSubjInput.value = `Child 1 (9th): ${s1List} | Child 2 (10th): ${s2List}`;
+        if (calcState.mode === 'group3') {
+          const g1 = Object.keys(calcState.g1Subjects).filter(k => calcState.g1Subjects[k]).map(k => k.toUpperCase()).join('/');
+          const g2 = Object.keys(calcState.g2Subjects).filter(k => calcState.g2Subjects[k]).map(k => k.toUpperCase()).join('/');
+          const g3 = Object.keys(calcState.g3Subjects).filter(k => calcState.g3Subjects[k]).map(k => k.toUpperCase()).join('/');
+          modalSubjInput.value = `3 Kids [C1(${calcState.g1Grade}th):${g1} | C2(${calcState.g2Grade}th):${g2} | C3(${calcState.g3Grade}th):${g3}]`;
+        } else if (calcState.mode === 'siblings') {
+          const s1 = Object.keys(calcState.s1Subjects).filter(k => calcState.s1Subjects[k]).map(k => k.toUpperCase()).join('/');
+          const s2 = Object.keys(calcState.s2Subjects).filter(k => calcState.s2Subjects[k]).map(k => k.toUpperCase()).join('/');
+          modalSubjInput.value = `C1 (${calcState.s1Grade}th): ${s1} | C2 (${calcState.s2Grade}th): ${s2}`;
         } else {
           const activeNames = [];
           if (calcState.singleSubjects.math) activeNames.push('Maths');
@@ -1458,7 +1610,7 @@
       let text = '';
 
       if (currentLang === 'pa') {
-        text = `ਸਤਿ ਸ਼੍ਰੀ ਅਕਾਲ ਸੌਰਵ ਜੀ, ਮੈਂ ਸਵਰਨ ਅਕੈਡਮਿਕਸ 'ਤੇ ਹੋਮ ਟਿਊਸ਼ਨ ਦੀ ਯੋਜਨਾ ਤਿਆਰ ਕੀਤੀ ਹੈ।\n\nਅੰਦਾਜ਼ਨ ਮਹੀਨਾਵਾਰ ਫ਼ੀਸ: ${feeVal}\nਮੈਂ ਮੁਫ਼ਤ 2 ਦਿਨਾਂ ਦਾ ਟ੍ਰਾਇਲ ਸੈਸ਼ਨ ਲੈਣਾ ਚਾਹੁੰਦਾ/ਚਾਹੁੰਦੀ ਹਾਂ।`;
+        text = `ਸਤਿ ਸ਼੍ਰੀ ਅਕਾਲ ਸੌਰਵ ਜੀ, ਮੈਂ ਸਵਰਨ ਅਕੈਡਮਿਕਸ 'ਤੇ ਹੋਮ ਟਿਊਸ਼ਨ ਦੀ ਯੋਜਨਾ ਚੁਣੀ ਹੈ।\n\nਅੰਦਾਜ਼ਨ ਮਹੀਨਾਵਾਰ ਫ਼ੀਸ: ${feeVal}\nਮੈਂ ਮੁਫ਼ਤ 2 ਦਿਨਾਂ ਦਾ ਟ੍ਰਾਇਲ ਸੈਸ਼ਨ ਬੁੱਕ ਕਰਨਾ ਚਾਹੁੰਦਾ/ਚਾਹੁੰਦੀ ਹਾਂ।`;
       } else if (currentLang === 'hi') {
         text = `नमस्ते सौरभ जी, मैंने स्वर्ण एकेडेमिक्स पर होम ट्यूशन का प्लान चुना है।\n\nअनुमानित मासिक शुल्क: ${feeVal}\nमैं 2 दिन का फ्री ट्रायल सत्र बुक करना चाहता/चाहती हूँ।`;
       } else {
@@ -1466,6 +1618,147 @@
       }
 
       window.open(`https://wa.me/919815485169?text=${encodeURIComponent(text)}`, '_blank');
+    }
+
+    // NCERT Latest Rationalised Syllabus Data Bank (Class 9 & 10)
+    const ncertCurriculum = {
+      9: {
+        math: [
+          "Number Systems",
+          "Polynomials",
+          "Coordinate Geometry",
+          "Linear Equations in Two Variables",
+          "Introduction to Euclid's Geometry",
+          "Lines and Angles",
+          "Triangles",
+          "Quadrilaterals",
+          "Circles",
+          "Heron's Formula",
+          "Surface Areas and Volumes",
+          "Statistics"
+        ],
+        sci: [
+          "Matter in Our Surroundings",
+          "Is Matter Around Us Pure?",
+          "Atoms and Molecules",
+          "Structure of the Atom",
+          "The Fundamental Unit of Life (Cell)",
+          "Tissues",
+          "Motion",
+          "Force and Laws of Motion",
+          "Gravitation",
+          "Work and Energy",
+          "Sound",
+          "Improvement in Food Resources"
+        ],
+        sst: [
+          "History: The French Revolution",
+          "History: Socialism in Europe & Russian Revolution",
+          "History: Nazism & the Rise of Hitler",
+          "Geography: India – Size and Location",
+          "Geography: Physical Features of India",
+          "Geography: Drainage System",
+          "Geography: Climate",
+          "Geography: Population",
+          "Civics: What is Democracy? Why Democracy?",
+          "Civics: Constitutional Design",
+          "Civics: Electoral Politics",
+          "Civics: Working of Institutions",
+          "Civics: Democratic Rights",
+          "Economics: The Story of Village Palampur",
+          "Economics: People as Resource",
+          "Economics: Poverty as a Challenge",
+          "Economics: Food Security in India"
+        ]
+      },
+      10: {
+        math: [
+          "Real Numbers",
+          "Polynomials",
+          "Pair of Linear Equations in Two Variables",
+          "Quadratic Equations",
+          "Arithmetic Progressions (AP)",
+          "Triangles",
+          "Coordinate Geometry",
+          "Introduction to Trigonometry",
+          "Some Applications of Trigonometry",
+          "Circles",
+          "Areas Related to Circles",
+          "Surface Areas and Volumes",
+          "Statistics",
+          "Probability"
+        ],
+        sci: [
+          "Chemical Reactions and Equations",
+          "Acids, Bases and Salts",
+          "Metals and Non-metals",
+          "Carbon and its Compounds",
+          "Life Processes",
+          "Control and Coordination",
+          "How do Organisms Reproduce?",
+          "Heredity and Evolution",
+          "Light – Reflection and Refraction",
+          "The Human Eye & Colourful World",
+          "Electricity",
+          "Magnetic Effects of Electric Current",
+          "Our Environment"
+        ],
+        sst: [
+          "History: The Rise of Nationalism in Europe",
+          "History: Nationalism in India",
+          "History: The Making of a Global World",
+          "History: Print Culture and the Modern World",
+          "Geography: Resources and Development",
+          "Geography: Forest and Wildlife Resources",
+          "Geography: Water Resources",
+          "Geography: Agriculture",
+          "Geography: Minerals and Energy Resources",
+          "Geography: Manufacturing Industries",
+          "Geography: Lifelines of National Economy",
+          "Civics: Power Sharing",
+          "Civics: Federalism",
+          "Civics: Gender, Religion and Caste",
+          "Civics: Political Parties",
+          "Civics: Outcomes of Democracy",
+          "Economics: Development",
+          "Economics: Sectors of the Indian Economy",
+          "Economics: Money and Credit",
+          "Economics: Globalisation & Indian Economy"
+        ]
+      }
+    };
+
+    let activeSyllabusGrade = 9;
+
+    function switchSyllabusClass(grade) {
+      triggerTactile('click');
+      activeSyllabusGrade = grade;
+      document.getElementById('btnSyllabusClass9').classList.toggle('active', grade === 9);
+      document.getElementById('btnSyllabusClass10').classList.toggle('active', grade === 10);
+      renderSyllabusUI();
+    }
+
+    function renderSyllabusUI() {
+      const g = activeSyllabusGrade;
+      document.getElementById('mathHeaderTitle').innerText = `Class ${g}th Mathematics (Latest NCERT):`;
+      document.getElementById('sciHeaderTitle').innerText = `Class ${g}th Science (Latest NCERT):`;
+      document.getElementById('sstHeaderTitle').innerText = `Class ${g}th Social Science (Latest NCERT):`;
+
+      const mBox = document.getElementById('mathChaptersList');
+      const scBox = document.getElementById('sciChaptersList');
+      const ssBox = document.getElementById('sstChaptersList');
+
+      mBox.innerHTML = ncertCurriculum[g].math.map(ch => `<span class="chapter-tag">${ch}</span>`).join('');
+      scBox.innerHTML = ncertCurriculum[g].sci.map(ch => `<span class="chapter-tag">${ch}</span>`).join('');
+      ssBox.innerHTML = ncertCurriculum[g].sst.map(ch => `<span class="chapter-tag">${ch}</span>`).join('');
+    }
+
+    function switchSubjectTab(tabId, btn) {
+      triggerTactile('click');
+      document.querySelectorAll('.tab-nav-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.tab-content-panel').forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById(tabId).classList.add('active');
     }
 
     // Comprehensive Question Bank with Random Scrambler
@@ -1624,15 +1917,6 @@
       if (!wasActive) node.classList.add('active-node');
     }
 
-    // Subject tabs
-    function switchSubjectTab(tabId, btn) {
-      triggerTactile('click');
-      document.querySelectorAll('.tab-nav-btn').forEach(b => b.classList.remove('active'));
-      document.querySelectorAll('.tab-content-panel').forEach(p => p.classList.remove('active'));
-      btn.classList.add('active');
-      document.getElementById(tabId).classList.add('active');
-    }
-
     // Modal
     function pickSector(val) {
       document.getElementById('parentSector').value = val + ', Chandigarh';
@@ -1643,7 +1927,9 @@
       if (calcState.mode === 'twins') {
         modalClassSelect.value = "Twins (Same Class Batch)";
       } else if (calcState.mode === 'siblings') {
-        modalClassSelect.value = "Siblings (9th & 10th Back-to-Back)";
+        modalClassSelect.value = "2 Siblings (Different Classes)";
+      } else if (calcState.mode === 'group3') {
+        modalClassSelect.value = "3 Students / Small Group Batch";
       } else {
         modalClassSelect.value = (calcState.grade === 9) ? 'Class 9th' : 'Class 10th (Board)';
       }
@@ -1734,6 +2020,7 @@
     window.addEventListener('DOMContentLoaded', () => {
       computePlan();
       initQuiz();
+      renderSyllabusUI();
     });
   </script>
 </body>
