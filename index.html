@@ -116,7 +116,7 @@
       border-color: var(--border-glow);
       box-shadow: 0 20px 48px rgba(0, 0, 0, 0.65), 0 0 24px rgba(0, 242, 254, 0.15);
     }
-        .top-header {
+    .top-header {
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -804,7 +804,12 @@
     <header class="top-header">
       <div class="live-chip">
         <span class="live-dot"></span>
-        <span class="translatable" data-en="Admissions Open 2026-27" data-pa="ਨਵੇਂ ਦਾਖ਼ਲੇ ਖੁੱਲ੍ਹੇ ਹਨ 2026-27" data-hi="प्रवेश प्रारंभ 2026-27">Admissions Open 2026-27</span>
+        <span class="translatable" 
+          data-en="Admissions Open 2027-28 • Only 2 Home Slots Left!" 
+          data-pa="ਨਵੇਂ ਦਾਖ਼ਲੇ ਖੁੱਲ੍ਹੇ ਹਨ 2027-28 • ਸਿਰਫ਼ 2 ਸੀਟਾਂ ਬਾਕੀ!" 
+          data-hi="प्रवेश प्रारंभ 2027-28 • केवल 2 स्लॉट शेष!">
+          Admissions Open 2027-28 • Only 2 Home Slots Left!
+        </span>
       </div>
       <div class="lang-switch-dock">
         <button class="lang-pill active" id="btnLangEn" onclick="switchLang('en')">EN</button>
@@ -813,21 +818,10 @@
       </div>
     </header>
 
-    <!-- Hero Card Profile with SVG Inbuilt Logo & Quote -->
+    <!-- Hero Card Profile with Custom Image Logo & Quote -->
     <section class="glass-card hero-container reveal active">
       <div class="brand-unit">
-        <svg width="28" height="28" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <linearGradient id="swaranGlow" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stop-color="#00f2fe"/>
-              <stop offset="50%" stop-color="#fbbf24"/>
-              <stop offset="100%" stop-color="#7928ca"/>
-            </linearGradient>
-          </defs>
-          <path d="M32 6L40 22H24L32 6Z" fill="url(#swaranGlow)"/>
-          <path d="M12 28C22 28 28 34 32 42C36 34 42 28 52 28V50C42 50 36 54 32 60C28 54 22 50 12 50V28Z" fill="url(#swaranGlow)" opacity="0.9"/>
-          <circle cx="32" cy="18" r="3" fill="#ffffff"/>
-        </svg>
+        <img src="87503.png" alt="Swaran Academics Logo" style="width: 34px; height: 34px; object-fit: contain; border-radius: 6px;">
         <span class="brand-name">SWARAN ACADEMICS</span>
       </div>
 
@@ -979,7 +973,8 @@
         <button class="btn-book-plan translatable" onclick="triggerTactile('success'); bookConfiguredPlan();" data-en="Book Free Demo for this Configuration 📲" data-pa="ਇਸ ਪਲਾਨ ਲਈ ਮੁਫ਼ਤ ਡੈਮੋ ਬੁੱਕ ਕਰੋ 📲" data-hi="इस प्लान हेतु फ्री डेमो बुक करें 📲">Book Free Demo for this Configuration 📲</button>
       </div>
     </section>
-        <!-- Scrambled Interactive Concept Readiness Quiz -->
+
+    <!-- Scrambled Interactive Concept Readiness Quiz -->
     <section class="glass-card reveal">
       <div class="sec-tag translatable" data-en="Interactive Concept Mini-Quiz" data-pa="ਇੰਟਰਐਕਟਿਵ ਮਿੰਨੀ ਕੰਸੈਪਟ ਕੁਇਜ਼" data-hi="इंटरएक्टिव मिनी कॉन्सेप्ट क्विज़">Interactive Concept Mini-Quiz</div>
       <div class="quiz-card" id="quizContainer">
@@ -1196,7 +1191,7 @@
     <!-- Dual Sticky Bottom Action Dock -->
     <div class="sticky-dock">
       <a href="https://wa.me/919815485169?text=Hello%20Saurav,%20I%20am%20interested%20in%20Home%20Tuitions%20for%209th/10th%20grade%20around%20PU%20Chandigarh." class="dock-action-btn dock-wa" id="dockWaLink" onclick="triggerTactile('success')">
-        <span>💬</span> <span class="translatable" data-en="Whatsapp Chat" data-pa="ਵਟਸਐਪ ਚੈਟ" data-hi="व्हाट्सएप चैट">Whatsapp Chat</span>
+        <span>💬</span> <span class="translatable" data-en="WhatsApp Chat" data-pa="ਵਟਸਐਪ ਚੈਟ" data-hi="व्हाट्सएप चैट">WhatsApp Chat</span>
       </a>
       <a href="tel:9815485169" class="dock-action-btn dock-call" onclick="triggerTactile('click')">
         <span>📞</span> <span class="translatable" data-en="Direct Call" data-pa="ਸਿੱਧੀ ਕਾਲ ਕਰੋ" data-hi="कॉल करें">Direct Call</span>
@@ -1204,7 +1199,8 @@
     </div>
 
   </div>
-    <script>
+
+  <script>
     // Web Audio Synthesizer Engine
     let audioCtx = null;
     function getAudioCtx() {
@@ -1316,10 +1312,10 @@
     // Interactive Dual-Subject Calculator Logic
     let calcState = {
       grade: 9,
-      mode: 'solo', // 'solo', 'twins', 'siblings'
+      mode: 'solo',
       singleSubjects: { math: true, sci: true, sst: true },
-      s1Subjects: { math: true, sci: true, sst: true }, // Student 1 (9th)
-      s2Subjects: { math: true, sci: true, sst: true }  // Student 2 (10th)
+      s1Subjects: { math: true, sci: true, sst: true },
+      s2Subjects: { math: true, sci: true, sst: true }
     };
 
     function setGrade(val) {
@@ -1390,7 +1386,7 @@
       if (calcState.mode === 'twins') {
         const activeCount = Object.values(calcState.singleSubjects).filter(Boolean).length;
         if (activeCount === 3) {
-          total = 5500; // Special 3-subject combined flat package for both twins
+          total = 5500;
         } else if (activeCount === 2) {
           total = 4000;
         } else {
@@ -1408,7 +1404,6 @@
         let fee1 = count1 * 2200 - (count1 === 3 ? 500 : 0);
         let fee2 = count2 * 2500 - (count2 === 3 ? 500 : 0);
 
-        // Combined sum with 15% Sibling Family Rebate
         total = Math.round((fee1 + fee2) * 0.85);
         total = Math.ceil(total / 500) * 500;
 
@@ -1442,7 +1437,6 @@
       feePerkTag.setAttribute('data-hi', perkTxtHi);
       feePerkTag.innerText = (currentLang === 'hi') ? perkTxtHi : ((currentLang === 'pa') ? perkTxtPa : perkTxtEn);
 
-      // Auto update modal subjects
       const modalSubjInput = document.getElementById('modalSubjects');
       if (modalSubjInput) {
         if (calcState.mode === 'siblings') {
@@ -1460,28 +1454,18 @@
     }
 
     function bookConfiguredPlan() {
-      let modeTxt = 'Individual 1-on-1';
-      let classTxt = `${calcState.grade}th`;
-      let subjDetails = '';
+      let feeVal = document.getElementById('displayFee').innerText;
+      let text = '';
 
-      if (calcState.mode === 'twins') {
-        const list = Object.keys(calcState.singleSubjects).filter(k => calcState.singleSubjects[k]).map(k => k.toUpperCase()).join(', ');
-        modeTxt = 'Twins / Same Class Combined Batch (Flat ₹5,500 rate)';
-        classTxt = `${calcState.grade}th (Both)`;
-        subjDetails = list;
-      } else if (calcState.mode === 'siblings') {
-        const s1List = Object.keys(calcState.s1Subjects).filter(k => calcState.s1Subjects[k]).map(k => k.toUpperCase()).join(', ');
-        const s2List = Object.keys(calcState.s2Subjects).filter(k => calcState.s2Subjects[k]).map(k => k.toUpperCase()).join(', ');
-        modeTxt = 'Siblings in Different Classes (Back-to-Back Slots)';
-        classTxt = '9th & 10th (Both)';
-        subjDetails = `Child 1 (9th): [${s1List}] | Child 2 (10th): [${s2List}]`;
+      if (currentLang === 'pa') {
+        text = `ਸਤਿ ਸ਼੍ਰੀ ਅਕਾਲ ਸੌਰਵ ਜੀ, ਮੈਂ ਸਵਰਨ ਅਕੈਡਮਿਕਸ 'ਤੇ ਹੋਮ ਟਿਊਸ਼ਨ ਦੀ ਯੋਜਨਾ ਤਿਆਰ ਕੀਤੀ ਹੈ।\n\nਅੰਦਾਜ਼ਨ ਮਹੀਨਾਵਾਰ ਫ਼ੀਸ: ${feeVal}\nਮੈਂ ਮੁਫ਼ਤ 2 ਦਿਨਾਂ ਦਾ ਟ੍ਰਾਇਲ ਸੈਸ਼ਨ ਲੈਣਾ ਚਾਹੁੰਦਾ/ਚਾਹੁੰਦੀ ਹਾਂ।`;
+      } else if (currentLang === 'hi') {
+        text = `नमस्ते सौरभ जी, मैंने स्वर्ण एकेडेमिक्स पर होम ट्यूशन का प्लान चुना है।\n\nअनुमानित मासिक शुल्क: ${feeVal}\nमैं 2 दिन का फ्री ट्रायल सत्र बुक करना चाहता/चाहती हूँ।`;
       } else {
-        const list = Object.keys(calcState.singleSubjects).filter(k => calcState.singleSubjects[k]).map(k => k.toUpperCase()).join(', ');
-        subjDetails = list;
+        text = `Hello Saurav! I configured a Home Tuition plan on Swaran Academics.\n\nEstimated Fee: ${feeVal}\nI would like to book a Free 2-Day Trial Session.`;
       }
 
-      const msg = encodeURIComponent(`Hello Saurav! I configured a Home Tuition plan on Swaran Academics:\n- Format: ${modeTxt}\n- Grades: ${classTxt}\n- Subjects: ${subjDetails}\n- Estimated Fee: ${document.getElementById('displayFee').innerText}/month\n\nI would like to book a Free 2-Day Trial Session.`);
-      window.open(`https://wa.me/919815485169?text=${msg}`, '_blank');
+      window.open(`https://wa.me/919815485169?text=${encodeURIComponent(text)}`, '_blank');
     }
 
     // Comprehensive Question Bank with Random Scrambler
@@ -1544,10 +1528,8 @@
     }
 
     function initQuiz() {
-      // Pick 3 random questions from question pool
       const shuffledAll = shuffleArray(fullQuestionBank);
       activeQuizQuestions = shuffledAll.slice(0, 3).map(item => {
-        // Scramble options for every question
         const originalCorrectAnswer = item.options[item.correct];
         const shuffledOpts = shuffleArray(item.options);
         return {
@@ -1656,7 +1638,7 @@
       document.getElementById('parentSector').value = val + ', Chandigarh';
     }
 
-          function openBookingModal() {
+    function openBookingModal() {
       const modalClassSelect = document.getElementById('modalClass');
       if (calcState.mode === 'twins') {
         modalClassSelect.value = "Twins (Same Class Batch)";
@@ -1677,13 +1659,26 @@
     }
 
     function submitModalToWhatsapp() {
-      const name = document.getElementById('parentName').value.trim() || 'Parent/Student';
-      const sector = document.getElementById('parentSector').value.trim() || 'Near PU Chandigarh';
-      const grade = document.getElementById('modalClass').value;
-      const subjects = document.getElementById('modalSubjects').value.trim();
+      const name = document.getElementById('parentName') ? document.getElementById('parentName').value.trim() : '';
+      const sector = document.getElementById('parentSector') ? document.getElementById('parentSector').value.trim() : '';
+      const grade = document.getElementById('modalClass') ? document.getElementById('modalClass').value : '';
+      const subjects = document.getElementById('modalSubjects') ? document.getElementById('modalSubjects').value.trim() : '';
 
-      const text = encodeURIComponent(`Hello Saurav! I would like to book a Free 2-Day Trial Class via Swaran Academics:\n- Name: ${name}\n- Area: ${sector}\n- Format/Grade: ${grade}\n- Subjects: ${subjects}`);
-      window.open(`https://wa.me/919815485169?text=${text}`, '_blank');
+      if (!name || !sector) {
+        alert(currentLang === 'pa' ? 'ਕਿਰਪਾ ਕਰਕੇ ਸਾਰੇ ਖਾਨੇ ਭਰੋ।' : (currentLang === 'hi' ? 'कृपया सभी विवरण भरें।' : 'Please fill all details.'));
+        return;
+      }
+
+      let text = '';
+      if (currentLang === 'pa') {
+        text = `ਸਤਿ ਸ਼੍ਰੀ ਅਕਾਲ ਸੌਰਵ ਜੀ, ਮੈਂ ਮੁਫ਼ਤ 2 ਦਿਨਾਂ ਦਾ ਟ੍ਰਾਇਲ ਬੁੱਕ ਕਰਨਾ ਚਾਹੁੰਦਾ/ਚਾਹੁੰਦੀ ਹਾਂ।\n\nਵਿਦਿਆਰਥੀ ਜਾਂ ਮਾਪੇ ਦਾ ਨਾਂ: ${name}\nਇਲਾਕਾ/ਸੈਕਟਰ: ${sector}\nਜਮਾਤ: ${grade}\nਵਿਸ਼ੇ: ${subjects}`;
+      } else if (currentLang === 'hi') {
+        text = `नमस्ते सौरभ जी, मैं 2 दिन का फ्री ट्रायल बुक करना चाहता/चाहती हूँ।\n\nविद्यार्थी या अभिभावक का नाम: ${name}\nइलाका/सेक्टर: ${sector}\nकक्षा: ${grade}\nविषय: ${subjects}`;
+      } else {
+        text = `Hello Saurav! I would like to book a Free 2-Day Trial Class via Swaran Academics:\n\nStudent/Parent Name: ${name}\nArea: ${sector}\nGrade: ${grade}\nSubjects: ${subjects}`;
+      }
+
+      window.open(`https://wa.me/919815485169?text=${encodeURIComponent(text)}`, '_blank');
       closeBookingModal();
     }
 
@@ -1717,6 +1712,19 @@
           nameInput.placeholder = 'Student / Parent Name';
           sectorInput.placeholder = 'Location e.g. Sector 15 / PU Campus';
         }
+      }
+
+      const dockWa = document.getElementById('dockWaLink');
+      if (dockWa) {
+        let dockMsg = '';
+        if (lang === 'pa') {
+          dockMsg = 'ਸਤਿ ਸ਼੍ਰੀ ਅਕਾਲ ਸੌਰਵ ਜੀ, ਮੈਂ ਪੰਜਾਬ ਯੂਨੀਵਰਸਿਟੀ / ਚੰਡੀਗੜ੍ਹ ਦੇ ਆਸ-ਪਾਸ 9ਵੀਂ/10ਵੀਂ ਜਮਾਤ ਦੀਆਂ ਹੋਮ ਟਿਊਸ਼ਨਾਂ ਬਾਰੇ ਗੱਲਬਾਤ ਕਰਨੀ ਚਾਹੁੰਦਾ/ਚਾਹੁੰਦੀ ਹਾਂ।';
+        } else if (lang === 'hi') {
+          dockMsg = 'नमस्ते सौरभ जी, मैं पंजाब यूनिवर्सिटी / चंडीगढ़ के आस-पास 9वीं/10वीं कक्षा के होम ट्यूशन के बारे में जानकारी लेना चाहता/चाहती हूँ।';
+        } else {
+          dockMsg = 'Hello Saurav, I am interested in Home Tuitions for 9th/10th grade around PU Chandigarh.';
+        }
+        dockWa.href = `https://wa.me/919815485169?text=${encodeURIComponent(dockMsg)}`;
       }
 
       computePlan();
